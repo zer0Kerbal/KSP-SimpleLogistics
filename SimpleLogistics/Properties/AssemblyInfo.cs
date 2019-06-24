@@ -7,7 +7,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyTitle ("SimpleLogistics")]
 [assembly: AssemblyDescription ("Simple Logistics for KSP")]
 [assembly: AssemblyConfiguration ("")]
-[assembly: AssemblyCompany ("")]
+[assembly: AssemblyCompany ("SGEx")]
 [assembly: AssemblyProduct ("")]
 [assembly: AssemblyCopyright ("RealGecko")]
 [assembly: AssemblyTrademark ("")]
