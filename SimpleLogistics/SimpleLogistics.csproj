@@ -27,9 +27,9 @@
     <ConsolePause>false</ConsolePause>
     <CustomCommands>
       <CustomCommands>
-        <Command type="AfterBuild" command="cp ${TargetFile} /home/realgecko/Development/KSP/GameData/${ProjectName}" />
+        <!-- <Command type="AfterBuild" command="cp ${TargetFile} /home/realgecko/Development/KSP/GameData/${ProjectName}" />
         <Command type="AfterBuild" command="cp ${TargetFile} ${SolutionDir}/GameData/${ProjectName}" />
-        <Command type="Execute" command="/usr/bin/wine /home/realgecko/Development/KSP/KSP_x64.exe" workingdir="/home/realgecko/Development/KSP/" />
+        <Command type="Execute" command="/usr/bin/wine /home/realgecko/Development/KSP/KSP_x64.exe" workingdir="/home/realgecko/Development/KSP/" /> -->
       </CustomCommands>
     </CustomCommands>
   </PropertyGroup>
