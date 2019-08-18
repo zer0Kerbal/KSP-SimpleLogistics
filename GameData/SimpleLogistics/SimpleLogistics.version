@@ -1,7 +1,7 @@
 {
 	"NAME" : "Simple Logistics",
 	"URL"      : "https://raw.githubusercontent.com/zer0Kerbal/KSP-SimpleLogistics/master/GameData/SimpleLogistics/SimpleLogistics.version",
-	"DOWNLOAD" : "https://github.com/zer0Kerbal/KSP-SimpleLogistics/releases/latest",
+	"DOWNLOAD" : "https://github.com/zer0Kerbal/KSP-SimpleLogistics/releases",
 	"GITHUB" :
 	{
 		"USERNAME" : "zer0Kerbal",
@@ -11,9 +11,9 @@
 	"VERSION" : 
 	{
 		"MAJOR" : 2,
-		"MINOR" : 0,
-		"PATCH" : 2,
-		"BUILD" : 2
+		"MINOR" : 1,
+		"PATCH" : 1,
+		"BUILD" : 0
 	},
 	"KSP_VERSION":
 	{

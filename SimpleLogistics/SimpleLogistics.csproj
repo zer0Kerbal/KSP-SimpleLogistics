@@ -60,4 +60,22 @@
   <ItemGroup>
     <Folder Include="UIFramework\" />
   </ItemGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+      "C:\KSP_DEV\Workspace\pdb2mdb.exe" "C:\KSP_DEV\Workspace\KSP-SimpleLogistics\SimpleLogistics\bin\Release\SimpleLogistics.dll"
+      xcopy /Y "C:\KSP_DEV\Workspace\KSP-SimpleLogistics\SimpleLogistics\bin\Release\SimpleLogistics.dll" "C:\KSP_DEV\Workspace\KSP-SimpleLogistics\GameData\SimpleLogistics\Plugins"
+      xcopy /Y "C:\KSP_DEV\Workspace\KSP-SimpleLogistics\SimpleLogistics\bin\Release\SimpleLogistics.dll.mdb" "C:\KSP_DEV\Workspace\KSP-SimpleLogistics\GameData\SimpleLogistics\Plugins"
+      xcopy /Y "C:\KSP_DEV\Workspace\KSP-SimpleLogistics\LICENSE.md" "C:\KSP_DEV\Workspace\KSP-SimpleLogistics\GameData\SimpleLogistics"
+      xcopy /Y "C:\KSP_DEV\Workspace\KSP-SimpleLogistics\README.md" "C:\KSP_DEV\Workspace\KSP-SimpleLogistics\GameData\SimpleLogistics"
+      xcopy /Y "C:\KSP_DEV\Workspace\KSP-SimpleLogistics\SimpleLogistics.version" "C:\KSP_DEV\Workspace\KSP-SimpleLogistics\GameData\SimpleLogistics"
+      xcopy /Y "C:\KSP_DEV\Workspace\KSP-SimpleLogistics\KerbalChangeLog.cfg" "C:\KSP_DEV\Workspace\KSP-SimpleLogistics\GameData\SimpleLogistics"
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<config>
+    <rect name="SimpleLogistics">
+        <xmin>0</xmin>
+        <xmax>400</xmax>
+        <ymin>0</ymin>
+        <ymax>400</ymax>
+    </rect>
+</config>
