@@ -1,11 +1,11 @@
 {
-	"NAME" : "Simple Logistics",
+	"NAME" : "Simple Logistics Restocked",
 	"URL"      : "https://raw.githubusercontent.com/zer0Kerbal/KSP-SimpleLogistics/master/GameData/SimpleLogistics/SimpleLogistics.version",
-	"DOWNLOAD" : "https://github.com/zer0Kerbal/KSP-SimpleLogistics/releases/latest",
+	"DOWNLOAD" : "https://github.com/zer0Kerbal/SimpleLogistics/releases/latest",
 	"GITHUB" :
 	{
 		"USERNAME" : "zer0Kerbal",
-		"REPOSITORY" : "KSP-SimpleLogistics"
+		"REPOSITORY" : "SimpleLogistics"
 		"ALLOW_PRE_RELEASE": false
 	},
 	"VERSION" : 
