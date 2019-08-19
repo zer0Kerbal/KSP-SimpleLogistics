@@ -33,7 +33,7 @@
 	//
 	// Update the following with the name of the .version file which is in the root directory
 	//
-	string versionfile = RootDirectory + "OnDemandFuelCells.version";
+	string versionfile = RootDirectory + "SimpleLogistics.version";
 
 	if (!File.Exists(versionfile))
 	{

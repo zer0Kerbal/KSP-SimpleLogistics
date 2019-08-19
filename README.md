@@ -1,4 +1,5 @@
-# KSP Simple Logistics
+# Simple Logistics Restocked
+KSP Simple Logistics
 Simple resource sharing among landed vessels.
 by RealGecko
 

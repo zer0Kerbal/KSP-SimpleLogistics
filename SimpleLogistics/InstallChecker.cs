@@ -1,26 +1,26 @@
-﻿/**
- * Based on the InstallChecker from the Kethane mod for Kerbal Space Program.
- * https://github.com/Majiir/Kethane/blob/b93b1171ec42b4be6c44b257ad31c7efd7ea1702/Plugin/InstallChecker.cs
- * 
- * Original is (C) Copyright Majiir.
- * CC0 Public Domain (http://creativecommons.org/publicdomain/zero/1.0/)
- * http://forum.kerbalspaceprogram.com/threads/65395-CompatibilityChecker-Discussion-Thread?p=899895&viewfull=1#post899895
- * 
- * This file has been modified extensively and is released under the same license.
- */
+﻿///**
+// * Based on the InstallChecker from the Kethane mod for Kerbal Space Program.
+// * https://github.com/Majiir/Kethane/blob/b93b1171ec42b4be6c44b257ad31c7efd7ea1702/Plugin/InstallChecker.cs
+// * 
+// * Original is (C) Copyright Majiir.
+// * CC0 Public Domain (http://creativecommons.org/publicdomain/zero/1.0/)
+// * http://forum.kerbalspaceprogram.com/threads/65395-CompatibilityChecker-Discussion-Thread?p=899895&viewfull=1#post899895
+// * 
+// * This file has been modified extensively and is released under the same license.
+// */
 using System;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
 
-namespace ODFC
+namespace SimpleLogistics
 {
     [KSPAddon(KSPAddon.Startup.MainMenu, true)]
     internal class InstallChecker : MonoBehaviour
     {
-        private const string MODNAME = "OnDemandFuelCells";
-        private const string FOLDERNAME = "OnDemandFuelCells";
+        private const string MODNAME = "SimpleLogistics";
+        private const string FOLDERNAME = "SimpleLogistics";
         private const string EXPECTEDPATH = FOLDERNAME + "/Plugins";
 
         protected void Start()
