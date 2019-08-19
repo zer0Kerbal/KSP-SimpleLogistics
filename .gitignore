@@ -38,3 +38,17 @@ Thumbs.db
 
 #dotCover
 *.dotCover
+
+# Archive
+.zip
+.rar
+.7z
+.vs/SimpleLogistics/DesignTimeBuild/.dtbcache
+.vs/SimpleLogistics/DesignTimeBuild/.dtbcache
+.vs/SimpleLogistics/v16/Server/sqlite3/db.lock
+.vs/SimpleLogistics/v16/Server/sqlite3/storage.ide
+*.rar
+*.lock
+*.ide
+*.ide-shm
+*.ide-wal
