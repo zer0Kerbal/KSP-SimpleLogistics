@@ -2,7 +2,6 @@
 <#@ import namespace="System.IO" #>
 <#@ output extension=".cs" #>
 
-<#@ assembly name="EnvDTE" #><# /* This assembly provides access to Visual Studio project properties. */ #>
 <#
 
 	// Instructions
@@ -10,7 +9,7 @@
 	// 2.  Copy this file into the new template
 	// 3.  Update the string: versionfile with the complete path to the .version file
 	// 4.  Remove the following line from the file AssemblyInfo.cs (usually located in the "Property" folder inside your C# project):
-	//        [assembly: AssemblyFileVersion("1.0.0.0")]
+	//        [assembly: AssemblyVersion("1.0.0.0")]
 	// 5.  Add the following to the PreBuild steps:
 	//		set textTemplatingPath="%CommonProgramFiles(x86)%\Microsoft Shared\TextTemplating\$(VisualStudioVersion)\texttransform.exe"
 	//
@@ -19,21 +18,19 @@
 	//		%textTemplatingPath% "$(ProjectDir)AssemblyFileVersion.tt"
 
     int major = 0; 
-    int minor = 0; 
+    int minor = 0; 	
     int build = 0; 
 	int patch = 0;
 	bool versionSection = false;
+
 	int i = 0;
 	int i2 = 0;
 	string s;
-
-		// For Visual Studio / MSBuild Build-Time Template Resolution
-	string RootDirectory = System.IO.Path.GetDirectoryName(Host.TemplateFile) + @"\..\";
-
+	
 	//
-	// Update the following with the name of the .version file which is in the root directory
+	// Update the following with the complete path to the .version file
 	//
-	string versionfile = RootDirectory + "SimpleLogistics.version";
+	string versionfile =  @"C:\KSP_DEV\Workspace\SimpleLogistics\SimpleLogistics.version";
 
 	if (!File.Exists(versionfile))
 	{

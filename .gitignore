@@ -1,54 +1,83 @@
-#Autosave files
-*~
+# Prerequisites
+*.d
 
-#build
-[Oo]bj/
-[Bb]in/
-packages/
-TestResults/
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
 
-# globs
-Makefile.in
-*.DS_Store
-*.sln.cache
-*.suo
-*.cache
-*.pidb
-*.userprefs
-*.usertasks
-config.log
-config.make
-config.status
-aclocal.m4
-install-sh
-autom4te.cache/
-*.user
-*.tar.gz
-tarballs/
-test-results/
-Thumbs.db
+# Precompiled Headers
+*.gch
+*.pch
 
-#Mac bundle stuff
-*.dmg
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
 *.app
 
-#resharper
-*_Resharper.*
-*.Resharper
-
-#dotCover
-*.dotCover
-
 # Archive
-.zip
-.rar
-.7z
-.vs/SimpleLogistics/DesignTimeBuild/.dtbcache
-.vs/SimpleLogistics/DesignTimeBuild/.dtbcache
-.vs/SimpleLogistics/v16/Server/sqlite3/db.lock
-.vs/SimpleLogistics/v16/Server/sqlite3/storage.ide
+ *.zip
+ *.rar
+ *.7z
+*.zip
+
+# Unique
+*.atom
+
+# Office
+*.xls
+*.xlsx
+*.psd
+*.7z
 *.rar
+
+# Working files (copyright and shouldn't be included)
+*.dll
+*.zip
+*.mdb
 *.lock
 *.ide
-*.ide-shm
+*.pdb
+*.cache
+*.txt
+Source/.vs/
 *.ide-wal
+*.suo
+/build/
+*.suo
+*.user
+_ReSharper.*/
+*.sdf
+bin/
+obj/
+Debug/
+Release/
+*.opensdf
+*.tlog
+*.log
+TestResult.xml
+*.VisualState.xml
+.vs/
+
+# internal tools
+buildRelease.bat
+deploy.bat
+*.sqlite
+
+*.json

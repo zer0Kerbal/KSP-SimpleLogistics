@@ -1,15 +1,16 @@
-﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{49E5D325-C48A-41D5-9C75-0F94A37F08A5}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <NoStandardLibraries>false</NoStandardLibraries>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SimpleLogistics</RootNamespace>
     <AssemblyName>SimpleLogistics</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <!-- <ReleaseVersion>1.1.1.0</ReleaseVersion> -->
-    <!-- <Deterministic>true</Deterministic> -->
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,35 +21,26 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>
-    </DocumentationFile>
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
-  <PropertyGroup>
-    <RootNamespace>SimpleLogistics</RootNamespace>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-  </PropertyGroup>
   <ItemGroup>
-    <!-- <Reference Include="Microsoft.CSharp" /> -->
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="Assembly-CSharp">
       <HintPath>$(DevDir)\KSP_x64_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
     <Reference Include="Assembly-CSharp-firstpass">
       <HintPath>$(DevDir)\KSP_x64_Data\Managed\Assembly-CSharp-firstpass.dll</HintPath>
       <Private>False</Private>
@@ -95,19 +87,30 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
   <PropertyGroup>
-    <PostBuildEvent>
-		"C:\KSP_DEV\Workspace\pdb2mdb.exe" "C:\KSP_DEV\Workspace\SimpleLogistics\SimpleLogistics\bin\Release\SimpleLogistics.dll"
-		xcopy /Y "C:\KSP_DEV\Workspace\SimpleLogistics\SimpleLogistics\bin\Release\SimpleLogistics.dll" "C:\KSP_DEV\Workspace\SimpleLogistics\GameData\SimpleLogistics\Plugins"
-		xcopy /Y "C:\KSP_DEV\Workspace\SimpleLogistics\SimpleLogistics\bin\Release\SimpleLogistics.dll.mdb" "C:\KSP_DEV\Workspace\SimpleLogistics\GameData\SimpleLogistics\Plugins"
-		xcopy /Y "C:\KSP_DEV\Workspace\SimpleLogistics\KerbalChangelog.cfg" "C:\KSP_DEV\Workspace\SimpleLogistics\GameData\SimpleLogistics"
-		xcopy /Y "C:\KSP_DEV\Workspace\SimpleLogistics\license.md" "C:\KSP_DEV\Workspace\SimpleLogistics\GameData\SimpleLogistics"
-		xcopy /Y "C:\KSP_DEV\Workspace\SimpleLogistics\SimpleLogistics.version" "C:\KSP_DEV\Workspace\SimpleLogistics\GameData\SimpleLogistics"
-		xcopy /Y "C:\KSP_DEV\Workspace\SimpleLogistics\readme.md" "C:\KSP_DEV\Workspace\SimpleLogistics\GameData\SimpleLogistics"
+    <PostBuildEvent>start /D $(ProjectDir)..\  /WAIT deploy.bat $(TargetDir) $(TargetFileName)
+
+if $(ConfigurationName) == Release start /D $(ProjectDir)..\ /WAIT buildRelease.bat $(TargetDir) $(TargetFileName)
 </PostBuildEvent>
   </PropertyGroup>
-  <ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>set textTemplatingPath="$(DevEnvDir)texttransform.exe"
+%25textTemplatingPath%25 "$(ProjectDir)AssemblyVersion.tt"
+    </PreBuildEvent>
+  </PropertyGroup>
+  <!--<Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>-->
+  <!--   <ProjectExtensions>
     <VisualStudio AllowExistingFolder="true" />
-  </ProjectExtensions>
+  </ProjectExtensions> -->
 </Project>
