@@ -1,7 +1,19 @@
+<!-- Readme.md v1.1
+Simple Logistics (SL)
+created: 11 Aug 18
+updated: 23 Sep 19 -->
+
+<!-- Download on SpaceDock or Github or Curseforge. Also available on CKAN. -->
+
 # Simple Logistics Restocked
 KSP Simple Logistics
 Simple resource sharing among landed vessels.
-by RealGecko
+originally by RealGecko
+
+![Mod Version](https://img.shields.io/github/v/release/zer0Kerbal/SimpleLogistics?include_prereleases) 
+![KSP 1.7.x](https://img.shields.io/badge/KSP%20version-1.7.x-66ccff.svg?style=flat-square) 
+![CKAN listed](https://img.shields.io/badge/CKAN-Indexed-brightgreen.svg) 
+![CC 4.0 BY-NC-SA](https://img.shields.io/badge/license-CC--4.0--BY--SA-lightgrey)
 
 ## Requirements
 - Module Manager
@@ -53,4 +65,4 @@ by RealGecko
 ##### All bundled mods are distributed under their own licenses
 ##### All art assets (textures, models, animations) are distributed under an All Rights Reserved License.
 
-###### v2.0.2.2 original: 11 Aug 2018 0K updated: 17 Aug 2019 zed'K
+###### v2.0.2.4 original: 11 Aug 2018 0K updated: 23 Sep 2019 zed'K
