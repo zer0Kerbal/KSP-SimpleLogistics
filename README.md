@@ -25,18 +25,6 @@ originally by RealGecko
 - Code clean, update pass
 - moved Changelog into separate file
 
-### Version 2.0.2.1 recompile by forum user @Miracle Magician
-- Recompile for KSP 1.7.2
-
-### Version 2.0.2.0 recompile by forum user @Usgiyi
-- Recompile for KSP 1.4.5
-
-### Version 2.0.2
-- Recompile for KSP 1.3.1
-
-### Version 2.0.1
-- Fixed MM patch
-
 ## Dependencies 
  * Kerbal Space Program
  * 
@@ -51,6 +39,17 @@ originally by RealGecko
  * 
  
 ## License 
+- ![Software Only License - This only covers the software/sourcecode](https://www.gnu.org/graphics/gplv3-or-later-sm.png) [GPLv3](https://www.gnu.org/licenses/gpl-3.0.html)
+- ![Non-Software/Sourcecode  License - All other/General License](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png ) [content licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.](https://creativecommons.org/licenses/by-nc-sa/4.0)
+
+`You may modify for personal use. You may redistribute content with attribution to original author zer0Kerbal, plus any other attribution where required. You must redistribute under identical license, CC BY-NC-SA 4.0.`
+
+https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+ *Be Kind: Lithobrake, not jakebrake! Keep your Module Manager up to date*
+# Non-Software (All other/General) License:
+
+CC 4.0 BY-NC-SA CC 4.0 BY-NC-SA 
 
 *a part of the **TWYLLTR** (Take What You Like, Leave the Rest) collection.*  
  
