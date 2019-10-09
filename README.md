@@ -40,16 +40,13 @@ originally by RealGecko
  
 ## License 
 - ![GPLv3](https://www.gnu.org/graphics/gplv3-or-later-sm.png) [Software Only License. This only covers the software and sourcecode](https://www.gnu.org/licenses/gpl-3.0.html)
-- ![CC BY-NC-SA 4.0.](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png) [Non-Software or Sourcecode  License. All other/General License content licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.](https://creativecommons.org/licenses/by-nc-sa/4.0)
+- ![CC BY-NC-SA 4.0.](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png) [Non-Software or Sourcecode (All other/General) License. All other/General License content licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.](https://creativecommons.org/licenses/by-nc-sa/4.0)
 
 `You may modify for personal use. You may redistribute content with attribution to original author zer0Kerbal, plus any other attribution where required. You must redistribute under identical license, CC BY-NC-SA 4.0.`
 
 https://creativecommons.org/licenses/by-nc-sa/4.0/
 
  *Be Kind: Lithobrake, not jakebrake! Keep your Module Manager up to date*
-# Non-Software (All other/General) License:
-
-CC 4.0 BY-NC-SA CC 4.0 BY-NC-SA 
 
 *a part of the **TWYLLTR** (Take What You Like, Leave the Rest) collection.*  
  
