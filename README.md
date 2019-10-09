@@ -39,8 +39,8 @@ originally by RealGecko
  * 
  
 ## License 
-- ![Software Only License - This only covers the software/sourcecode](https://www.gnu.org/graphics/gplv3-or-later-sm.png) [GPLv3](https://www.gnu.org/licenses/gpl-3.0.html)
-- ![Non-Software/Sourcecode  License - All other/General License](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png ) [content licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.](https://creativecommons.org/licenses/by-nc-sa/4.0)
+- ![GPLv3](https://www.gnu.org/graphics/gplv3-or-later-sm.png) [Software Only License. This only covers the software and sourcecode](https://www.gnu.org/licenses/gpl-3.0.html)
+- ![CC BY-NC-SA 4.0.](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png) [Non-Software or Sourcecode  License. All other/General License content licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.](https://creativecommons.org/licenses/by-nc-sa/4.0)
 
 `You may modify for personal use. You may redistribute content with attribution to original author zer0Kerbal, plus any other attribution where required. You must redistribute under identical license, CC BY-NC-SA 4.0.`
 
