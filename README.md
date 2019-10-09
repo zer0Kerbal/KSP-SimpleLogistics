@@ -1,7 +1,7 @@
-<!-- Readme.md v1.1
+<!-- Readme.md v1.1.1.0
 Simple Logistics (SL)
 created: 11 Aug 18
-updated: 23 Sep 19 -->
+updated: 08 Oct 19 -->
 
 <!-- Download on SpaceDock or Github or Curseforge. Also available on CKAN. -->
 
@@ -20,7 +20,7 @@ originally by RealGecko
 - Module Manager
 
 ## Changelog
-### Version 2.0.3.0
+### Version 2.0.2.4
 - Recompile for KSP 1.7.3
 - Code clean, update pass
 - moved Changelog into separate file
