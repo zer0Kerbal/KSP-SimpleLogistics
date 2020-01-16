@@ -190,7 +190,7 @@ namespace SimpleLogistics
 		// It's a mess
 		private void DrawGUI(int windowId) {
 			GUILayout.BeginVertical ();
-            Layout.LabelAndText(Localizer.Format("#SimpleLogistics_Label1"), FlightGlobals.ActiveVessel.RevealName()); //"Current Vessel"
+            Layout.LabelAndText(Localizer.Format("#SimpleLogistics_Label1"), Localizer.Format(FlightGlobals.ActiveVessel.RevealName())); //"Current Vessel"
 
             bool ableToRequest = false;
 
