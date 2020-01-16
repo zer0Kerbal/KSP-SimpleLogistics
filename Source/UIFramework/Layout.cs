@@ -6,6 +6,7 @@
 using System;
 using UnityEngine;
 
+using ClickThroughFix;
 namespace SimpleLogistics
 {
 	public class Layout
@@ -203,7 +204,7 @@ namespace SimpleLogistics
 			// Fix rect width and height not being integers to avoid blurry font rendering
 			screenRect.width = (float)Math.Floor (screenRect.width);
 			screenRect.height = (float)Math.Floor (screenRect.height);
-			return GUILayout.Window (id, screenRect, func, title, Styles.window, options);
+			return ClickThruBlocker.GUILayoutWindow (id, screenRect, func, title, Styles.window, options);
 		}
 
 		/// <summary>
