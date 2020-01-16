@@ -16,6 +16,8 @@ originally by RealGecko
 ![Software License GPLv3](https://img.shields.io/badge/SoftwareLicense-GPLv3-red) 
 ![NonSoftware License CC 4.0 BY-NC-SA](https://img.shields.io/badge/NonSoftwareLicense-CC--4.0--BY--SA-lightgrey)
 
+![SimpleLogistics](https://spacedock.info/content/RealGecko_4471/SimpleLogistics/SimpleLogistics-1479979364.054124.png)
+
 ## Changelog
 ### Version 2.0.3.0
 - Recompile for KSP 1.8.1/ .NET 4.8 / Unity 2019
@@ -24,23 +26,14 @@ originally by RealGecko
 - Code clean, update pass
 - moved Changelog into separate file
 
-### Version 2.0.2.4
-- Recompile for KSP 1.7.3
-- Code clean, update pass
-- moved Changelog into separate file
-
 ## Dependencies 
  * Kerbal Space Program
- *
-
-## Supports
- * [WIP] Stock Mining Enhancements
- * [WIP] Near Future Electionics
- * [WIP] Bon Voyage
+ * Module Manager
  
 ## Suggests 
  * [On Demand Fuel Cells (ODFC)](https://forum.kerbalspaceprogram.com/index.php?/topic/187625-*)
- * 
+ * Field Training Facility (FTF)
+ * Field Training Lab (FTL)
  
 ## License 
 - ![GPLv3](https://www.gnu.org/graphics/gplv3-or-later-sm.png) [Software and Sourcecode Only License. This only covers the software and sourcecode. Original license.](https://www.gnu.org/licenses/gpl-3.0.html)
@@ -50,13 +43,6 @@ originally by RealGecko
 
  *Be Kind: Lithobrake, not jakebrake! Keep your Module Manager up to date*
 
-*a part of the **TWYLLTR** (Take What You Like, Leave the Rest) collection.*  
-
 📌v2.0.3.0
-
-## links to original:  
-
-
-![Jeb's Rule #1"](https://ic.pics.livejournal.com/asaratov/25113347/1448500/1448500_original.jpg   "Jeb's Rule #1")
 
 ###### v2.0.3.0 original: 11 Aug 2018 0K updated: 15 Dec 2020 zed'K
