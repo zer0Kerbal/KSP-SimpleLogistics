@@ -4,6 +4,7 @@ using UnityEngine;
 using KSP.UI.Screens;
 using KSP.IO;
 using KSP.Localization;
+using ToolbarControl_NS;
 
 namespace SimpleLogistics
 {
@@ -32,8 +33,9 @@ namespace SimpleLogistics
 		private bool active;
 		private bool refresh;
 
-		private ApplicationLauncherButton appLauncherButton;
-		private IButton toolbarButton;
+		//private ApplicationLauncherButton appLauncherButton;
+		//private IButton toolbarButton;
+		private ToolbarControl toolbarControl;
 
 		// Same as Debug Toolbar lock mask
 		private const ulong lockMask = 900719925474097919;
@@ -119,7 +121,21 @@ namespace SimpleLogistics
 		#endregion
 
 		#region UI Functions
+
+		public const string MODID = "SimpleLogisticsUI";
+		public const string MODNAME = "Simple Logistics";
 		private void CreateLauncher() {
+			toolbarControl = gameObject.AddComponent<ToolbarControl>();
+			toolbarControl.AddToAllToolbars(onAppTrue, onAppFalse,
+	
+				ApplicationLauncher.AppScenes.FLIGHT,
+				 MODID,
+				"SIButton",
+				"SimpleLogistics/Textures/simple-logistics-icon",
+				"SimpleLogistics/Textures/simple-logistics-icon-toolbar",
+				MODNAME
+			);
+#if false
 			if (ToolbarManager.ToolbarAvailable) {
 				toolbarButton = ToolbarManager.Instance.add ("SimpleLogistics", "AppLaunch");
 				toolbarButton.TexturePath = "SimpleLogistics/Textures/simple-logistics-icon-toolbar";
@@ -142,16 +158,24 @@ namespace SimpleLogistics
 					GameDatabase.Instance.GetTexture("SimpleLogistics/Textures/simple-logistics-icon", false)
 				);
 			}
+#endif
 		}
 
 		public void DestroyLauncher()
 		{
+#if false
 			if (appLauncherButton != null) {
 				ApplicationLauncher.Instance.RemoveModApplication (appLauncherButton);
 			}
 			if (toolbarButton != null) {
 				toolbarButton.Destroy ();
 				toolbarButton = null;
+			}
+#endif
+			if (toolbarControl != null)
+			{
+				toolbarControl.OnDestroy();
+				Destroy(toolbarControl);
 			}
 		}
 
@@ -160,11 +184,14 @@ namespace SimpleLogistics
 			if (gamePaused || globalHidden || !active) return;
 
 			if (FlightGlobals.ActiveVessel.situation != Vessel.Situations.LANDED) {
+#if false
 				if (appLauncherButton != null)
 					appLauncherButton.SetFalse ();
 				else
 					onToggle ();
 				return;
+#endif
+				toolbarControl.SetFalse();
 			}
 
 			if (refresh) {
@@ -190,7 +217,7 @@ namespace SimpleLogistics
 		// It's a mess
 		private void DrawGUI(int windowId) {
 			GUILayout.BeginVertical ();
-            Layout.LabelAndText(Localizer.Format("#SimpleLogistics_Label1"), FlightGlobals.ActiveVessel.RevealName()); //"Current Vessel"
+            Layout.LabelAndText(Localizer.Format("#SimpleLogistics_Label1"), Localizer.Format(FlightGlobals.ActiveVessel.RevealName())); //"Current Vessel"
 
             bool ableToRequest = false;
 
@@ -252,10 +279,13 @@ namespace SimpleLogistics
             //"Close"
             if (Layout.Button(Localizer.Format("#SimpleLogistics_Label7"), Palette.red))
             {
-                if (appLauncherButton != null)
+#if false
+				if (appLauncherButton != null)
 					appLauncherButton.SetFalse ();
 				else
 					onToggle ();				
+#endif
+				toolbarControl.SetFalse();
 			}
 
 			GUILayout.EndVertical ();
@@ -322,9 +352,9 @@ namespace SimpleLogistics
 		{
 			InputLockManager.RemoveControlLock(this.name);
 		}
-		#endregion
+#endregion
 
-		#region Resource Sharing
+#region Resource Sharing
 		private void FixedUpdate() {
 			// Find all resources in the network
 			partResources.Clear ();
@@ -469,7 +499,7 @@ namespace SimpleLogistics
 				ShareResource (resList, value);
 			}
 		}
-		#endregion
+#endregion
 	}
 }
 
