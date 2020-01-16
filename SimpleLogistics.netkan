@@ -1,0 +1,18 @@
+{
+    "$kref": "#/ckan/spacedock/1079",
+    "spec_version": "v1.4",
+    "identifier": "SimpleLogistics",
+    "x_via": "Manual SpaceDock CKAN submission",
+    "license": "GPL-3.0",
+    "author": "RealGecko,zer0Kerbal",
+    "depends": [
+         {
+             "name": "ModuleManager"
+         }
+     ],
+    "recommends"     : [
+        {"name" : "AlternateResourcePanel"},
+        {"name" : "Field Training Facility"},
+        {"name" : "Field Training Lab"}
+    ]
+}
