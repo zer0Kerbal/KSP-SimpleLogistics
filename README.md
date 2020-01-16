@@ -16,6 +16,8 @@ originally by RealGecko
 ![Software License GPLv3](https://img.shields.io/badge/SoftwareLicense-GPLv3-red) 
 ![NonSoftware License CC 4.0 BY-NC-SA](https://img.shields.io/badge/NonSoftwareLicense-CC--4.0--BY--SA-lightgrey)
 
+![SimpleLogistics](https://spacedock.info/content/RealGecko_4471/SimpleLogistics/SimpleLogistics-1479979364.054124.png)
+
 ## Changelog
 ### Version 2.0.3.0
 - Recompile for KSP 1.8.1/ .NET 4.8 / Unity 2019
@@ -31,16 +33,12 @@ originally by RealGecko
 
 ## Dependencies 
  * Kerbal Space Program
- *
-
-## Supports
- * [WIP] Stock Mining Enhancements
- * [WIP] Near Future Electionics
- * [WIP] Bon Voyage
+ * Module Manager
  
 ## Suggests 
  * [On Demand Fuel Cells (ODFC)](https://forum.kerbalspaceprogram.com/index.php?/topic/187625-*)
- * 
+ * Field Training Facility
+	* Field Training Lab
  
 ## License 
 - ![GPLv3](https://www.gnu.org/graphics/gplv3-or-later-sm.png) [Software and Sourcecode Only License. This only covers the software and sourcecode. Original license.](https://www.gnu.org/licenses/gpl-3.0.html)
