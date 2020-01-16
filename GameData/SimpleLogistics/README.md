@@ -10,9 +10,9 @@ KSP Simple Logistics
 Simple resource sharing among landed vessels.
 originally by RealGecko
 
-![Mod Version](https://img.shields.io/github/v/release/zer0Kerbal/SimpleLogistics?include_prereleases) 
-![KSP 1.7.x](https://img.shields.io/badge/KSP%20version-1.7.x-66ccff.svg?style=flat-square) 
-![CKAN listed](https://img.shields.io/badge/CKAN-Indexed-brightgreen.svg) 
+![Mod Version](https://img.shields.io/github/v/release/zer0Kerbal/SimpleLogistics?include_prereleases)
+![KSP 1.7.x](https://img.shields.io/badge/KSP%20version-1.7.x-66ccff.svg?style=flat-square)
+![CKAN listed](https://img.shields.io/badge/CKAN-Indexed-brightgreen.svg)
 ![CC 4.0 BY-NC-SA](https://img.shields.io/badge/license-CC--4.0--BY--SA-lightgrey)
 
 ## Requirements
@@ -20,7 +20,9 @@ originally by RealGecko
 
 ## Changelog
 ### Version 2.0.3.0
-- Recompile for KSP 1.7.3
+- Recompile for KSP 1.8.1/ .NET 4.8 / Unity 2019
+- Added localization for US-EN and ZH-CN ( thank you @tinygrox)
+ - change = update patch to include ":NEEDS"
 - Code clean, update pass
 - moved Changelog into separate file
 
@@ -36,33 +38,33 @@ originally by RealGecko
 ### Version 2.0.1
 - Fixed MM patch
 
-## Dependencies 
+## Dependencies
  * Kerbal Space Program
- * 
- 
-## Supports 
+ *
+
+## Supports
  * [WIP] Stock Mining Enhancements
  * [WIP] Near Future Electionics
  * [WIP] Bon Voyage
- 
-## Suggests 
- * 
- * 
- 
-## License 
+
+## Suggests
+ *
+ *
+
+## License
 
 *a part of the **TWYLLTR** (Take What You Like, Leave the Rest) collection.*  
- 
+
 📌v2.0.3.0-alpha  
- 
+
 ## links to original:  
 
 
-![Jeb's Rule #1"](https://ic.pics.livejournal.com/asaratov/25113347/1448500/1448500_original.jpg   "Jeb's Rule #1") 
- 
- 
- 
+![Jeb's Rule #1"](https://ic.pics.livejournal.com/asaratov/25113347/1448500/1448500_original.jpg   "Jeb's Rule #1")
+
+
+
 ##### All bundled mods are distributed under their own licenses
 ##### All art assets (textures, models, animations) are distributed under an All Rights Reserved License.
 
-###### v2.0.2.4 original: 11 Aug 2018 0K updated: 23 Sep 2019 zed'K
+###### v2.0.3.0 original: 11 Aug 2018 0K updated: 15 Dec 2020 zed'K

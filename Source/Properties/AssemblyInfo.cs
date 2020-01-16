@@ -19,7 +19,7 @@ using System.Runtime.CompilerServices;
 // and "{Major}.{Minor}.{Build}.*" will update just the revision.
 [assembly: KSPAssemblyDependency("ToolbarController", 1, 0)]
 //[assembly: AssemblyVersion ("2.0.2.2")]
-[assembly: AssemblyFileVersion ("2.0.2.4")]
+[assembly: AssemblyFileVersion ("2.0.3.0")]
 [assembly: ComVisible(false)]
 [assembly: Guid("587108A5-23DD-4CAD-976D-8ABE51CBB43D")]
 
