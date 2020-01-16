@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using KSP.UI.Screens;
 using KSP.IO;
+using KSP.Localization;
 
 namespace SimpleLogistics
 {
@@ -175,8 +176,8 @@ namespace SimpleLogistics
 				windowId,
 				windowRect,
 				DrawGUI,
-				"Logistics Network",
-				GUILayout.ExpandWidth(true),
+                Localizer.Format("#SimpleLogistics_WindowTitle"), //"Logistics Network"
+                GUILayout.ExpandWidth(true),
 				GUILayout.ExpandHeight(true)
 			);
 			if (windowRect.Contains (Event.current.mousePosition)) {
@@ -189,19 +190,21 @@ namespace SimpleLogistics
 		// It's a mess
 		private void DrawGUI(int windowId) {
 			GUILayout.BeginVertical ();
-			Layout.LabelAndText ("Current Vessel", FlightGlobals.ActiveVessel.RevealName());
+            Layout.LabelAndText(Localizer.Format("#SimpleLogistics_Label1"), FlightGlobals.ActiveVessel.RevealName()); //"Current Vessel"
 
-			bool ableToRequest = false;
+            bool ableToRequest = false;
 
 			LogisticsModule lm = FlightGlobals.ActiveVessel.FindPartModuleImplementing<LogisticsModule> ();
 			if (lm != null) {
 				Layout.Label (
-					lm.IsActive ? "Pluged In" : "Unplugged",
-					lm.IsActive ? Palette.green : Palette.red
+                    lm.IsActive ? Localizer.Format("#SimpleLogistics_Label2") : Localizer.Format("#SimpleLogistics_Label3"), //"Pluged In""Unplugged"
+                    lm.IsActive ? Palette.green : Palette.red
 				);
 
-				if (Layout.Button ("Toggle Plug", Palette.yellow)) {
-					lm.Set (!lm.IsActive);
+                // "Toggle Plug"
+                if (Layout.Button(Localizer.Format("#SimpleLogistics_Label4"), Palette.yellow))
+                { 
+                    lm.Set (!lm.IsActive);
 					refresh = true;
 				}
 				ableToRequest = !lm.IsActive;
@@ -209,10 +212,10 @@ namespace SimpleLogistics
 
 			if (ableToRequest)
 				GetVesselSpareSpace ();
-			
-			Layout.LabelCentered ("Resource Pool:", Palette.yellow);
 
-			foreach (var resource in resourcePool) {
+            Layout.LabelCentered(Localizer.Format("#SimpleLogistics_Label5"), Palette.yellow); //"Resource Pool:"
+
+            foreach (var resource in resourcePool) {
 				GUILayout.BeginHorizontal ();
 				Layout.Label (resource.Key, Palette.yellow, GUILayout.Width(170));
 				if (ableToRequest && requestPool.ContainsKey (resource.Key)) {
@@ -241,12 +244,15 @@ namespace SimpleLogistics
 			}
 
 			if (ableToRequest)
-			if (Layout.Button ("Request Resources")) {
-				requested = true;
+            // "Request Resources"
+            if(Layout.Button(Localizer.Format("#SimpleLogistics_Label6"))) {
+                requested = true;
 			}
 
-			if(Layout.Button("Close", Palette.red)) {
-				if (appLauncherButton != null)
+            //"Close"
+            if (Layout.Button(Localizer.Format("#SimpleLogistics_Label7"), Palette.red))
+            {
+                if (appLauncherButton != null)
 					appLauncherButton.SetFalse ();
 				else
 					onToggle ();				
@@ -279,8 +285,8 @@ namespace SimpleLogistics
 		public void onAppTrue()
 		{
 			if (FlightGlobals.ActiveVessel.situation != Vessel.Situations.LANDED) {
-				ScreenMessages.PostScreenMessage ("Must be landed to use logistics");
-				return;
+                ScreenMessages.PostScreenMessage(Localizer.Format("#SimpleLogistics_msg1")); //"Must be landed to use logistics"
+                return;
 			}
 
 			active = true;
@@ -296,8 +302,8 @@ namespace SimpleLogistics
 		internal virtual void onToggle()
 		{
 			if (FlightGlobals.ActiveVessel.situation != Vessel.Situations.LANDED) {
-				ScreenMessages.PostScreenMessage ("Must be landed to use logistics");
-				return;
+                ScreenMessages.PostScreenMessage(Localizer.Format("#SimpleLogistics_msg2")); //"Must be landed to use logistics"
+                return;
 			}
 
 			active = !active;

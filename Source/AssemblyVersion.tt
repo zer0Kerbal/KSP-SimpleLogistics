@@ -1,4 +1,4 @@
-﻿<#@ template debug="false" hostspecific="true" language="C#" #>
+﻿﻿<#@ template debug="false" hostspecific="true" language="C#" #>
 <#@ import namespace="System.IO" #>
 <#@ output extension=".cs" #>
 
@@ -15,22 +15,24 @@
 	//
 	//		if %textTemplatingPath%=="\Microsoft Shared\TextTemplating\$(VisualStudioVersion)\texttransform.exe" set textTemplatingPath="%CommonProgramFiles%\Microsoft Shared\TextTemplating\$(VisualStudioVersion)\texttransform.exe"
 	//
-	//		%textTemplatingPath% "$(ProjectDir)AssemblyFileVersion.tt"
+	//		%textTemplatingPath% "$(ProjectDir)AssemblyVersion.tt"
 
     int major = 0; 
-    int minor = 0; 	
+    int minor = 0; 
     int build = 0; 
 	int patch = 0;
 	bool versionSection = false;
-
 	int i = 0;
 	int i2 = 0;
 	string s;
-	
+
+	// For Visual Studio / MSBuild Build-Time Template Resolution
+	string RootDirectory = System.IO.Path.GetDirectoryName(Host.TemplateFile) + @"\..\";
+
 	//
-	// Update the following with the complete path to the .version file
+	// Update the following with the name of the .version file which is in the root directory
 	//
-	string versionfile =  @"C:\KSP_DEV\Workspace\SimpleLogistics\SimpleLogistics.version";
+	string versionfile = RootDirectory +"SimpleLogistics.version";
 
 	if (!File.Exists(versionfile))
 	{
@@ -94,3 +96,4 @@
  using System.Reflection;
 
  [assembly: AssemblyVersion("<#= major #>.<#= minor #>.<#= patch #>.<#= build #>")]
+

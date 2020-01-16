@@ -1,7 +1,7 @@
-<!-- Readme.md v1.1.1.0
+<!-- Readme.md v1.1.1.1
 Simple Logistics (SL)
 created: 11 Aug 18
-updated: 08 Oct 19 -->
+updated: 16 Jan 20 -->
 
 <!-- Download on SpaceDock or Github or Curseforge. Also available on CKAN. -->
 
@@ -16,10 +16,14 @@ originally by RealGecko
 ![Software License GPLv3](https://img.shields.io/badge/SoftwareLicense-GPLv3-red) 
 ![NonSoftware License CC 4.0 BY-NC-SA](https://img.shields.io/badge/NonSoftwareLicense-CC--4.0--BY--SA-lightgrey)
 
-## Requirements
-- Module Manager
-
 ## Changelog
+### Version 2.0.3.0
+- Recompile for KSP 1.8.1/ .NET 4.8 / Unity 2019
+- Added localization for US-EN and ZH-CN ( thank you @tinygrox)
+- change = update patch to include ":NEEDS"
+- Code clean, update pass
+- moved Changelog into separate file
+
 ### Version 2.0.2.4
 - Recompile for KSP 1.7.3
 - Code clean, update pass
@@ -27,9 +31,9 @@ originally by RealGecko
 
 ## Dependencies 
  * Kerbal Space Program
- * 
- 
-## Supports 
+ *
+
+## Supports
  * [WIP] Stock Mining Enhancements
  * [WIP] Near Future Electionics
  * [WIP] Bon Voyage
@@ -44,22 +48,15 @@ originally by RealGecko
 
 `You may modify for personal use. You may redistribute content with attribution to original author zer0Kerbal, plus any other attribution where required. You must redistribute under identical license, CC BY-NC-SA 4.0.`
 
-https://creativecommons.org/licenses/by-nc-sa/4.0/
-
  *Be Kind: Lithobrake, not jakebrake! Keep your Module Manager up to date*
 
 *a part of the **TWYLLTR** (Take What You Like, Leave the Rest) collection.*  
- 
-📌v2.0.3.0-alpha  
- 
+
+📌v2.0.3.0
+
 ## links to original:  
 
 
-![Jeb's Rule #1"](https://ic.pics.livejournal.com/asaratov/25113347/1448500/1448500_original.jpg   "Jeb's Rule #1") 
- 
- 
- 
-##### All bundled mods are distributed under their own licenses
-##### All art assets (textures, models, animations) are distributed under an All Rights Reserved License.
+![Jeb's Rule #1"](https://ic.pics.livejournal.com/asaratov/25113347/1448500/1448500_original.jpg   "Jeb's Rule #1")
 
-###### v2.0.2.4 original: 11 Aug 2018 0K updated: 23 Sep 2019 zed'K
+###### v2.0.3.0 original: 11 Aug 2018 0K updated: 15 Dec 2020 zed'K
