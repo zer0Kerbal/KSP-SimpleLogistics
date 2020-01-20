@@ -72,6 +72,7 @@
       <DependentUpon>AssemblyVersion.tt</DependentUpon>
     </Compile>
     <Compile Include="InstallChecker.cs" />
+    <Compile Include="Log.cs" />
     <Compile Include="LogisticsModule.cs" />
     <Compile Include="SimpleLogistics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
