@@ -1,19 +1,19 @@
 Localization 
 {
-	fr-fr
-	{
-		#SimpleLogistics_Module_Plugged = Verbunden?
-		#SimpleLogistics_Module_PluggedNet = Stellen Sie eine Verbindung zum Netzwerk her
-		#SimpleLogistics_Module_Getinfo = Logistics module für die einfache gemeinsame Nutzung von Ressourcen.
-		#SimpleLogistics_WindowTitle = Netzwerk für Logistics
-		#SimpleLogistics_Label1 = Aktuelles Schiff
-		#SimpleLogistics_Label2 = Verbunden
-		#SimpleLogistics_Label3 = Verbindung getrennt
-		#SimpleLogistics_Label4 = Plug wechseln
-		#SimpleLogistics_Label5 = Resource Pool:
-		#SimpleLogistics_Label6 = Ressourcenanfrage
-		#SimpleLogistics_Label7 = Schliessen
-		#SimpleLogistics_msg1 = Muss gelandet sein, um die Logistik zu nutzen
-		#SimpleLogistics_msg2 = Muss gelandet sein, um die Logistik zu nutzen
-	}
+    fr-fr
+    {
+        #SimpleLogistics_Module_Plugged = Plugged In?
+        #SimpleLogistics_Module_PluggedNet = Plug into Network
+        #SimpleLogistics_Module_Getinfo = Logistics Module for easy resource sharing.
+        #SimpleLogistics_WindowTitle = Logistics Network
+        #SimpleLogistics_Label1 = Current Vessel
+        #SimpleLogistics_Label2 = Plugged In
+        #SimpleLogistics_Label3 = Unplugged
+        #SimpleLogistics_Label4 = Toggle Plug
+        #SimpleLogistics_Label5 = Resource Pool:
+        #SimpleLogistics_Label6 = Request Resources
+        #SimpleLogistics_Label7 = Close
+        #SimpleLogistics_msg1 = Must be landed to use logistics
+        #SimpleLogistics_msg2 = Must be landed to use logistics
+    }
 }
