@@ -1,0 +1,19 @@
+Localization 
+{
+	es-mx 
+	{
+		#SimpleLogistics_Module_Plugged = Verbunden?
+		#SimpleLogistics_Module_PluggedNet = Stellen Sie eine Verbindung zum Netzwerk her
+		#SimpleLogistics_Module_Getinfo = Logistics module für die einfache gemeinsame Nutzung von Ressourcen.
+		#SimpleLogistics_WindowTitle = Netzwerk für Logistics
+		#SimpleLogistics_Label1 = Aktuelles Schiff
+		#SimpleLogistics_Label2 = Verbunden
+		#SimpleLogistics_Label3 = Verbindung getrennt
+		#SimpleLogistics_Label4 = Plug wechseln
+		#SimpleLogistics_Label5 = Resource Pool:
+		#SimpleLogistics_Label6 = Ressourcenanfrage
+		#SimpleLogistics_Label7 = Schliessen
+		#SimpleLogistics_msg1 = Muss gelandet sein, um die Logistik zu nutzen
+		#SimpleLogistics_msg2 = Muss gelandet sein, um die Logistik zu nutzen
+	}
+}
