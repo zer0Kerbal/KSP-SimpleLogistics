@@ -34,6 +34,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ClickThroughBlocker">
+      <HintPath>..\..\..\..\Games\Dev\GameData\000_ClickThroughBlocker\Plugins\ClickThroughBlocker.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,6 +51,10 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="$(DevDir)\KSP_x64_Data\Managed\UnityEngine*.dll">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ToolbarControl">
+      <HintPath>..\..\..\..\Games\Dev\GameData\001_ToolbarControl\Plugins\ToolbarControl.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
@@ -64,6 +72,7 @@
       <DependentUpon>AssemblyVersion.tt</DependentUpon>
     </Compile>
     <Compile Include="InstallChecker.cs" />
+    <Compile Include="Log.cs" />
     <Compile Include="LogisticsModule.cs" />
     <Compile Include="SimpleLogistics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

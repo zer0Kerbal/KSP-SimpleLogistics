@@ -163,13 +163,13 @@ namespace SimpleLogistics
 //			tdWhite.Apply ();
 		}
 		internal static void LoadTextures() {
-			var bytes = System.IO.File.ReadAllBytes ("GameData/SimpleLogistics/Textures/window-back.png");
+			var bytes = System.IO.File.ReadAllBytes ("GameData/SimpleLogistics/Textures/window-back.dds");
 			tWindowBack.LoadImage (bytes);
 
-			bytes = System.IO.File.ReadAllBytes ("GameData/SimpleLogistics/Textures/button-back.png");
+			bytes = System.IO.File.ReadAllBytes ("GameData/SimpleLogistics/Textures/button-back.dds");
 			tButtonBack.LoadImage (bytes);
 
-			bytes = System.IO.File.ReadAllBytes ("GameData/SimpleLogistics/Textures/button-hover-back.png");
+			bytes = System.IO.File.ReadAllBytes ("GameData/SimpleLogistics/Textures/button-hover-back.dds");
 			tButtonHover.LoadImage (bytes);
 		}
 	}
