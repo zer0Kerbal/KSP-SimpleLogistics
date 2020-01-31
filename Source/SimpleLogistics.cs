@@ -70,8 +70,9 @@ namespace SimpleLogistics
 			refresh = true;
 
 			requested = false;
+			CreateLauncher();
 
-			GameEvents.onGUIApplicationLauncherReady.Add(CreateLauncher);
+			//GameEvents.onGUIApplicationLauncherReady.Add(CreateLauncher);
 			GameEvents.onLevelWasLoaded.Add (onLevelWasLoaded);
 			GameEvents.onVesselChange.Add (onVesselChange);
 			GameEvents.onHideUI.Add(onHideUI);
@@ -84,7 +85,7 @@ namespace SimpleLogistics
 			config.SetValue (this.name, windowRect);
 			config.save ();
 
-			GameEvents.onGUIApplicationLauncherReady.Remove(CreateLauncher);
+			//GameEvents.onGUIApplicationLauncherReady.Remove(CreateLauncher);
 			GameEvents.onLevelWasLoaded.Remove (onLevelWasLoaded);
 			GameEvents.onVesselChange.Remove (onVesselChange);
 			GameEvents.onHideUI.Remove(onHideUI);
@@ -124,10 +125,10 @@ namespace SimpleLogistics
 
 		public const string MODID = "SimpleLogisticsUI";
 		public const string MODNAME = "Simple Logistics";
-		private void CreateLauncher() {
+		private void CreateLauncher() 
+		{
 			toolbarControl = gameObject.AddComponent<ToolbarControl>();
-			toolbarControl.AddToAllToolbars(onAppTrue, onAppFalse,
-	
+			toolbarControl.AddToAllToolbars(onAppTrue, onAppFalse,	
 				ApplicationLauncher.AppScenes.FLIGHT,
 				 MODID,
 				"SIButton",
