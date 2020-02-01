@@ -356,6 +356,16 @@ namespace SimpleLogistics
 		}
 #endregion
 #region zed'K new code
+        private Boolean IsSituationValid(Vessel vessel)
+        {
+            Boolean stati = false;
+
+            if (HighLogic.CurrentGame.Parameters.CustomParams<SimpleLogistics_Options>().globalLogisticsRange > 1) stati = true;
+            if (HighLogic.CurrentGame.Parameters.CustomParams<SimpleLogistics_Options>().allowPreLaunch) stati = true;
+            if (HighLogic.CurrentGame.Parameters.CustomParams<SimpleLogistics_Options>().allowSplashed) stati = true;
+            if (HighLogic.CurrentGame.Parameters.CustomParams<SimpleLogistics_Options>().requireLanded) stati = true;
+            return stati;
+        }
         private Boolean VesselState(Vessel vessel)
         {
             Log.dbg("name {0}, range {1}, situation {2}", vessel.vesselName, vessel.vesselRanges, vessel.SituationString);

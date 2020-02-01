@@ -27,8 +27,8 @@ namespace SimpleLogistics
 		public static Color gray20 = new Color (0.2f, 0.2f, 0.2f);
 		public static Color gray10 = new Color (0.1f, 0.1f, 0.1f);
 		public static Color transparent = new Color (0.0f, 0.0f, 0.0f, 0.0f);
-//		public static Color windowBack = new Color (0.39f, 0.41f, 0.46f, 0.85f);
-//		public static Color windowBorder = new Color (0.66f, 0.73f, 0.78f, 0.85f);
+		public static Color windowBack = new Color (0.39f, 0.41f, 0.46f, 0.85f);
+		public static Color windowBorder = new Color (0.66f, 0.73f, 0.78f, 0.85f);
 
 		// Color filled textures
 
@@ -120,56 +120,57 @@ namespace SimpleLogistics
 			tTransparent.SetPixel (0, 0, transparent);
 			tTransparent.Apply ();
 
-//			tBorder.SetPixel (0, 0, windowBorder);
-//			tBorder.SetPixel (0, 1, windowBorder);
-//			tBorder.SetPixel (0, 2, windowBorder);
-//			tBorder.SetPixel (0, 3, windowBorder);
-//			tBorder.SetPixel (1, 0, windowBorder);
-//			tBorder.SetPixel (1, 1, windowBack);
-//			tBorder.SetPixel (1, 2, windowBack);
-//			tBorder.SetPixel (1, 3, windowBorder);
-//			tBorder.SetPixel (2, 0, windowBorder);
-//			tBorder.SetPixel (2, 1, windowBack);
-//			tBorder.SetPixel (2, 2, windowBack);
-//			tBorder.SetPixel (2, 3, windowBorder);
-//			tBorder.SetPixel (3, 0, windowBorder);
-//			tBorder.SetPixel (3, 1, windowBorder);
-//			tBorder.SetPixel (3, 2, windowBorder);
-//			tBorder.SetPixel (3, 3, windowBorder);
+/*			tBorder.SetPixel (0, 0, windowBorder);
+			tBorder.SetPixel (0, 1, windowBorder);
+			tBorder.SetPixel (0, 2, windowBorder);
+			tBorder.SetPixel (0, 3, windowBorder);
+			tBorder.SetPixel (1, 0, windowBorder);
+			tBorder.SetPixel (1, 1, windowBack);
+			tBorder.SetPixel (1, 2, windowBack);
+			tBorder.SetPixel (1, 3, windowBorder);
+			tBorder.SetPixel (2, 0, windowBorder);
+			tBorder.SetPixel (2, 1, windowBack);
+			tBorder.SetPixel (2, 2, windowBack);
+			tBorder.SetPixel (2, 3, windowBorder);
+			tBorder.SetPixel (3, 0, windowBorder);
+			tBorder.SetPixel (3, 1, windowBorder);
+			tBorder.SetPixel (3, 2, windowBorder);
+			tBorder.SetPixel (3, 3, windowBorder);
 
-			// User for debugging
-//			tdGray.SetPixel (0, 0, dGray);
-//			tdGray.Apply ();
-//			
-//			tdBlue.SetPixel (0, 0, dBlue);
-//			tdBlue.Apply ();
-//			
-//			tdGreen.SetPixel (0, 0, dGreen);
-//			tdGreen.Apply ();
-//			
-//			tdCyan.SetPixel (0, 0, dCyan);
-//			tdCyan.Apply ();
-//			
-//			tdRed.SetPixel (0, 0, dRed);
-//			tdRed.Apply ();
-//			
-//			tdMagenta.SetPixel (0, 0, dMagenta);
-//			tdMagenta.Apply ();
-//			
-//			tdYellow.SetPixel (0, 0, dYellow);
-//			tdYellow.Apply ();
-//			
-//			tdWhite.SetPixel (0, 0, dWhite);
-//			tdWhite.Apply ();
+		// Use for debugging
+			tdGray.SetPixel (0, 0, dGray);
+			tdGray.Apply ();
+			
+			tdBlue.SetPixel (0, 0, dBlue);
+			tdBlue.Apply ();
+			
+			tdGreen.SetPixel (0, 0, dGreen);
+			tdGreen.Apply ();
+			
+			tdCyan.SetPixel (0, 0, dCyan);
+			tdCyan.Apply ();
+			
+			tdRed.SetPixel (0, 0, dRed);
+			tdRed.Apply ();
+			
+			tdMagenta.SetPixel (0, 0, dMagenta);
+			tdMagenta.Apply ();
+			
+			tdYellow.SetPixel (0, 0, dYellow);
+			tdYellow.Apply ();
+			
+			tdWhite.SetPixel (0, 0, dWhite);
+			tdWhite.Apply ();*/
+
 		}
 		internal static void LoadTextures() {
-			var bytes = System.IO.File.ReadAllBytes ("GameData/SimpleLogistics/Textures/window-back.dds");
+			var bytes = System.IO.File.ReadAllBytes ("GameData/SimpleLogistics/Textures/window-back.png");
 			tWindowBack.LoadImage (bytes);
 
-			bytes = System.IO.File.ReadAllBytes ("GameData/SimpleLogistics/Textures/button-back.dds");
+			bytes = System.IO.File.ReadAllBytes ("GameData/SimpleLogistics/Textures/button-back.png");
 			tButtonBack.LoadImage (bytes);
 
-			bytes = System.IO.File.ReadAllBytes ("GameData/SimpleLogistics/Textures/button-hover-back.dds");
+			bytes = System.IO.File.ReadAllBytes ("GameData/SimpleLogistics/Textures/button-hover-back.png");
 			tButtonHover.LoadImage (bytes);
 		}
 	}
