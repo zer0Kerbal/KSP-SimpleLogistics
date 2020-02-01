@@ -1,4 +1,4 @@
-/*
+﻿/*
  * UI Framework licensed under BSD 3-clause license
  * https://github.com/Real-Gecko/Unity5-UIFramework/blob/master/LICENSE.md
 */
@@ -27,8 +27,8 @@ namespace SimpleLogistics
 		public static Color gray20 = new Color (0.2f, 0.2f, 0.2f);
 		public static Color gray10 = new Color (0.1f, 0.1f, 0.1f);
 		public static Color transparent = new Color (0.0f, 0.0f, 0.0f, 0.0f);
-		public static Color windowBack = new Color (0.39f, 0.41f, 0.46f, 0.85f);
-		public static Color windowBorder = new Color (0.66f, 0.73f, 0.78f, 0.85f);
+//		public static Color windowBack = new Color (0.39f, 0.41f, 0.46f, 0.85f);
+//		public static Color windowBorder = new Color (0.66f, 0.73f, 0.78f, 0.85f);
 
 		// Color filled textures
 
@@ -55,7 +55,7 @@ namespace SimpleLogistics
 		/// </summary>
 //		public static Texture2D tBorder = new Texture2D(4, 4);
 
-		// Use for debuging
+		// Use for debugging
 //		internal static Color dGray = new Color(0.5f, 0.5f, 0.5f);
 //		internal static Color dBlue = new Color(0.5f, 0.5f, 1.0f);
 //		internal static Color dGreen = new Color(0.5f, 1.0f, 0.5f);
@@ -137,7 +137,7 @@ namespace SimpleLogistics
 //			tBorder.SetPixel (3, 2, windowBorder);
 //			tBorder.SetPixel (3, 3, windowBorder);
 
-			// User for debuging
+			// User for debugging
 //			tdGray.SetPixel (0, 0, dGray);
 //			tdGray.Apply ();
 //			

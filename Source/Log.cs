@@ -23,7 +23,7 @@ namespace SimpleLogistics
             UnityEngine.Debug.Log("[SimpleLogistics] " + msg);
         }
     }
-  /*  internal static class Logg
+/*    internal static class Logg
     {
         public enum LEVEL
         {

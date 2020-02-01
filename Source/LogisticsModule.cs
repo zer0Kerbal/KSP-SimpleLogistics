@@ -24,7 +24,7 @@ namespace SimpleLogistics
 
 		public override string GetInfo()
 		{
-			return Localizer.Format("#SimpleLogistics_Module_Getinfo");//"Logistics Module for easy resource sharing."
+			return Localizer.Format("#SimpleLogistics_Module_Getinfo"); //"Logistics Module for easy resource sharing."
         }
 
 		public override void OnStart(PartModule.StartState state) {
