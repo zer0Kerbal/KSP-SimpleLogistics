@@ -15,6 +15,10 @@ originally by RealGecko
 ![CKAN listed](https://img.shields.io/badge/CKAN-Indexed-brightgreen.svg)
 ![Software License GPLv3](https://img.shields.io/badge/SoftwareLicense-GPLv3-red)
 ![NonSoftware License CC 4.0 BY-NC-SA](https://img.shields.io/badge/NonSoftwareLicense-CC--4.0--BY--SA-lightgrey)
+ 
+## Looking for translators!
+### SimpleLogistics now speaks six languages:
+#### English, Spanish, French, German, Chinese, and Japanese
 
 ![SimpleLogistics](https://spacedock.info/content/RealGecko_4471/SimpleLogistics/SimpleLogistics-1479979364.054124.png)
 

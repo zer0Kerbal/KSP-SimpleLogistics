@@ -27,8 +27,8 @@ namespace SimpleLogistics
 		public static Color gray20 = new Color (0.2f, 0.2f, 0.2f);
 		public static Color gray10 = new Color (0.1f, 0.1f, 0.1f);
 		public static Color transparent = new Color (0.0f, 0.0f, 0.0f, 0.0f);
-//		public static Color windowBack = new Color (0.39f, 0.41f, 0.46f, 0.85f);
-//		public static Color windowBorder = new Color (0.66f, 0.73f, 0.78f, 0.85f);
+		public static Color windowBack = new Color (0.39f, 0.41f, 0.46f, 0.85f);
+		public static Color windowBorder = new Color (0.66f, 0.73f, 0.78f, 0.85f);
 
 		// Color filled textures
 
