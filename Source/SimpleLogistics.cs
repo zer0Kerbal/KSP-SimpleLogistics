@@ -40,7 +40,7 @@ namespace SimpleLogistics
 		// Same as Debug Toolbar lock mask
 		private const ulong lockMask = 900719925474097919;
 
-		#region Primary Functions
+#region Primary Functions
 		private void Awake() {
 			if (instance != null) {
 				Destroy (this);
@@ -121,7 +121,7 @@ namespace SimpleLogistics
 
 		#endregion
 
-		#region UI Functions
+#region UI Functions
 
 		public const string MODID = "SimpleLogisticsUI";
 		public const string MODNAME = "Simple Logistics";
@@ -218,16 +218,17 @@ namespace SimpleLogistics
 		// It's a mess
 		private void DrawGUI(int windowId) {
 			GUILayout.BeginVertical ();
+           
             Layout.LabelAndText(Localizer.Format("#SimpleLogistics_Label1"), Localizer.Format(FlightGlobals.ActiveVessel.RevealName())); //"Current Vessel"
 
             bool ableToRequest = false;
 
 			LogisticsModule lm = FlightGlobals.ActiveVessel.FindPartModuleImplementing<LogisticsModule> ();
 			if (lm != null) {
-				Layout.Label (
+                Layout.Label(
                     lm.IsActive ? Localizer.Format("#SimpleLogistics_Label2") : Localizer.Format("#SimpleLogistics_Label3"), //"Pluged In""Unplugged"
                     lm.IsActive ? Palette.green : Palette.red
-				);
+                );
 
                 // "Toggle Plug"
                 if (Layout.Button(Localizer.Format("#SimpleLogistics_Label4"), Palette.yellow))
@@ -354,14 +355,29 @@ namespace SimpleLogistics
 			InputLockManager.RemoveControlLock(this.name);
 		}
 #endregion
-
+#region zed'K new code
+        private Boolean VesselState(Vessel vessel)
+        {
+            Log.dbg("name {0}, range {1}, situation {2}", vessel.vesselName, vessel.vesselRanges, vessel.SituationString);
+            if ((vessel.situation != Vessel.Situations.LANDED) || (vessel.situation != Vessel.Situations.PRELAUNCH) || (vessel.situation != Vessel.Situations.SPLASHED)) return true;
+            return false;
+        }
+        private Boolean VesselRange(Vessel vessel)
+        {
+            return true;
+        }
+#endregion
 #region Resource Sharing
-		private void FixedUpdate() {
+        private void FixedUpdate() {
 			// Find all resources in the network
 			partResources.Clear ();
 			foreach (Vessel vessel in FlightGlobals.VesselsLoaded) {
-				if (vessel.situation != Vessel.Situations.LANDED)
-					continue;
+                // Log.dbg("name {0}, range {1}, situation {2}", vessel.vesselName, vessel.vesselRanges, vessel.SituationString);
+				// if ((vessel.situation != Vessel.Situations.LANDED) || (vessel.situation != Vessel.Situations.PRELAUNCH) || (vessel.situation != Vessel.Situations.SPLASHED))
+				//	continue;
+                //if (VesselState(vessel) && VesselRange(vessel))
+                if (vessel.situation != Vessel.Situations.LANDED)
+                    continue;
 
 				LogisticsModule lm = vessel.FindPartModuleImplementing<LogisticsModule> ();
 				if (lm != null)
