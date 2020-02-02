@@ -1,11 +1,11 @@
-<!-- Readme.md v1.1.1.2
-Simple Logistics (SL)
-created: 11 Aug 18
-updated: 18 Jan 20 -->
+<!-- Readme.md v1.1.1.3
+Simple Logistics (SLR)
+created: 11 Aug 2018
+updated: 01 Feb 2020 -->
 
 <!-- Download on SpaceDock or Github or Curseforge. Also available on CKAN. -->
 
-# Simple Logistics Restocked
+# Simple Logistics (Restocked)
 KSP Simple Logistics
 Simple resource sharing among landed vessels.
 originally by RealGecko
@@ -15,23 +15,30 @@ originally by RealGecko
 ![CKAN listed](https://img.shields.io/badge/CKAN-Indexed-brightgreen.svg)
 ![Software License GPLv3](https://img.shields.io/badge/SoftwareLicense-GPLv3-red)
 ![NonSoftware License CC 4.0 BY-NC-SA](https://img.shields.io/badge/NonSoftwareLicense-CC--4.0--BY--SA-lightgrey)
- 
-## Looking for translators!
-### SimpleLogistics now speaks six languages:
-#### English, Spanish, French, German, Chinese, and Japanese
 
 ![SimpleLogistics](https://spacedock.info/content/RealGecko_4471/SimpleLogistics/SimpleLogistics-1479979364.054124.png)
 
 ## Dependencies
- * [Kerbal Space Program]()
- * [Module Manager]()
- * [NEW] [ToolbarController]()
- * [NEW] [ClickThroughBlocker]()
+ * [Kerbal Space Program](https://kerbalspaceprogram.com)
+ * [Module Manager](https://forum.kerbalspaceprogram.com/index.php?/topic/50533-*)
+ * [NEW] [ToolbarController](https://forum.kerbalspaceprogram.com/index.php?/topic/169509-*)
+ * [NEW] [ClickThroughBlocker](https://forum.kerbalspaceprogram.com/index.php?/topic/170747-*)
 
 ## Suggests
+ * [Toolbar (Blizzy's)](https://forum.kerbalspaceprogram.com/index.php?/topic/161857-*)
  * [On Demand Fuel Cells (ODFC)](https://forum.kerbalspaceprogram.com/index.php?/topic/187625-*)
- * [Field Training Facility (FTF)]()
- * [Field Training Lab (FTL)]()
+ * [Field Training Facility (FTF)](https://forum.kerbalspaceprogram.com/index.php?/topic/188841-*)
+ * [Field Training Lab (FTL)](https://forum.kerbalspaceprogram.com/index.php?/topic/188841-*)
+ * [Docking Port Descriptions](https://github.com/zer0Kerbal/KGEx/tree/master/GameData/KGEx/DockingPortDescriptions)
+ * [More Hitchhikers](https://forum.kerbalspaceprogram.com/index.php?/topic/188246-*)
+ * [PicoPort Shielded](https://github.com/zer0Kerbal/KGEx/tree/master/GameData/KGEx/MM-Patches/ShieldedPicoPort)
+ * [Transparent Command Pods Repressurized](https://forum.kerbalspaceprogram.com/index.php?/topic/187495-*)
+ * [Nuke Refueled](https://forum.kerbalspaceprogram.com/index.php?/topic/21466-*)
+ * [Vanguard]()
+ * [ProbiTronics]()
+ * [CTN]()
+ * [Stork Delivery System (SDS)]()
+ * [Biomatic]()
  * [B9 Stock Switches (BSS)]()
  * [HotBeverages!]()
 
@@ -41,4 +48,4 @@ originally by RealGecko
 
  *Be Kind: Lithobrake, not jakebrake! Keep your Module Manager up to date*
 
-###### 📌 v2.0.3.1 original: 11 Aug 2018 0K updated: 15 Dec 2020 zed'K
+###### 📌 v2.0.3.1 original: 11 Aug 2018 0K updated: 01 Feb 2020 zed'K
