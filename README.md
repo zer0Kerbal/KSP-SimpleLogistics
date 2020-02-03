@@ -6,7 +6,7 @@ updated: 01 Feb 2020 -->
 <!-- Download on SpaceDock or Github or Curseforge. Also available on CKAN. -->
 
 # Simple Logistics (Restocked)
-KSP Simple Logistics
+Simple Logistics (🇺🇸 🇪🇸 🇫🇷 🇮🇹 🇧🇷 🇷🇺 🇩🇪 🇨🇳 🇯🇵 🇰🇷 🇳🇴 🇸🇪)
 Simple resource sharing among landed vessels.
 originally by RealGecko
 
