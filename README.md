@@ -1,14 +1,15 @@
 <!-- Readme.md v1.1.1.3
-Simple Logistics (SLR)
+SimpleLogistics (SLR)
 created: 11 Aug 2018
 updated: 01 Feb 2020 -->
 
 <!-- Download on SpaceDock or Github or Curseforge. Also available on CKAN. -->
 
-# Simple Logistics (Restocked)
-KSP Simple Logistics
-Simple resource sharing among landed vessels.
-originally by RealGecko
+# SimpleLogistics (Restocked)
+SimpleLogistics <br>
+Localizations: 🇺🇸 🇪🇸 🇫🇷 🇮🇹 🇧🇷 🇷🇺 🇩🇪 🇨🇳 🇯🇵 🇰🇷 🇳🇴 🇸🇪 <br>
+Simple resource sharing among landed vessels. <br>
+originally by @RealGecko
 
 ![Mod Version](https://img.shields.io/github/v/release/zer0Kerbal/SimpleLogistics?include_prereleases)
 ![KSP 1.8.x](https://img.shields.io/badge/KSP%20version-1.8.x-66ccff.svg?style=flat-square)
@@ -48,4 +49,4 @@ originally by RealGecko
 
  *Be Kind: Lithobrake, not jakebrake! Keep your Module Manager up to date*
 
-###### 📌 v2.0.3.1 original: 11 Aug 2018 0K updated: 01 Feb 2020 zed'K
+###### 📌 v2.0.3.1 original: 11 Aug 2018 0K updated: 03 Feb 2020 zed'K
