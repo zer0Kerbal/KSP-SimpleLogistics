@@ -14,8 +14,8 @@ Note: Even though you will appear to be editing the project's files, don't worry
 
 It is recommended to make your changes on your own computer at first so you can test them before uploading, especially if you are creating a new translation from scratch.
 
-1. Install the [current release of Astrogator](https://github.com/HebaruSan/Astrogator/releases/latest) if you have not already
-2. Open your `Kerbal Space Program/GameData/Astrogator/lang` folder on your local disk
+1. Install the current release of xxx mod if you have not already
+2. Open your `Kerbal Space Program/GameData/xxxMod/Localization` folder on your local disk
 3. Look for a file called *lang*.cfg, where *lang* is KSP's name for your locale; as of KSP 1.3, this includes:
     - en-us (English)
     - es-es (Spanish)
@@ -50,7 +50,7 @@ Follow these steps to start your own translation from scratch:
 
 The middle part of the `cfg` file contains the strings to translate. The format is `name = translation`, where the name is a special string defined by the mod. For example:
 
-    astrogator_launchSubtitle = Transfers from <<1>>\n(Launch ~<<2>>)
+    #launchSubtitle = Transfers from <<1>>\n(Launch ~<<2>>)
 
 Do **not** change the part to the left of the equals sign ("=")! These names must be the same in every language file.
 
@@ -65,7 +65,7 @@ The part to the right of the equals sign is the string to be used in-game. Most 
 
 For example, this is a possible translation of the above line into Spanish, courtesy of Google Translate:
 
-    astrogator_launchSubtitle = Transferencias desde <<1>>\n(Lanzamiento ~<<2>>)
+    #launchSubtitle = Transferencias desde <<1>>\n(Lanzamiento ~<<2>>)
 
 ### Testing
 
@@ -74,16 +74,16 @@ It's important to make sure that your changes work correctly. If you use Steam:
 1. [Select the language to use in Steam](https://www.youtube.com/watch?v=iBwYCvQxfeI)
 2. Wait for the language pack download to complete
 3. Run KSP
-4. Use Astrogator and make sure your changes appear as you intended
+4. Use the xxxMod ingame and make sure your changes appear as you intended
 
 If you do not use Steam, I don't know the steps to choose a language. Contact SQUAD if you can't figure it out.
 
 ## Contributing your translation for others to use
 
-After you have prepared a `cfg` file for your language and confirmed that it works as you intend, if you are willing to contribute it for redistribution under the GLPv3 license, follow these steps to upload it for inclusion in the main mod distribution:
+After you have prepared a `cfg` file for your language and confirmed that it works as you intend, if you are willing to contribute it for redistribution under the xxxModd's license, follow these steps to upload it for inclusion in the main mod distribution:
 
 1. Log in to [Github](https://github.com); you may need to register an account if you do not already have one
-2. Navigate to the [lang folder](https://github.com/HebaruSan/Astrogator/tree/master/assets/lang)
+2. Navigate to the xxxMod's Localization folder
 3. Look for the file you edited
 
 The remaining steps are different depending on whether the file already exists:
