@@ -44,8 +44,7 @@ originally by @RealGecko
  * [HotBeverages!]()
 
 ## License
-- ![GPLv3](https://www.gnu.org/graphics/gplv3-or-later-sm.png) [Software and Sourcecode Only License. This only covers the software and sourcecode. Original license.](https://www.gnu.org/licenses/gpl-3.0.html)
-- ![CC BY-NC-SA 4.0.](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png) [Non-Software or Sourcecode (All other/General) License. All other/General License content licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.](https://creativecommons.org/licenses/by-nc-sa/4.0)
+- ![GPLv3](https://www.gnu.org/graphics/gplv3-or-later-sm.png) [Lcense.](https://www.gnu.org/licenses/gpl-3.0.html)
 
  *Be Kind: Lithobrake, not jakebrake! Keep your Module Manager up to date*
 
