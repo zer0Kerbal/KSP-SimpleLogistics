@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "label": "Code",
   "labelColor": "darkblue",
-  "message": "<.NET 3.5> <Unity 2017> <C#>",
+  "message": "<.NET 3.5> <Unity 2017.1.3p1.> <C#>",
   "color": "66ccff",
   "style": "plastic"  
 }
