@@ -102,24 +102,13 @@
   <PropertyGroup>
     <PreBuildEvent>
       set textTemplatingPath="$(DevEnvDir)texttransform.exe"
-    </PreBuildEvent>
-    <PreBuildEvent>
-      %25textTemplatingPath%25 "$(ProjectDir)AssemblyVersion.tt"
-    </PreBuildEvent>
-  </PropertyGroup>
-  <PropertyGroup>
-    <PreBuildEvent>
       cmd /d C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\texttransform.exe "$(ProjectDir)Version.tt"
-    </PreBuildEvent>
-    <PreBuildEvent>
       cmd /d C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\texttransform.exe "$(ProjectDir)AssemblyFileVersion.tt"
     </PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PostBuildEvent>
       start /D $(ProjectDir)..\  /WAIT _deploy.bat $(TargetDir) $(TargetFileName)
-    </PostBuildEvent>
-    <PostBuildEvent>
       if $(ConfigurationName) == Release start /D $(ProjectDir)..\ /WAIT _buildRelease.bat $(TargetDir) $(TargetFileName)
     </PostBuildEvent>
   </PropertyGroup>
