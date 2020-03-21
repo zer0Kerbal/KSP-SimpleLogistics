@@ -57,7 +57,8 @@ updated: 01 Feb 2020 -->
 *red box below is a link to forum post on how to get support*  
 [![How to get support][image:get-support]][thread:getsupport]
 
-[![](http://img.youtube.com/vi/cJjIAE0RoK0/0.jpg)](http://www.youtube.com/watch?v=cJjIAE0RoK0 "Kottabo Talks SimpleLogistics")
+[![][UTUBE:img]][UTUBE:link]
+<!-- <iframe width="649" height="365" src="https://www.youtube.com/embed/cJjIAE0RoK0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
 ### License
 #### aka Legal Mumbo Jumbo
@@ -72,7 +73,7 @@ Author: [@RealGecko][LINK:realgecko]
 Source: [GitHub][MOD:original:source]  
 License: ![License GPLv3][shield:license] ![][LOGO:gplv3]  
 
-[![][UTUBE:img]][UTUBE:link]
+
  *Be Kind: Lithobrake, not jakebrake! Keep your Module Manager up to date*
 
 ###### v2.0.3.2 original: 11 Aug 2018 0K updated: 20 Mar 2020 zed'K
@@ -180,5 +181,5 @@ License: ![License GPLv3][shield:license] ![][LOGO:gplv3]
 [IMG:hero:1]: http://  
 [IMG:hero:2]: http://  
 
-[UTUBE:img]:  http://img.youtube.com/vi/cJjIAE0RoK0/0.jpg 
-[UTUBE:link]: http://www.youtube.com/watch?v=cJjIAE0RoK0 "Kottabo Talks SimpleLogistics"
+[UTUBE:img]:  http://img.youtube.com/vi/cJjIAE0RoK0/0.jpg  
+[UTUBE:link]: http://www.youtube.com/watch?v=cJjIAE0RoK0 "Kottabo Talks SimpleLogistics"  
