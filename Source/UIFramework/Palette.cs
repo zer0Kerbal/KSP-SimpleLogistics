@@ -10,7 +10,6 @@ namespace SimpleLogistics
 {
 	public struct Palette {
 		// Colors
-
 		public static Color white = new Color (1.0f, 1.0f, 1.0f);
 		public static Color dimWhite = new Color (0.9f, 0.9f, 0.9f, 0.9f);
 		public static Color black = new Color (0.0f, 0.0f, 0.0f, 1.0f);
@@ -31,14 +30,9 @@ namespace SimpleLogistics
 		public static Color windowBorder = new Color (0.66f, 0.73f, 0.78f, 0.85f);
 
 		// Color filled textures
-
 		public static Texture2D tBlack = new Texture2D (1, 1);
-//		public static Texture2D tRed = new Texture2D (1, 1);
 		public static Texture2D tDarkRed = new Texture2D (1, 1);
-//		public static Texture2D tGreen = new Texture2D (1, 1);
 		public static Texture2D tDarkGreen = new Texture2D (1, 1);
-//		public static Texture2D tBlue = new Texture2D (1, 1);
-//		public static Texture2D tYellow = new Texture2D (1, 1);
 		public static Texture2D tGray60 = new Texture2D (1, 1);
 		public static Texture2D tGray50 = new Texture2D (1, 1);
 		public static Texture2D tGray40 = new Texture2D (1, 1);
@@ -50,51 +44,15 @@ namespace SimpleLogistics
 		public static Texture2D tButtonBack = new Texture2D (8, 8);
 		public static Texture2D tButtonHover = new Texture2D (8, 8);
 
-		/// <summary>
-		/// 30 inside 60 outside
-		/// </summary>
-//		public static Texture2D tBorder = new Texture2D(4, 4);
-
-		// Use for debugging
-//		internal static Color dGray = new Color(0.5f, 0.5f, 0.5f);
-//		internal static Color dBlue = new Color(0.5f, 0.5f, 1.0f);
-//		internal static Color dGreen = new Color(0.5f, 1.0f, 0.5f);
-//		internal static Color dCyan = new Color(0.5f, 1.0f, 1.0f);
-//		internal static Color dRed = new Color(1.0f, 0.5f, 0.5f);
-//		internal static Color dMagenta = new Color(1.0f, 0.5f, 1.0f);
-//		internal static Color dYellow = new Color(1.0f, 1.0f, 0.5f);
-//		internal static Color dWhite = new Color(1.0f, 1.0f, 1.0f);
-		//
-//		internal static Texture2D tdGray = new Texture2D(1, 1);
-//		internal static Texture2D tdBlue = new Texture2D(1, 1);
-//		internal static Texture2D tdGreen = new Texture2D(1, 1);
-//		internal static Texture2D tdCyan = new Texture2D(1, 1);
-//		internal static Texture2D tdRed = new Texture2D(1, 1);
-//		internal static Texture2D tdMagenta = new Texture2D(1, 1);
-//		internal static Texture2D tdYellow = new Texture2D(1, 1);
-//		internal static Texture2D tdWhite = new Texture2D(1, 1);
-
 		internal static void InitPalette() {
 			tBlack.SetPixel (0, 0, black);
 			tBlack.Apply ();
-
-//			tRed.SetPixel (0, 0, red);
-//			tRed.Apply ();
 //
 			tDarkRed.SetPixel (0, 0, darkRed);
 			tDarkRed.Apply ();
 //
-//			tGreen.SetPixel (0, 0, green);
-//			tGreen.Apply ();
-//
 			tDarkGreen.SetPixel (0, 0, darkGreen);
 			tDarkGreen.Apply ();
-//
-//			tBlue.SetPixel (0, 0, blue);
-//			tBlue.Apply ();
-
-//			tYellow.SetPixel (0, 0, yellow);
-//			tYellow.Apply ();
 
 			tGray60.SetPixel(0, 0, gray60);
 			tGray60.Apply();
@@ -120,57 +78,15 @@ namespace SimpleLogistics
 			tTransparent.SetPixel (0, 0, transparent);
 			tTransparent.Apply ();
 
-/*			tBorder.SetPixel (0, 0, windowBorder);
-			tBorder.SetPixel (0, 1, windowBorder);
-			tBorder.SetPixel (0, 2, windowBorder);
-			tBorder.SetPixel (0, 3, windowBorder);
-			tBorder.SetPixel (1, 0, windowBorder);
-			tBorder.SetPixel (1, 1, windowBack);
-			tBorder.SetPixel (1, 2, windowBack);
-			tBorder.SetPixel (1, 3, windowBorder);
-			tBorder.SetPixel (2, 0, windowBorder);
-			tBorder.SetPixel (2, 1, windowBack);
-			tBorder.SetPixel (2, 2, windowBack);
-			tBorder.SetPixel (2, 3, windowBorder);
-			tBorder.SetPixel (3, 0, windowBorder);
-			tBorder.SetPixel (3, 1, windowBorder);
-			tBorder.SetPixel (3, 2, windowBorder);
-			tBorder.SetPixel (3, 3, windowBorder);
-
-		// Use for debugging
-			tdGray.SetPixel (0, 0, dGray);
-			tdGray.Apply ();
-			
-			tdBlue.SetPixel (0, 0, dBlue);
-			tdBlue.Apply ();
-			
-			tdGreen.SetPixel (0, 0, dGreen);
-			tdGreen.Apply ();
-			
-			tdCyan.SetPixel (0, 0, dCyan);
-			tdCyan.Apply ();
-			
-			tdRed.SetPixel (0, 0, dRed);
-			tdRed.Apply ();
-			
-			tdMagenta.SetPixel (0, 0, dMagenta);
-			tdMagenta.Apply ();
-			
-			tdYellow.SetPixel (0, 0, dYellow);
-			tdYellow.Apply ();
-			
-			tdWhite.SetPixel (0, 0, dWhite);
-			tdWhite.Apply ();*/
-
 		}
 		internal static void LoadTextures() {
-			var bytes = System.IO.File.ReadAllBytes ("GameData/SimpleLogistics/Textures/window-back.png");
+			var bytes = System.IO.File.ReadAllBytes ("GameData/SimpleLogistics/Plugins/Textures/window-back.png");
 			tWindowBack.LoadImage (bytes);
 
-			bytes = System.IO.File.ReadAllBytes ("GameData/SimpleLogistics/Textures/button-back.png");
+			bytes = System.IO.File.ReadAllBytes ("GameData/SimpleLogistics/Plugins/Textures/button-back.png");
 			tButtonBack.LoadImage (bytes);
 
-			bytes = System.IO.File.ReadAllBytes ("GameData/SimpleLogistics/Textures/button-hover-back.png");
+			bytes = System.IO.File.ReadAllBytes ("GameData/SimpleLogistics/Plugins/Textures/button-hover-back.png");
 			tButtonHover.LoadImage (bytes);
 		}
 	}

@@ -132,14 +132,14 @@ namespace SimpleLogistics
 				ApplicationLauncher.AppScenes.FLIGHT,
 				 MODID,
 				"SIButton",
-				"SimpleLogistics/Textures/simple-logistics-icon",
-				"SimpleLogistics/Textures/simple-logistics-icon-toolbar",
+				"SimpleLogistics/Plugins/Textures/simple-logistics-icon",
+				"SimpleLogistics/Plugins/Textures/simple-logistics-icon-toolbar",
 				MODNAME
 			);
 #if false
 			if (ToolbarManager.ToolbarAvailable) {
 				toolbarButton = ToolbarManager.Instance.add ("SimpleLogistics", "AppLaunch");
-				toolbarButton.TexturePath = "SimpleLogistics/Textures/simple-logistics-icon-toolbar";
+				toolbarButton.TexturePath = "SimpleLogistics/Plugins/Textures/simple-logistics-icon-toolbar";
 				toolbarButton.ToolTip = "Simple Logistics UI";
 				toolbarButton.Visible = true;
 				toolbarButton.OnClick += (ClickEvent e) => {
@@ -156,7 +156,7 @@ namespace SimpleLogistics
 					null,
 					null,
 					ApplicationLauncher.AppScenes.FLIGHT,
-					GameDatabase.Instance.GetTexture("SimpleLogistics/Textures/simple-logistics-icon", false)
+					GameDatabase.Instance.GetTexture("SimpleLogistics/Plugins/Textures/simple-logistics-icon", false)
 				);
 			}
 #endif
@@ -356,7 +356,7 @@ namespace SimpleLogistics
 		}
 #endregion
 #region zed'K new code
-        private Boolean IsSituationValid(Vessel vessel)
+/*        private Boolean IsSituationValid(Vessel vessel)
         {
             Boolean stati = false;
 
@@ -375,7 +375,7 @@ namespace SimpleLogistics
         private Boolean VesselRange(Vessel vessel)
         {
             return true;
-        }
+        }*/
 #endregion
 #region Resource Sharing
         private void FixedUpdate() {
