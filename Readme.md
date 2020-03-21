@@ -58,7 +58,7 @@ updated: 01 Feb 2020 -->
 [![How to get support][image:get-support]][thread:getsupport]
 
 [![][UTUBE:img]][UTUBE:link]
-<iframe width="649" height="365" src="https://www.youtube.com/embed/cJjIAE0RoK0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<!-- <iframe width="649" height="365" src="https://www.youtube.com/embed/cJjIAE0RoK0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
 ### License
 #### aka Legal Mumbo Jumbo
