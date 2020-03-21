@@ -60,6 +60,14 @@ updated: 01 Feb 2020 -->
 [![][UTUBE:img]][UTUBE:link]
 <!-- <iframe width="649" height="365" src="https://www.youtube.com/embed/cJjIAE0RoK0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
+> Thank you:
+>    @linuxgurugamer for the toolbar/clickthroughblocker updates (and other things)!
+>    @tinygrox for the localization implementation and the ZN-CH localization!
+>    @fitiales for the Spanish (es-es.cfg) localization!
+>    @malanok1 for the German(de-de.cg) and Russian (ru.cfg) localization!
+>    @Lisias for the Brazilian-Portuguese (br-pt.cfg) localization!
+>    @translate.google.com for French, Italian, Japanese, Korean, Swedish, and Norwegian localization (corrections solicited and welcome!)
+
 ### License
 #### aka Legal Mumbo Jumbo
 Source: [GitHub][MOD:github:repo]  
