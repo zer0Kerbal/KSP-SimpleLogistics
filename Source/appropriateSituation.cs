@@ -7,7 +7,6 @@ using KSP.IO;
 using KSP.Localization;
 using KSPAssets;
 using System.Linq;
-using UnityEngine;
 
 namespace SimpleLogistics
 {
@@ -24,7 +23,7 @@ namespace SimpleLogistics
          * AppropriateAltitude()
          * NetworkEligible()
          * IsActive needs to be read in from part and set IsActive flag
-        
+     */   
         // consitionPermissions
         const bool yesLanded = true,
                    yesSplashed = true,
@@ -43,12 +42,13 @@ namespace SimpleLogistics
         const double maxRange = 2400,
                      maxAltitude = 500,
                      maxGroundSpeed = 20;
+     /*
         //! from KSP
         internal enum sits : byte { LANDED, SPLASHED, PRELAUNCH, FLYING, SUB_ORBITAL, ORBITING, ESCAPING, DOCKED };
 
         //! from KSP
         internal enum cLevel : byte { NONE, PARTIAL_UNMANNED, PARTIAL_MANNED, FULL };
-
+*/
         #endregion
         internal bool InRange(Vessel vessel)
         {
@@ -148,11 +148,12 @@ namespace SimpleLogistics
                     if (yesLanded) { return true; }
                 break;
             }
+            return false;
         }
 
         public bool NetworkEligible()
         {
-            if (AppropriateSituation() && AppropriateControlLevel() &&  AppropriateAltitude() && AppropriateGroundSpeed()) return true
+            if (AppropriateSituation() && AppropriateControlLevel() && AppropriateAltitude() && AppropriateGroundSpeed()) return true;
             else return false;
         }
     }
