@@ -3,7 +3,7 @@ SimpleLogistics! (SLR)
 created: 11 Aug 2018
 updated: 01 Feb 2020 -->
 
-## ***Download on [SpaceDock][MOD:rel-spacedock] or [Github][MOD:rel-github] or [Curseforge][MOD:rel-curseforge]. Also available on [CKAN][MOD:rel-ckan]. ***
+## Download on [SpaceDock][MOD:rel-spacedock] or [Github][MOD:rel-github] or [Curseforge][MOD:rel-curseforge]. Also available on [CKAN][MOD:rel-ckan].  
 
 # SimpleLogistics! (Restocked)  
 ## Simple resource sharing among landed vessels.  
@@ -57,6 +57,8 @@ updated: 01 Feb 2020 -->
 *red box below is a link to forum post on how to get support*  
 [![How to get support][image:get-support]][thread:getsupport]
 
+[![](http://img.youtube.com/vi/cJjIAE0RoK0/0.jpg)](http://www.youtube.com/watch?v=cJjIAE0RoK0 "Kottabo Talks SimpleLogistics")
+
 ### License
 #### aka Legal Mumbo Jumbo
 Source: [GitHub][MOD:github:repo]  
@@ -69,12 +71,13 @@ Author: [@RealGecko][LINK:realgecko]
 [Download][MOD:original:download]  
 Source: [GitHub][MOD:original:source]  
 License: ![License GPLv3][shield:license] ![][LOGO:gplv3]  
-<!-- graphical links to downloads -->
-[![][image:rel-github]][MOD:rel-github] [![][image:rel-spacedock]][MOD:rel-spacedock] [![][image:rel-curseforge]][MOD:rel-curseforge]  
+
+[![][UTUBE:link0]][UTUBE:link1]
  *Be Kind: Lithobrake, not jakebrake! Keep your Module Manager up to date*
 
 ###### v2.0.3.2 original: 11 Aug 2018 0K updated: 20 Mar 2020 zed'K
 
+<!-- graphical links to downloads -->
 [MOD:license]:      https://github.com/zer0Kerbal/SimpleLogistics/blob/master/LICENSE
 [MOD:contributing]: https://github.com/zer0Kerbal/SimpleLogistics/blob/master/.github/CONTRIBUTING.md
 [MOD:issues]:       https://github.com/zer0Kerbal/SimpleLogistics/issues
@@ -176,3 +179,6 @@ License: ![License GPLv3][shield:license] ![][LOGO:gplv3]
 [IMG:hero:0]: https://spacedock.info/content/RealGecko_4471/SimpleLogistics/SimpleLogistics-1479979364.054124.png
 [IMG:hero:1]: http://  
 [IMG:hero:2]: http://  
+
+[UTUBE:img]:  http://img.youtube.com/vi/cJjIAE0RoK0/0.jpg "thumbnail"
+[UTUBE:link]: http://www.youtube.com/watch?v=cJjIAE0RoK0
