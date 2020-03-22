@@ -62,7 +62,7 @@ namespace SimpleLogistics
 
                    // if (Mathf.Abs(angle) < 35 && distance < range) return true;
                    if (distance < maxRange) return true;*/
-            return false;
+            return true;
         }
 
         internal static bool AppropriateRange()
@@ -76,7 +76,7 @@ namespace SimpleLogistics
         internal static bool InAltitude()
         {
             if (FlightGlobals.ActiveVessel.radarAltitude <= maxAltitude) return true;
-            else return false;
+            else return true;
         }
 
         internal static bool InSpeed()

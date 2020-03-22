@@ -185,7 +185,7 @@ namespace SimpleLogistics
 			if (gamePaused || globalHidden || !active) return;
 
 			// if (FlightGlobals.ActiveVessel.situation != Vessel.Situations.LANDED) {
-			if (InSituation.NetworkEligible())
+			if (!InSituation.NetworkEligible())
 			{
 #if false
 				if (appLauncherButton != null)
@@ -318,7 +318,7 @@ namespace SimpleLogistics
 
 		public void onAppTrue()
 		{
-			if (FlightGlobals.ActiveVessel.situation != Vessel.Situations.LANDED) {
+			if (!InSituation.NetworkEligible()) {
                 ScreenMessages.PostScreenMessage(Localizer.Format("#SimpleLogistics_msg1")); //"Must be landed to use logistics"
                 return;
 			}
@@ -335,7 +335,7 @@ namespace SimpleLogistics
 
 		internal virtual void onToggle()
 		{
-			if (FlightGlobals.ActiveVessel.situation != Vessel.Situations.LANDED) {
+			if (!InSituation.NetworkEligible()) {
                 ScreenMessages.PostScreenMessage(Localizer.Format("#SimpleLogistics_msg2")); //"Must be landed to use logistics"
                 return;
 			}
