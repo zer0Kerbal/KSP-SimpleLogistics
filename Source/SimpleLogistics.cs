@@ -124,7 +124,7 @@ namespace SimpleLogistics
 #region UI Functions
 
 		public const string MODID = "SimpleLogisticsUI";
-		public const string MODNAME = "Simple Logistics";
+		public const string MODNAME = "SimpleLogistics!";
 		private void CreateLauncher() 
 		{
 			toolbarControl = gameObject.AddComponent<ToolbarControl>();
@@ -184,7 +184,9 @@ namespace SimpleLogistics
 		{
 			if (gamePaused || globalHidden || !active) return;
 
-			if (FlightGlobals.ActiveVessel.situation != Vessel.Situations.LANDED) {
+			// if (FlightGlobals.ActiveVessel.situation != Vessel.Situations.LANDED) {
+			if (InSituation.NetworkEligible())
+			{
 #if false
 				if (appLauncherButton != null)
 					appLauncherButton.SetFalse ();

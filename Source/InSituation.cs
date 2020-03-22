@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
@@ -11,7 +11,7 @@ using System.Linq;
 namespace SimpleLogistics
 {
     [KSPAddon(KSPAddon.Startup.Flight, false)]
-    public class Util : MonoBehaviour
+    internal class InSituation : MonoBehaviour
     {
         #region Enums Vars
         //? either set in part.cfg or in game.settings
@@ -23,49 +23,49 @@ namespace SimpleLogistics
          * AppropriateAltitude()
          * NetworkEligible()
          * IsActive needs to be read in from part and set IsActive flag
-     */   
+     */
         // consitionPermissions
-        const bool yesLanded = true,
-                   yesSplashed = true,
-                   yesPreLaunch = true,
-                   yesFlying = false,
-                   yesSubOrbital = false,
-                   yesOrbiting = false,
-                   yesEscaping = false,
-                   yesDocked = true,
+        internal static bool yesLanded = true,
+                             yesSplashed = true,
+                             yesPreLaunch = true,
+                             yesFlying = false,
+                             yesSubOrbital = false,
+                             yesOrbiting = false,
+                             yesEscaping = false,
+                             yesDocked = true,
 
-                   yesNone = false,
-                   yesPartialUnmaned = true,
-                   yesPartialManned = true,
-                   yesFull = true;
+                             yesNone = false,
+                             yesPartialUnmaned = true,
+                             yesPartialManned = true,
+                             yesFull = true;
 
-        const double maxRange = 2400,
-                     maxAltitude = 500,
-                     maxGroundSpeed = 20;
-     /*
-        //! from KSP
-        internal enum sits : byte { LANDED, SPLASHED, PRELAUNCH, FLYING, SUB_ORBITAL, ORBITING, ESCAPING, DOCKED };
+        internal static double  maxRange = 2400,
+                                maxAltitude = 500,
+                                maxGroundSpeed = 20;
+        /*
+           //! from KSP
+           internal enum sits : byte { LANDED, SPLASHED, PRELAUNCH, FLYING, SUB_ORBITAL, ORBITING, ESCAPING, DOCKED };
 
-        //! from KSP
-        internal enum cLevel : byte { NONE, PARTIAL_UNMANNED, PARTIAL_MANNED, FULL };
-*/
+           //! from KSP
+           internal enum cLevel : byte { NONE, PARTIAL_UNMANNED, PARTIAL_MANNED, FULL };
+   */
         #endregion
-        internal bool InRange(Vessel vessel)
+        internal static bool InRange(Vessel vessel)
         {
-     /*       Transform partTransform = part.transform;
-            Vector3 directionToTarget = partTransform.position - kerbalOnEva.vessel.transform.position;
-            double angle = Vector3.Angle(GetPortDirection(), directionToTarget);
-            double distance = directionToTarget.magnitude;
+            /*       Transform partTransform = part.transform;
+                   Vector3 directionToTarget = partTransform.position - kerbalOnEva.vessel.transform.position;
+                   double angle = Vector3.Angle(GetPortDirection(), directionToTarget);
+                   double distance = directionToTarget.magnitude;
 
-            Log.dbg("Angle " + angle);
-            Log.dbg("Range " + distance);
+                   Log.dbg("Angle " + angle);
+                   Log.dbg("Range " + distance);
 
-            // if (Mathf.Abs(angle) < 35 && distance < range) return true;
-            if (distance < maxRange) return true;*/
+                   // if (Mathf.Abs(angle) < 35 && distance < range) return true;
+                   if (distance < maxRange) return true;*/
             return false;
         }
 
-        internal bool AppropriateRange()
+        internal static bool AppropriateRange()
         {
             /* // FlightGlobals.ActiveVessel.vesselRanges .situation != Vessel.Situations.LANDED)
             if (nearestVessel <= maxRange) return true;
@@ -73,19 +73,19 @@ namespace SimpleLogistics
             return true;
         }
 
-        internal bool AppropriateAltitude()
+        internal static bool InAltitude()
         {
             if (FlightGlobals.ActiveVessel.radarAltitude <= maxAltitude) return true;
             else return false;
         }
 
-        internal bool AppropriateGroundSpeed()
+        internal static bool InSpeed()
         {
             if (FlightGlobals.ActiveVessel.srfSpeed <= maxGroundSpeed) return true;
             else return false;
         }
 
-        internal bool AppropriateControlLevel()
+        internal static bool InControl()
         {
             Vessel.ControlLevel controlLevel = FlightGlobals.ActiveVessel.CurrentControlLevel;
             switch (controlLevel)
@@ -110,7 +110,7 @@ namespace SimpleLogistics
             return false;
         }
 
-        public bool AppropriateSituation()
+        internal static bool NetworkEligible()
         {
             Vessel.Situations situation = FlightGlobals.ActiveVessel.situation;
             switch (situation)
@@ -127,6 +127,10 @@ namespace SimpleLogistics
                     Log.dbg("situation {0} permission {1}", situation.ToString(), yesPreLaunch.ToString());
                     if (yesPreLaunch) return true;
                     break;
+                case Vessel.Situations.ORBITING:
+                    Log.dbg("situation {0} permission {1}", situation.ToString(), yesOrbiting.ToString());
+                    if (yesOrbiting) return true;
+                    break;
                 case Vessel.Situations.FLYING:
                     Log.dbg("situation {0} permission {1}", situation.ToString(), yesFlying.ToString());
                     if (yesFlying) return true;
@@ -135,10 +139,6 @@ namespace SimpleLogistics
                     Log.dbg("situation {0} permission {1}", situation.ToString(), yesSubOrbital.ToString());
                     if (yesSubOrbital) return true;
                     break;
-                case Vessel.Situations.ORBITING:
-                    Log.dbg("situation {0} permission {1}", situation.ToString(), yesOrbiting.ToString());
-                    if (yesOrbiting) return true;
-                    break;
                 case Vessel.Situations.ESCAPING:
                     Log.dbg("situation {0} permission {1}", situation.ToString(), yesEscaping.ToString());
                     if (yesEscaping) return true;
@@ -146,15 +146,9 @@ namespace SimpleLogistics
                 case Vessel.Situations.DOCKED:
                     Log.dbg("situation {0} permission {1}", situation.ToString(), yesDocked.ToString());
                     if (yesLanded) { return true; }
-                break;
+                    break;
             }
             return false;
-        }
-
-        public bool NetworkEligible()
-        {
-            if (AppropriateSituation() && AppropriateControlLevel() && AppropriateAltitude() && AppropriateGroundSpeed()) return true;
-            else return false;
         }
     }
 }

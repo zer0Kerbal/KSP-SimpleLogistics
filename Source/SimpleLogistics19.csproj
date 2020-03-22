@@ -61,9 +61,9 @@
     <None Include=".vs\SimpleLogistics\v16\Server\sqlite3\storage.ide-wal" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="appropriateSituation.cs" />
-    <Compile Include="InstallChecker.cs" />
     <Compile Include="Log.cs" />
+    <Compile Include="InSituation.cs" />
+    <Compile Include="InstallChecker.cs" />
     <Compile Include="LogisticsModule.cs" />
     <Compile Include="Properties\AssemblyVersion.cs">
       <AutoGen>True</AutoGen>
