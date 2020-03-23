@@ -25,34 +25,95 @@ namespace SimpleLogistics
         public override string DisplaySection { get { return "[WIP] SimpleLogistics"; } }
         public override int SectionOrder { get { return 1; } }
 
-        /// <summary>
-        /// The needs EC to start in GameParameters
-        /// </summary>
-        [GameParameters.CustomParameterUI("Required Landed",
-            toolTip = "if set to yes, vessel must be landed in order to access the logistics network.",
-            newGameOnly = false,
-            unlockedDuringMission = true
-            )]
-        public bool requireLanded = true;
 
-        /// <summary>
-        /// The automatic switch in GameParameters
-        /// </summary>
-        [GameParameters.CustomParameterUI("Allow Splashed",
-            toolTip = "if yes, allow splashed vessels to access the logistics network.",
+        [GameParameters.CustomParameterUI("SimpleLogistics! enabled?",
+            toolTip = "enables and disables entire network (ON/off).",
             newGameOnly = false,
             unlockedDuringMission = true)]
-        public bool allowSplashed = true;
+        internal bool enabled = true;
 
-        /// <summary>
-        /// The automatic switch in GameParameters
-        /// </summary>
-        [GameParameters.CustomParameterUI("Allow Pre-Launch",
-            toolTip = "if yes, allow pre-launch vessels to access the logistics network.",
+
+        [GameParameters.CustomParameterUI("Landed vessels may connect to SimpleLogistics network",
+            toolTip = "if yes, landed vessels connect to and use the SimpleLogistics Network?",
             newGameOnly = false,
             unlockedDuringMission = true)]
-        public bool allowPreLaunch = true;
+         internal bool yesLanded = true;
 
+
+        [GameParameters.CustomParameterUI("Splashed vessels may connect to SimpleLogistics network",
+            toolTip = "if yes, allow splashed vessels to access the SimpleLogistics network.",
+            newGameOnly = false,
+            unlockedDuringMission = true)]
+        internal bool yesSplashed = true;
+
+
+        [GameParameters.CustomParameterUI("Pre-Launch vessels may connect to SimpleLogistics network",
+            toolTip = "if yes, allow pre-launch vessels to access the SimpleLogistics network.",
+            newGameOnly = false,
+            unlockedDuringMission = true)]
+        internal bool yesPreLaunch = true;
+
+
+        [GameParameters.CustomParameterUI("Orbiting vessels may connect to SimpleLogistics network",
+            toolTip = "if yes, allow Orbiting  vessels to access the SimpleLogistics network.",
+            newGameOnly = false,
+            unlockedDuringMission = true)]
+        internal bool yesOrbiting = false;
+
+
+        [GameParameters.CustomParameterUI("Flying vessels may connect to SimpleLogistics network",
+            toolTip = "if yes, allow Flying  vessels to access the SimpleLogistics network.",
+            newGameOnly = false,
+            unlockedDuringMission = true)]
+        internal bool yesFlying = false;
+
+
+        [GameParameters.CustomParameterUI("SubOrbital vessels may connect to SimpleLogistics network",
+            toolTip = "if yes, allow SubOrbital  vessels to access the SimpleLogistics network.",
+            newGameOnly = false,
+            unlockedDuringMission = true)]
+        internal bool yesSubOrbital = false;
+
+
+        [GameParameters.CustomParameterUI("Escaping vessels may connect to SimpleLogistics network",
+            toolTip = "if yes, allow Escaping  vessels to access the SimpleLogistics network.",
+            newGameOnly = false,
+            unlockedDuringMission = true)]
+        internal bool yesEscaping = false;
+
+
+        [GameParameters.CustomParameterUI("Docked vessels may connect to SimpleLogistics network",
+            toolTip = "if yes, allow Docked vessels to access the SimpleLogistics network.",
+            newGameOnly = false,
+            unlockedDuringMission = true)]
+        internal bool yesDocked = false;
+
+
+        [GameParameters.CustomParameterUI("Control: Full",
+            toolTip = "allow logisics network access from vessels with full control.",
+            newGameOnly = false,
+            unlockedDuringMission = true)]
+        internal bool yesFull = true;
+
+        [GameParameters.CustomParameterUI("Control: Partial Manned",
+            toolTip = "allow logisics network access from vessels with Partial Manned control.",
+            newGameOnly = false,
+            unlockedDuringMission = true)]
+        internal bool yesPartialManned = true;
+
+        [GameParameters.CustomParameterUI("Control: Partial Unmanned",
+            toolTip = "allow logisics network access from vessels with Partial Unmanned control.",
+            newGameOnly = false,
+            unlockedDuringMission = true)]
+        internal bool yesPartialUnmaned = true;
+               
+
+        [GameParameters.CustomParameterUI("Control: None (debris)",
+            toolTip = "allow logisics network access from vessels with no control.",
+            newGameOnly = false,
+            unlockedDuringMission = true)]
+        internal bool yesNone = false;
+        
         /// <summary>
         /// The colored paw
         /// </summary>
@@ -60,21 +121,40 @@ namespace SimpleLogistics
             toolTip = "allow color coding in ODFC PAW (part action window) / part RMB (right menu button).",
             newGameOnly = false,
             unlockedDuringMission = true)]
-        public bool coloredPAW = true;
+        internal bool coloredPAW = true;
 
-        /// <summary>
-        /// Sets the globalScalingFactor in GameParameters
-        /// </summary>
-        [GameParameters.CustomFloatParameterUI("Global Range",
-            toolTip = "Scales production and consumption Globally on all ODFC modules.",
+        [GameParameters.CustomFloatParameterUI("Global Range Max (0 for limitied only by game physics range",
+            toolTip = "Max range of Logistics Network (in meters).",
             newGameOnly = false,
             unlockedDuringMission = true,
-            minValue = 0.05f,
-            maxValue = 5.0f,
-            stepCount = 101,
+            minValue = 10.0f,
+            maxValue = 2400.0f,
+            stepCount = 100,
             displayFormat = "F2",
             asPercentage = false)]
-        public float globalLogisticsRange = 1.0f;
+        internal float maxRange = 1000.0f; // 0 for physics range ~2400
+
+        [GameParameters.CustomFloatParameterUI("Global Range",
+            toolTip = "Max range of Logistics Network (in meters).",
+            newGameOnly = false,
+            unlockedDuringMission = true,
+            minValue = 10.0f,
+            maxValue = 1000.0f,
+            stepCount = 10,
+            displayFormat = "F2",
+            asPercentage = false)]
+        internal float maxAltitude = 500.0f;
+
+        [GameParameters.CustomFloatParameterUI("Global Range",
+            toolTip = "Max range of Logistics Network (in meters).",
+            newGameOnly = false,
+            unlockedDuringMission = true,
+            minValue = 1.0f,
+            maxValue = 100.0f,
+            stepCount = 1,
+            displayFormat = "F2",
+            asPercentage = false)]
+        internal float maxGroundSpeed = 20.0f;
 
         // If you want to have some of the game settings default to enabled,  change 
         // the "if false" to "if true" and set the values as you like
@@ -98,35 +178,78 @@ namespace SimpleLogistics
             switch (preset)
             {
                 case GameParameters.Preset.Easy:
-                    requireLanded = false;
-                    allowSplashed = true;
-                    allowPreLaunch = true;
-                    globalLogisticsRange = 1.5f;
+                    yesLanded = true;
+                    yesSplashed = true;
+                    yesPreLaunch = true;
+                    yesFlying = false;
+                    yesSubOrbital = false;
+                    yesOrbiting = false;
+                    yesEscaping = false;
+                    yesDocked = false;
+                    yesNone = true;
+                    yesPartialUnmaned = true;
+                    yesPartialManned = true;
+                    yesFull = true;
+                    maxRange = 0f;
+                    maxAltitude = 500f;
+                    maxGroundSpeed = 100f;
                     break;
 
                 case GameParameters.Preset.Normal:
-                    requireLanded = true;
-                    allowSplashed = true;
-                    allowPreLaunch = true;
-                    globalLogisticsRange = 1.0f;
+                    yesLanded = true;
+                    yesSplashed = true;
+                    yesPreLaunch = true;
+                    yesFlying = false;
+                    yesSubOrbital = false;
+                    yesOrbiting = false;
+                    yesEscaping = false;
+                    yesDocked = false;
+                    yesNone = false;
+                    yesPartialUnmaned = true;
+                    yesPartialManned = true;
+                    yesFull = true;
+                    maxRange = 1000f;
+                    maxAltitude = 250f;
+                    maxGroundSpeed = 40f;
                     break;
 
                 case GameParameters.Preset.Moderate:
-                    requireLanded = true;
-                    allowSplashed = false;
-                    allowPreLaunch = true;
-                    globalLogisticsRange = 0.75f;
+                    yesLanded = true;
+                    yesSplashed = true;
+                    yesPreLaunch = true;
+                    yesFlying = false;
+                    yesSubOrbital = false;
+                    yesOrbiting = false;
+                    yesEscaping = false;
+                    yesDocked = false;
+                    yesNone = false;
+                    yesPartialUnmaned = false;
+                    yesPartialManned = true;
+                    yesFull = true;
+                    maxRange = 500f;
+                    maxAltitude = 100f;
+                    maxGroundSpeed = 20f;
                     break;
 
                 case GameParameters.Preset.Hard:
-                    requireLanded = true;
-                    allowSplashed = false;
-                    allowPreLaunch = false;
-                    globalLogisticsRange = 0.5f;
+                    yesLanded = true;
+                    yesSplashed = true;
+                    yesPreLaunch = true;
+                    yesFlying = false;
+                    yesSubOrbital = false;
+                    yesOrbiting = false;
+                    yesEscaping = false;
+                    yesDocked = false;
+                    yesNone = false;
+                    yesPartialUnmaned = false;
+                    yesPartialManned = false;
+                    yesFull = true;
+                    maxRange = 250f;
+                    maxAltitude = 50f;
+                    maxGroundSpeed = 10f;
                     break;
             }
         }
-
 #else
         public override bool HasPresets { get { return false; } }
         public override void SetDifficultyPreset(GameParameters.Preset preset) { }
