@@ -118,7 +118,7 @@ namespace SimpleLogistics
         /// The colored paw
         /// </summary>
         [GameParameters.CustomParameterUI("PAW Color",
-            toolTip = "allow color coding in ODFC PAW (part action window) / part RMB (right menu button).",
+            toolTip = "allow color coding in PAW (part action window) / part RMB (right menu button).",
             newGameOnly = false,
             unlockedDuringMission = true)]
         internal bool coloredPAW = true;
