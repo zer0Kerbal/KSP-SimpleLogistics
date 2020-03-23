@@ -7,6 +7,7 @@ using System;
 using UnityEngine;
 
 using ClickThroughFix;
+
 namespace SimpleLogistics
 {
 	public class Layout

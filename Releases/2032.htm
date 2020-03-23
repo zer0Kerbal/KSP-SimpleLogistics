@@ -1,0 +1,91 @@
+﻿<!-- ReleaseLayout.md v1.1.2.0
+SimpleLogistics! (SLR)
+created: 11 Aug 2018
+updated: 01 Feb 2020 -->
+<p><a href="https://forum.kerbalspaceprogram.com/index.php?/topic/191045-*"><img src="https://img.shields.io/badge/SimpleLogistics%20version-2.0.3.2-orange.svg?style=plastic" alt="Mod Version" /></a>
+<a href="http://kerbalspaceprogram.com/"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/zer0Kerbal/SimpleLogistics/master/json/ksp.json" alt="KSP version" /></a> <img src="https://img.shields.io/badge/KSP-AVC--supported-brightgreen.svg?style=plastic" alt="KSP-AVC" /> <a href="https://www.gnu.org/licenses/gpl-3.0-standalone.html" title="GPLv3"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/zer0Kerbal/SimpleLogistics/master/json/license.json" alt="License GPLv3" /></a> <a href="https://www.gnu.org/licenses/gpl-3.0-standalone.html" title="GPLv3"><img src="https://i.postimg.cc/90kCDs7K/gplv3-48x17.png" alt="" /></a><br />
+<img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/zer0Kerbal/SimpleLogistics/master/json/code.json" alt="Code" /> <img src="https://github.com/zer0Kerbal/SimpleLogistics/workflows/Validate%20AVC%20.version%20files/badge.svg" alt="Validate AVC .version files" /></p>
+<hr />
+<h1 id="version-2032---deployable-serenity">Version 2.0.3.2 - Deployable Serenity</h1>
+<ul>
+<li>thank you to forum users @Buzz light fear, @Cavscout74 for the idea!</li>
+<li>for those who have the DLC Breaking Ground installed there is a new feature for two Serenity parts</li>
+<li>the DeployedRTG and the DeployedSolarPanel can now be plugged into a SimpleLogistic's network</li>
+</ul>
+<h3 id="mini-nuk-pd-radioisotope-thermoelectric-generator--deployedrtg">Mini-NUK-PD Radioisotope Thermoelectric Generator  (DeployedRTG)</h3>
+<ul>
+<li>all the normal rules for RTG apply</li>
+<li>produces .50 EC/s</li>
+<li>produces heat like stock RTG</li>
+<li>range of inclusion in SimpleLogistic Network - currently ~2.4km, can always use relays</li>
+<li>after deploying, must manually 'plug-in' to the SimpleLogistics network.</li>
+<li>existing rtg/solarpanels might not work - might have to pick them up (using RMB/PAW) and redeploying them again</li>
+<li>has a battery of 25 EC units</li>
+</ul>
+<h3 id="ox-stat-pd-photovoltaic-panel-deployedsolarpanel">OX-Stat-PD Photovoltaic Panel (DeployedSolarPanel)</h3>
+<ul>
+<li>produces .15 (max) EC/s</li>
+<li>has a battery of 25 EC units</li>
+<li>needs sunlight</li>
+<li>all the normal rules for solar apply</li>
+<li>range of inclusion in SimpleLogistic Network - currently ~2.4km, can always use relays</li>
+<li>after deploying, must manually 'plug-in' to the SimpleLogistics network.</li>
+<li>existing rtg/solarpanels might not work - might have to pick them up (using RMB/PAW) and redeploying them again</li>
+<li>there is a limitation, SimpleLogistics currently just averages out resources over the network.</li>
+</ul>
+<h3 id="add-simplelogistics-to-kas-prtpylonpwer-so-anything-attached-can-draw-power">Add SimpleLogistics! to KAS PrtPylonPwer (so anything attached can draw power)</h3>
+<ul>
+<li>Thank you to leatherneck6017 for this idea.</li>
+<li>add KAS-PortPylonPwr.cfg</li>
+<li>experimental: IsActive = True</li>
+<li>FUTURE: need to expand to anything that has cck-lights, including deployable-lights and tracking lights.</li>
+<li>range of inclusion in SimpleLogistic Network - currently ~2.4km, can always use relays</li>
+<li>after deploying, must manually 'plug-in' to the SimpleLogistics network.</li>
+<li>existing rtg/solarpanels might not work - might have to pick them up (using RMB/PAW) and redeploying them again</li>
+<li>there is a limitation, SimpleLogistics currently just averages out resources over the network.</li>
+</ul>
+<h3 id="code-and-code-related">Code and Code Related</h3>
+<ul>
+<li>added Version.tt and AssemblyVersion.tt automation</li>
+<li>moved AssemblyVersion.tt/.cs into Properties/</li>
+<li>updated to v2 of InstallChecker.cs</li>
+<li>moved Textures/ → Plugins/Textures/</li>
+</ul>
+<h3 id="deployment-and-backend">Deployment and Backend</h3>
+<ul>
+<li>update changelog to include new Kerbal Changelog features</li>
+<li>updated _deploy and _buildRelease</li>
+<li>automated Readme.md → Readme.htm</li>
+<li>Readme.htm now included in releae</li>
+<li>CONTRIBUTING.md now included in repository</li>
+<li>updated .version to be avc compliant</li>
+<li>added avc github checker and badge</li>
+<li>updated .gitattributes .gitignore</li>
+<li>added json's</li>
+<li>updated / modernized .csproj</li>
+<li>updated Readme.md</li>
+<li>updated Releases.layout.md</li>
+</ul>
+<blockquote>
+<p>See <a href="https://raw.githubusercontent.com/zer0Kerbal/SimpleLogistics/master/Changelog.cfg">Full Changelog</a> for full details of changes<br />
+See <a href="https://github.com/zer0Kerbal/SimpleLogistics/issues">Known Issues</a> for known issues</p>
+</blockquote>
+<hr />
+<p><em>red box below is a link to forum post on how to get support</em><br />
+<a href="https://forum.kerbalspaceprogram.com/index.php?/topic/83212-*"><img src="https://i.postimg.cc/vHP6zmrw/image.png" alt="How to get support" /></a></p>
+<p><img src="https://raw.githubusercontent.com/zer0Kerbal/SimpleLogistics/master/Graphics/2032b.png" alt="" title="Deployable Assets" /></p>
+<hr />
+<p style="color: #FF0000;">Kerbal Space Program 1.7.3<br>
+Unity 2017.1.3p1.<br>
+.NET Framework 3.5</p>
+ *Be Kind: Lithobrake, not jakebrake! Keep your Module Manager up to date*
+<!-- graphical links to downloads -->
+<!-- <p style="color: #FF0000;">Kerbal Space Program 1.8.1<br>
+Unity 2019.2.2f1<br>
+.NET Framework 4.8</p> -->
+<!--- license logo urls -->
+<!--- release graphic(s) -->
+<!--
+CC BY-NC-SA-4.0
+zer0Kerbal
+-->

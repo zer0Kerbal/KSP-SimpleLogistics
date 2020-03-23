@@ -40,7 +40,7 @@ namespace SimpleLogistics
 		// Same as Debug Toolbar lock mask
 		private const ulong lockMask = 900719925474097919;
 
-		#region Primary Functions
+#region Primary Functions
 		private void Awake() {
 			if (instance != null) {
 				Destroy (this);
@@ -121,10 +121,10 @@ namespace SimpleLogistics
 
 		#endregion
 
-		#region UI Functions
+#region UI Functions
 
 		public const string MODID = "SimpleLogisticsUI";
-		public const string MODNAME = "Simple Logistics";
+		public const string MODNAME = "SimpleLogistics!";
 		private void CreateLauncher() 
 		{
 			toolbarControl = gameObject.AddComponent<ToolbarControl>();
@@ -132,14 +132,14 @@ namespace SimpleLogistics
 				ApplicationLauncher.AppScenes.FLIGHT,
 				 MODID,
 				"SIButton",
-				"SimpleLogistics/Textures/simple-logistics-icon",
-				"SimpleLogistics/Textures/simple-logistics-icon-toolbar",
+				"SimpleLogistics/Plugins/PluginData/Textures/simple-logistics-icon",
+				"SimpleLogistics/Plugins/PluginData/Textures/simple-logistics-icon-toolbar",
 				MODNAME
 			);
 #if false
 			if (ToolbarManager.ToolbarAvailable) {
 				toolbarButton = ToolbarManager.Instance.add ("SimpleLogistics", "AppLaunch");
-				toolbarButton.TexturePath = "SimpleLogistics/Textures/simple-logistics-icon-toolbar";
+				toolbarButton.TexturePath = "SimpleLogistics/Plugins/PluginData/Textures/simple-logistics-icon-toolbar";
 				toolbarButton.ToolTip = "Simple Logistics UI";
 				toolbarButton.Visible = true;
 				toolbarButton.OnClick += (ClickEvent e) => {
@@ -156,7 +156,7 @@ namespace SimpleLogistics
 					null,
 					null,
 					ApplicationLauncher.AppScenes.FLIGHT,
-					GameDatabase.Instance.GetTexture("SimpleLogistics/Textures/simple-logistics-icon", false)
+					GameDatabase.Instance.GetTexture("SimpleLogistics/Plugins/Textures/simple-logistics-icon", false)
 				);
 			}
 #endif
@@ -184,7 +184,9 @@ namespace SimpleLogistics
 		{
 			if (gamePaused || globalHidden || !active) return;
 
-			if (FlightGlobals.ActiveVessel.situation != Vessel.Situations.LANDED) {
+			// if (FlightGlobals.ActiveVessel.situation != Vessel.Situations.LANDED) {
+			if (!InSituation.NetworkEligible(FlightGlobals.ActiveVessel))
+			{
 #if false
 				if (appLauncherButton != null)
 					appLauncherButton.SetFalse ();
@@ -218,16 +220,17 @@ namespace SimpleLogistics
 		// It's a mess
 		private void DrawGUI(int windowId) {
 			GUILayout.BeginVertical ();
+           
             Layout.LabelAndText(Localizer.Format("#SimpleLogistics_Label1"), Localizer.Format(FlightGlobals.ActiveVessel.RevealName())); //"Current Vessel"
 
             bool ableToRequest = false;
 
 			LogisticsModule lm = FlightGlobals.ActiveVessel.FindPartModuleImplementing<LogisticsModule> ();
 			if (lm != null) {
-				Layout.Label (
+                Layout.Label(
                     lm.IsActive ? Localizer.Format("#SimpleLogistics_Label2") : Localizer.Format("#SimpleLogistics_Label3"), //"Pluged In""Unplugged"
                     lm.IsActive ? Palette.green : Palette.red
-				);
+                );
 
                 // "Toggle Plug"
                 if (Layout.Button(Localizer.Format("#SimpleLogistics_Label4"), Palette.yellow))
@@ -315,7 +318,7 @@ namespace SimpleLogistics
 
 		public void onAppTrue()
 		{
-			if (FlightGlobals.ActiveVessel.situation != Vessel.Situations.LANDED) {
+			if (!InSituation.NetworkEligible(FlightGlobals.ActiveVessel)) {
                 ScreenMessages.PostScreenMessage(Localizer.Format("#SimpleLogistics_msg1")); //"Must be landed to use logistics"
                 return;
 			}
@@ -332,7 +335,7 @@ namespace SimpleLogistics
 
 		internal virtual void onToggle()
 		{
-			if (FlightGlobals.ActiveVessel.situation != Vessel.Situations.LANDED) {
+			if (!InSituation.NetworkEligible(FlightGlobals.ActiveVessel)) {
                 ScreenMessages.PostScreenMessage(Localizer.Format("#SimpleLogistics_msg2")); //"Must be landed to use logistics"
                 return;
 			}
@@ -354,14 +357,36 @@ namespace SimpleLogistics
 			InputLockManager.RemoveControlLock(this.name);
 		}
 #endregion
+#region zed'K new code
+/*        private Boolean IsSituationValid(Vessel vessel)
+        {
+            Boolean stati = false;
 
+            if (HighLogic.CurrentGame.Parameters.CustomParams<SimpleLogistics_Options>().globalLogisticsRange > 1) stati = true;
+            if (HighLogic.CurrentGame.Parameters.CustomParams<SimpleLogistics_Options>().allowPreLaunch) stati = true;
+            if (HighLogic.CurrentGame.Parameters.CustomParams<SimpleLogistics_Options>().allowSplashed) stati = true;
+            if (HighLogic.CurrentGame.Parameters.CustomParams<SimpleLogistics_Options>().requireLanded) stati = true;
+            return stati;
+        }
+        private Boolean VesselState(Vessel vessel)
+        {
+            Log.dbg("name {0}, range {1}, situation {2}", vessel.vesselName, vessel.vesselRanges, vessel.SituationString);
+            if ((vessel.situation != Vessel.Situations.LANDED) || (vessel.situation != Vessel.Situations.PRELAUNCH) || (vessel.situation != Vessel.Situations.SPLASHED)) return true;
+            return false;
+        }
+        private Boolean VesselRange(Vessel vessel)
+        {
+            return true;
+        }*/
+#endregion
 #region Resource Sharing
-		private void FixedUpdate() {
+        private void FixedUpdate() {
 			// Find all resources in the network
 			partResources.Clear ();
 			foreach (Vessel vessel in FlightGlobals.VesselsLoaded) {
-				if (vessel.situation != Vessel.Situations.LANDED)
-					continue;
+				
+				if (!InSituation.NetworkEligible(vessel))
+                    continue;
 
 				LogisticsModule lm = vessel.FindPartModuleImplementing<LogisticsModule> ();
 				if (lm != null)
