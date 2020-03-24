@@ -3,6 +3,7 @@
  * https://github.com/Real-Gecko/Unity5-UIFramework/blob/master/LICENSE.md
 */
 
+#if false
 using System;
 using UnityEngine;
 
@@ -382,3 +383,4 @@ namespace SimpleLogistics
 	}
 }
 
+#endif

@@ -48,7 +48,8 @@ namespace SimpleLogistics
                    double distance = directionToTarget.magnitude;
 
                    //Log.dbg("Angle " + angle);
-                   Log.dbg("{0} Range {1}", vessel.name, distance);
+                   // LGG commented out the following to avoid compile error
+                   //Log.dbg("{0} Range {1}", vessel.name, distance);
 
                    // if (Mathf.Abs(angle) < 35 && distance < range) return true;
                    if (distance < HighLogic.CurrentGame.Parameters.CustomParams<SimpleLogistics_Options>().maxRange) return true;

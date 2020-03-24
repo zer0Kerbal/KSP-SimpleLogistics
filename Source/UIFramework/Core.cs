@@ -37,7 +37,9 @@ namespace SimpleLogistics
 				return;
 			Palette.InitPalette ();
 			Palette.LoadTextures ();
+#if false
 			Styles.InitStyles ();
+#endif
 			skinInitialized = true;
 			Destroy (this); // Quit after initialized
 		}

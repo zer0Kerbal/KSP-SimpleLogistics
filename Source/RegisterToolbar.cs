@@ -8,6 +8,7 @@ namespace SimpleLogistics
 	{
 		void Start()
 		{
+			Debug.Log("SimpleLogistics.RegisterToolbar");
 			ToolbarControl.RegisterMod(SimpleLogistics.MODID, SimpleLogistics.MODNAME);
 		}
 	}
