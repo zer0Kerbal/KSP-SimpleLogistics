@@ -32,18 +32,22 @@ namespace SimpleLogistics
 		public override void OnStart(PartModule.StartState state) {
 		}
 
-        public void Load(ConfigNode node)
+        // LGG
+        public new void Load(ConfigNode node)
         {
             bool b;
             if (node.HasValue("IsActive") && bool.TryParse(node.GetValue("IsActive"), out b))
             {
                 isActive = b;
             }
+            base.Load(node); // LGG
         }
 
-        public void Save(ConfigNode node)
+        // LGG
+        public new void Save(ConfigNode node)
         {
             node.AddValue("IsActive", isActive);
+            base.Save(node); // LGG
         }
 
         public override string ToString()
