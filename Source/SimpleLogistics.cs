@@ -156,7 +156,8 @@ namespace SimpleLogistics
 					null,
 					null,
 					ApplicationLauncher.AppScenes.FLIGHT,
-					GameDatabase.Instance.GetTexture("SimpleLogistics/Plugins/Textures/simple-logistics-icon", false)
+            Unity
+					GameDatabase.Instance.GetTexture("SimpleLogistics/Plugins/PluginData/Textures/simple-logistics-icon", false)
 				);
 			}
 #endif
