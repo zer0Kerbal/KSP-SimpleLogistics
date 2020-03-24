@@ -156,7 +156,7 @@ namespace SimpleLogistics
 					null,
 					null,
 					ApplicationLauncher.AppScenes.FLIGHT,
-					GameDatabase.Instance.GetTexture("SimpleLogistics/Plugins/Textures/simple-logistics-icon", false)
+					GameDatabase.Instance.GetTexture("SimpleLogistics/Plugins/PluginData/Textures/simple-logistics-icon", false)
 				);
 			}
 #endif
@@ -201,8 +201,12 @@ namespace SimpleLogistics
 				windowRect.height = 0;
 				refresh = false;
 			}
+			// LGG  The following uses the KSP stock skin.  Comment it out to use
+			// the Unity stock skin
+			GUI.skin = HighLogic.Skin;
+			//			windowRect = Layout.Window(
+			windowRect = GUILayout.Window(
 
-			windowRect = Layout.Window(
 				windowId,
 				windowRect,
 				DrawGUI,
@@ -220,22 +224,29 @@ namespace SimpleLogistics
 		// It's a mess
 		private void DrawGUI(int windowId) {
 			GUILayout.BeginVertical ();
-           
-            Layout.LabelAndText(Localizer.Format("#SimpleLogistics_Label1"), Localizer.Format(FlightGlobals.ActiveVessel.RevealName())); //"Current Vessel"
+#if false
+			Layout.LabelAndText(Localizer.Format("#SimpleLogistics_Label1"), Localizer.Format(FlightGlobals.ActiveVessel.RevealName())); //"Current Vessel"
+#endif
+			GUILayout.BeginHorizontal();
+			GUILayout.Label(Localizer.Format("#SimpleLogistics_Label1" + ": "));
+			GUILayout.Label(Localizer.Format(FlightGlobals.ActiveVessel.RevealName()));
+			GUILayout.EndHorizontal();
 
             bool ableToRequest = false;
 
 			LogisticsModule lm = FlightGlobals.ActiveVessel.FindPartModuleImplementing<LogisticsModule> ();
 			if (lm != null) {
-                Layout.Label(
-                    lm.IsActive ? Localizer.Format("#SimpleLogistics_Label2") : Localizer.Format("#SimpleLogistics_Label3"), //"Pluged In""Unplugged"
-                    lm.IsActive ? Palette.green : Palette.red
+				//                Layout.Label(
+				GUILayout.Label(
+					lm.IsActive ? Localizer.Format("#SimpleLogistics_Label2") : Localizer.Format("#SimpleLogistics_Label3") //, //"Pluged In""Unplugged"
+//                    lm.IsActive ? Palette.green : Palette.red
                 );
 
-                // "Toggle Plug"
-                if (Layout.Button(Localizer.Format("#SimpleLogistics_Label4"), Palette.yellow))
-                { 
-                    lm.Set (!lm.IsActive);
+				// "Toggle Plug"
+				//if (Layout.Button(Localizer.Format("#SimpleLogistics_Label4"), Palette.yellow))
+					if (GUILayout.Button(Localizer.Format("#SimpleLogistics_Label4")))
+					{
+						lm.Set (!lm.IsActive);
 					refresh = true;
 				}
 				ableToRequest = !lm.IsActive;
@@ -244,52 +255,63 @@ namespace SimpleLogistics
 			if (ableToRequest)
 				GetVesselSpareSpace ();
 
-            Layout.LabelCentered(Localizer.Format("#SimpleLogistics_Label5"), Palette.yellow); //"Resource Pool:"
-
-            foreach (var resource in resourcePool) {
+			//Layout.LabelCentered(Localizer.Format("#SimpleLogistics_Label5"), Palette.yellow); //"Resource Pool:"
+			GUILayout.FlexibleSpace();
+			GUILayout.Label(Localizer.Format("#SimpleLogistics_Label5")); //"Resource Pool:"
+			GUILayout.FlexibleSpace();
+			foreach (var resource in resourcePool) {
 				GUILayout.BeginHorizontal ();
-				Layout.Label (resource.Key, Palette.yellow, GUILayout.Width(170));
+				//Layout.Label(resource.Key, Palette.yellow, GUILayout.Width(170));
+				GUILayout.Label(resource.Key, GUILayout.Width(170));
 				if (ableToRequest && requestPool.ContainsKey (resource.Key)) {
-					Layout.Label (requestPool[resource.Key].ToString("0.00") + " / " +
+					//Layout.Label(requestPool[resource.Key].ToString("0.00") + " / " +
+					GUILayout.Label(requestPool[resource.Key].ToString("0.00") + " / " +
 						resource.Value.ToString ("0.00"));
 				} else
-					Layout.Label (resource.Value.ToString ("0.00"));
-				
+//					Layout.Label(resource.Value.ToString("0.00"));
+					GUILayout.Label(resource.Value.ToString("0.00"));
+
 				GUILayout.EndHorizontal ();
 				if (ableToRequest && requestPool.ContainsKey(resource.Key)) {
 					GUILayout.BeginHorizontal ();
-					if (Layout.Button ("0", GUILayout.Width (20)))
-						requestPool [resource.Key] = 0;
-					
-					requestPool [resource.Key] = Layout.HorizontalSlider (
-						requestPool [resource.Key],
+					//if (Layout.Button("0", GUILayout.Width(20)))
+					if (GUILayout.Button("0", GUILayout.Width(20)))
+							requestPool[resource.Key] = 0;
+
+					//requestPool[resource.Key] = Layout.HorizontalSlider(
+					requestPool[resource.Key] = GUILayout.HorizontalSlider(
+						(float)requestPool[resource.Key],
 						0,
-						Math.Min (vesselSpareSpace [resource.Key], resource.Value),
+						(float)Math.Min (vesselSpareSpace [resource.Key], resource.Value),
 						GUILayout.Width (280)
 					);
-					if (Layout.Button (vesselSpareSpace [resource.Key].ToString ("0.00")))
-						requestPool [resource.Key] = Math.Min (vesselSpareSpace [resource.Key], resource.Value);
+					//if (Layout.Button(vesselSpareSpace[resource.Key].ToString("0.00")))
+						if (GUILayout.Button(vesselSpareSpace[resource.Key].ToString("0.00")))
+							requestPool[resource.Key] = Math.Min (vesselSpareSpace [resource.Key], resource.Value);
 
 					GUILayout.EndHorizontal ();
 				}
 			}
 
 			if (ableToRequest)
-            // "Request Resources"
-            if(Layout.Button(Localizer.Format("#SimpleLogistics_Label6"))) {
-                requested = true;
+				// "Request Resources"
+				//if(Layout.Button(Localizer.Format("#SimpleLogistics_Label6"))) {
+				if (GUILayout.Button(Localizer.Format("#SimpleLogistics_Label6")))
+				{
+					requested = true;
 			}
 
-            //"Close"
-            if (Layout.Button(Localizer.Format("#SimpleLogistics_Label7"), Palette.red))
-            {
+			//"Close"
+			//if (Layout.Button(Localizer.Format("#SimpleLogistics_Label7"), Palette.red))
+			if (GUILayout.Button(Localizer.Format("#SimpleLogistics_Label7")))
+				{
 #if false
 				if (appLauncherButton != null)
 					appLauncherButton.SetFalse ();
 				else
 					onToggle ();				
 #endif
-				toolbarControl.SetFalse();
+					toolbarControl.SetFalse();
 			}
 
 			GUILayout.EndVertical ();
