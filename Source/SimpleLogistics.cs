@@ -229,8 +229,9 @@ namespace SimpleLogistics
 			Layout.LabelAndText(Localizer.Format("#SimpleLogistics_Label1"), Localizer.Format(FlightGlobals.ActiveVessel.RevealName())); //"Current Vessel"
 #endif
 			GUILayout.BeginHorizontal();
-			GUILayout.Label(Localizer.Format("#SimpleLogistics_Label1" + ": "));
-			GUILayout.Label(Localizer.Format(FlightGlobals.ActiveVessel.RevealName()));
+			// GUILayout.Label(Localizer.Format("#SimpleLogistics_Label1") + ": "));
+			// GUILayout.Label(Localizer.Format(FlightGlobals.ActiveVessel.RevealName()));
+			GUILayout.Label(Localizer.Format("#SimpleLogistics_Label1"), Localizer.Format(FlightGlobals.ActiveVessel.RevealName()));
 			GUILayout.EndHorizontal();
 
             bool ableToRequest = false;
@@ -385,10 +386,10 @@ namespace SimpleLogistics
         {
             Boolean stati = false;
 
-            if (HighLogic.CurrentGame.Parameters.CustomParams<SimpleLogistics_Options>().globalLogisticsRange > 1) stati = true;
-            if (HighLogic.CurrentGame.Parameters.CustomParams<SimpleLogistics_Options>().allowPreLaunch) stati = true;
-            if (HighLogic.CurrentGame.Parameters.CustomParams<SimpleLogistics_Options>().allowSplashed) stati = true;
-            if (HighLogic.CurrentGame.Parameters.CustomParams<SimpleLogistics_Options>().requireLanded) stati = true;
+            if (HighLogic.CurrentGame.Parameters.CustomParams<OptionsA>().globalLogisticsRange > 1) stati = true;
+            if (HighLogic.CurrentGame.Parameters.CustomParams<OptionsA>().allowPreLaunch) stati = true;
+            if (HighLogic.CurrentGame.Parameters.CustomParams<OptionsA>().allowSplashed) stati = true;
+            if (HighLogic.CurrentGame.Parameters.CustomParams<OptionsA>().requireLanded) stati = true;
             return stati;
         }
         private Boolean VesselState(Vessel vessel)

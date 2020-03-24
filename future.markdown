@@ -28,10 +28,10 @@
 ***
 ### game settings
 * max land speed to allow network access
-* range (10m to 2500m)
+* [x] range (10m to 2500m)
 ***
 ### difficulty settings
-* 2500m - 1500m - 1000m - 500m - 200m
+* [x] 2500m - 1500m - 1000m - 500m - 200m
 ***
 ### Point-2-Point
 * allows selection of not only what resource, but also from/to which vessel
@@ -50,9 +50,9 @@
 
     as commented in Kottabos video thread:
 ### add game settings/difficulty setting (easy-peasy) for (options):
-* situations (all, pre-launch, splashed, landed)
+* [x] situations (all, pre-launch, splashed, landed)
 * m/s movement (beyond body) limitations (optional)
-* ranges -concerned about performance hit
+* [x] ranges -concerned about performance hit
 * stretch: pull in code from cleverbobcat resources for visible AoE
 * possibly add EC consumption for use/transfer (opt)
 * possibly add in transfer rates
