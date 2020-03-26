@@ -192,7 +192,6 @@ namespace SimpleLogistics
 		private void DrawGUI(int windowId)
 		{
 			GUILayout.BeginVertical ();
-			GUILayout.FlexibleSpace(); 
 			GUILayout.BeginHorizontal();
 				GUILayout.Label(Localizer.Format("#SimpleLogistics_VesselName", FlightGlobals.ActiveVessel.GetDisplayName()));
 			GUILayout.EndHorizontal();
@@ -229,24 +228,24 @@ namespace SimpleLogistics
 			foreach (var resource in resourcePool)
 			{
 				GUILayout.BeginHorizontal ();
-				GUILayout.Label(resource.Key, GUILayout.Width(170));
-				if (ableToRequest && requestPool.ContainsKey (resource.Key))
-				{
-					//Layout.Label(requestPool[resource.Key].ToString("0.00") + " / " +
-					GUILayout.Label(requestPool[resource.Key].ToString("0.00") + " / " +
-						resource.Value.ToString ("0.00"));
-				GUILayout.FlexibleSpace();
-				}
-/*				else
-				{
-					//TODO: *knocking on wood that this woorks.
-*//*					if (GUILayout.Button(resourcePool[resource.Key].ToString("0.00")))
-							// depositResource(PartResourceLibrary.Instance.GetDefinition(resource.Key.ToString()) );
-							depositResource(PartResourceLibrary.Instance.GetDefinition(resource.Key.ToString()) );*//*
+					GUILayout.Label(resource.Key, GUILayout.Width(170));
+					if (ableToRequest && requestPool.ContainsKey (resource.Key))
+					{
+						//Layout.Label(requestPool[resource.Key].ToString("0.00") + " / " +
+						GUILayout.Label(requestPool[resource.Key].ToString("0.00") + " / " +
+							resource.Value.ToString ("0.00"));
+					}
+	/*				else
+					{
+						//TODO: *knocking on wood that this woorks.
+	*//*					if (GUILayout.Button(resourcePool[resource.Key].ToString("0.00")))
+								// depositResource(PartResourceLibrary.Instance.GetDefinition(resource.Key.ToString()) );
+								depositResource(PartResourceLibrary.Instance.GetDefinition(resource.Key.ToString()) );*//*
 
-					GUILayout.Label(resource.Value.ToString("0.00"));
-				}*/
+						GUILayout.Label(resource.Value.ToString("0.00"));
+					}*/
 
+					GUILayout.FlexibleSpace();
 				GUILayout.EndHorizontal ();
 				if (ableToRequest && requestPool.ContainsKey(resource.Key))
 				{
@@ -254,7 +253,6 @@ namespace SimpleLogistics
 					//if (Layout.Button("0", GUILayout.Width(20)))
 					if (GUILayout.Button("0", GUILayout.Width(20)))
 							requestPool[resource.Key] = 0;
-				GUILayout.FlexibleSpace();
 
 					//requestPool[resource.Key] = Layout.HorizontalSlider(
 					requestPool[resource.Key] = GUILayout.HorizontalSlider(
@@ -268,6 +266,7 @@ namespace SimpleLogistics
 						if (GUILayout.Button(vesselSpareSpace[resource.Key].ToString("0.00")))
 							requestPool[resource.Key] = Math.Min (vesselSpareSpace [resource.Key], resource.Value);
 
+			GUILayout.FlexibleSpace(); 
 					GUILayout.EndHorizontal ();
 				}
 			}
@@ -283,6 +282,7 @@ namespace SimpleLogistics
 			//if (Layout.Button(Localizer.Format("#SimpleLogistics_Label7"), Palette.red))
 			if (GUILayout.Button("<color=red>X</color>", GUILayout.Width(20))) toolbarControl.SetFalse();
 			//GUI.skin.button.alignment = x;
+			GUILayout.FlexibleSpace(); 
 
 			GUILayout.EndVertical ();
 			GUI.DragWindow ();
