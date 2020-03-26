@@ -10,18 +10,18 @@ namespace SimpleLogistics
 	public class LogisticsModule: PartModule
 	{
 		[KSPField(isPersistant = true, guiName = "#SimpleLogistics_Module_Plugged", guiActive = true)] //Plugged In?
-        private bool isActive = false;
+        private bool _isActive = false;
 
-		[SerializeField] 
-		public bool IsActive { get { return isActive; } }
+		[SerializeField]
+        public bool IsActive { get { return _isActive; } }
 
 		[KSPEvent(guiActive = true, guiName = "#SimpleLogistics_Module_PluggedNet")] //Plug into Network
         private void Toggle() {
-			isActive = !isActive;
+			_isActive = !_isActive;
 		}
 
 		public void Set(bool status) {
-			isActive = status;
+			_isActive = status;
 		}
 
 		public override string GetInfo()
@@ -29,16 +29,18 @@ namespace SimpleLogistics
 			return Localizer.Format("#SimpleLogistics_Module_Getinfo"); //"Logistics Module for easy resource sharing."
         }
 
-		public override void OnStart(PartModule.StartState state) {
+		public override void OnStart(PartModule.StartState state) 
+        {
+            Logs.dbg("On Start");
 		}
 
         // LGG
         public new void Load(ConfigNode node)
         {
             bool b;
-            if (node.HasValue("IsActive") && bool.TryParse(node.GetValue("IsActive"), out b))
+            if (node.HasValue("isActive") && bool.TryParse(node.GetValue("isActive"), out b))
             {
-                isActive = b;
+                Set(b);
             }
             base.Load(node); // LGG
         }
@@ -46,13 +48,13 @@ namespace SimpleLogistics
         // LGG
         public new void Save(ConfigNode node)
         {
-            node.AddValue("IsActive", isActive);
+            node.AddValue("isActive", _isActive);
             base.Save(node); // LGG
         }
 
         public override string ToString()
         {
-            return IsActive ? "false" : "true";
+            return IsActive ? "true" : "false";
             
         }
     }

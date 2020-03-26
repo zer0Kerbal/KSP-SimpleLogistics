@@ -4,6 +4,7 @@ using UnityEngine;
 using KSP.UI.Screens;
 using KSP.IO;
 using KSP.Localization;
+using ClickThroughFix;
 using ToolbarControl_NS;
 
 namespace SimpleLogistics
@@ -33,24 +34,24 @@ namespace SimpleLogistics
 		private bool active;
 		private bool refresh;
 
-		//private ApplicationLauncherButton appLauncherButton;
-		//private IButton toolbarButton;
 		private ToolbarControl toolbarControl;
 
 		// Same as Debug Toolbar lock mask
 		private const ulong lockMask = 900719925474097919;
 
 #region Primary Functions
-		private void Awake() {
-			if (instance != null) {
+		private void Awake() 
+		{
+			if (instance != null) 
+			{
 				Destroy (this);
 				return;
 			}
-
 			instance = this;
 		}
 
-		private void Start() {
+		private void Start() 
+		{
 			resourcePool = new SortedList<string, double> ();
 			requestPool = new SortedList<string, double> ();
 			vesselSpareSpace = new SortedList<string, double> ();
@@ -72,7 +73,6 @@ namespace SimpleLogistics
 			requested = false;
 			CreateLauncher();
 
-			//GameEvents.onGUIApplicationLauncherReady.Add(CreateLauncher);
 			GameEvents.onLevelWasLoaded.Add (onLevelWasLoaded);
 			GameEvents.onVesselChange.Add (onVesselChange);
 			GameEvents.onHideUI.Add(onHideUI);
@@ -81,11 +81,11 @@ namespace SimpleLogistics
 			GameEvents.onGameUnpause.Add (onGameUnpause);
 		}
 
-		private void OnDestroy() {
+		private void OnDestroy() 
+		{
 			config.SetValue (this.name, windowRect);
 			config.save ();
 
-			//GameEvents.onGUIApplicationLauncherReady.Remove(CreateLauncher);
 			GameEvents.onLevelWasLoaded.Remove (onLevelWasLoaded);
 			GameEvents.onVesselChange.Remove (onVesselChange);
 			GameEvents.onHideUI.Remove(onHideUI);
@@ -100,15 +100,20 @@ namespace SimpleLogistics
 				instance = null;
 		}
 
-		private void onVesselChange(Vessel vessel) {
+		private void onVesselChange(Vessel vessel) 
+		{
 			requestPool.Clear ();
 			vesselSpareSpace.Clear ();
-			foreach(Part part in vessel.parts) {
-				foreach (var resource in part.Resources) {
-					if (!requestPool.ContainsKey (resource.info.name)) {
+			foreach(Part part in vessel.parts) 
+			{
+				foreach (var resource in part.Resources) 
+				{
+					if (!requestPool.ContainsKey (resource.info.name)) 
+					{
 						requestPool.Add (resource.info.name, 0);
 						vesselSpareSpace.Add (resource.info.name, resource.maxAmount);
-					} else
+					} 
+					else
 						vesselSpareSpace [resource.info.name] += resource.maxAmount;
 				}
 			}
@@ -136,44 +141,10 @@ namespace SimpleLogistics
 				"SimpleLogistics/Plugins/PluginData/Textures/simple-logistics-icon-toolbar",
 				MODNAME
 			);
-#if false
-			if (ToolbarManager.ToolbarAvailable) {
-				toolbarButton = ToolbarManager.Instance.add ("SimpleLogistics", "AppLaunch");
-				toolbarButton.TexturePath = "SimpleLogistics/Plugins/PluginData/Textures/simple-logistics-icon-toolbar";
-				toolbarButton.ToolTip = "Simple Logistics UI";
-				toolbarButton.Visible = true;
-				toolbarButton.OnClick += (ClickEvent e) => {
-					onToggle();
-				};
-			}
-			else if (appLauncherButton == null)
-			{
-				appLauncherButton = ApplicationLauncher.Instance.AddModApplication(
-					onAppTrue,
-					onAppFalse,
-					null,
-					null,
-					null,
-					null,
-					ApplicationLauncher.AppScenes.FLIGHT,
-					Unity
-					GameDatabase.Instance.GetTexture("SimpleLogistics/Plugins/PluginData/Textures/simple-logistics-icon", false)
-				);
-			}
-#endif
 		}
 
 		public void DestroyLauncher()
 		{
-#if false
-			if (appLauncherButton != null) {
-				ApplicationLauncher.Instance.RemoveModApplication (appLauncherButton);
-			}
-			if (toolbarButton != null) {
-				toolbarButton.Destroy ();
-				toolbarButton = null;
-			}
-#endif
 			if (toolbarControl != null)
 			{
 				toolbarControl.OnDestroy();
@@ -186,28 +157,23 @@ namespace SimpleLogistics
 			if (gamePaused || globalHidden || !active) return;
 
 			// if (FlightGlobals.ActiveVessel.situation != Vessel.Situations.LANDED) {
-			if (!InSituation.NetworkEligible(FlightGlobals.ActiveVessel))
+				
+			string test = InSituation.NetworkEligible(FlightGlobals.ActiveVessel);
+			if (!String.IsNullOrEmpty(test))
 			{
-#if false
-				if (appLauncherButton != null)
-					appLauncherButton.SetFalse ();
-				else
-					onToggle ();
-				return;
-#endif
 				toolbarControl.SetFalse();
+				Logs.msg(test);
 			}
 
-			if (refresh) {
+			if (refresh)
+			{
 				windowRect.height = 0;
 				refresh = false;
 			}
-			// LGG  The following uses the KSP stock skin.  Comment it out to use
-			// the Unity stock skin
-			GUI.skin = HighLogic.Skin;
-			//			windowRect = Layout.Window(
-			windowRect = GUILayout.Window(
 
+			if (HighLogic.CurrentGame.Parameters.CustomParams<OptionsA>().useAlternateSkin) GUI.skin = HighLogic.Skin;
+
+			windowRect = ClickThruBlocker.GUILayoutWindow(
 				windowId,
 				windowRect,
 				DrawGUI,
@@ -223,34 +189,34 @@ namespace SimpleLogistics
 		}
 
 		// It's a mess
-		private void DrawGUI(int windowId) {
+		private void DrawGUI(int windowId)
+		{
 			GUILayout.BeginVertical ();
-#if false
-			Layout.LabelAndText(Localizer.Format("#SimpleLogistics_Label1"), Localizer.Format(FlightGlobals.ActiveVessel.RevealName())); //"Current Vessel"
-#endif
+			GUILayout.FlexibleSpace(); 
 			GUILayout.BeginHorizontal();
-			// GUILayout.Label(Localizer.Format("#SimpleLogistics_Label1") + ": "));
-			// GUILayout.Label(Localizer.Format(FlightGlobals.ActiveVessel.RevealName()));
-			GUILayout.Label(Localizer.Format("#SimpleLogistics_Label1"), Localizer.Format(FlightGlobals.ActiveVessel.RevealName()));
+				GUILayout.Label(Localizer.Format("#SimpleLogistics_VesselName", FlightGlobals.ActiveVessel.GetDisplayName()));
+			GUILayout.EndHorizontal();
+
+			GUILayout.BeginHorizontal();
+				GUILayout.Label(Localizer.Format("#SimpleLogistics_Status", FlightGlobals.ActiveVessel.SituationString));
 			GUILayout.EndHorizontal();
 
             bool ableToRequest = false;
 
 			LogisticsModule lm = FlightGlobals.ActiveVessel.FindPartModuleImplementing<LogisticsModule> ();
-			if (lm != null) {
-				//                Layout.Label(
+			if (lm != null)
+			{
 				GUILayout.Label(
-					lm.IsActive ? Localizer.Format("#SimpleLogistics_Label2") : Localizer.Format("#SimpleLogistics_Label3") //, //"Pluged In""Unplugged"
+					lm.IsActive ? Localizer.Format("#SimpleLogistics_Label3") : Localizer.Format("#SimpleLogistics_Label2") //, //"Pluged In""Unplugged"
 //                    lm.IsActive ? Palette.green : Palette.red
                 );
 
-				// "Toggle Plug"
-				//if (Layout.Button(Localizer.Format("#SimpleLogistics_Label4"), Palette.yellow))
-					if (GUILayout.Button(Localizer.Format("#SimpleLogistics_Label4")))
-					{
-						lm.Set (!lm.IsActive);
+				if (GUILayout.Button("<color=yellow>" + Localizer.Format("#SimpleLogistics_Label4") + "</color>")) // "Toggle Plug"
+				{
+					lm.Set (!lm.IsActive);
 					refresh = true;
 				}
+				
 				ableToRequest = !lm.IsActive;
 			}
 
@@ -258,27 +224,37 @@ namespace SimpleLogistics
 				GetVesselSpareSpace ();
 
 			//Layout.LabelCentered(Localizer.Format("#SimpleLogistics_Label5"), Palette.yellow); //"Resource Pool:"
-			GUILayout.FlexibleSpace();
 			GUILayout.Label(Localizer.Format("#SimpleLogistics_Label5")); //"Resource Pool:"
-			GUILayout.FlexibleSpace();
-			foreach (var resource in resourcePool) {
+			//GUILayout.FlexibleSpace();
+			foreach (var resource in resourcePool)
+			{
 				GUILayout.BeginHorizontal ();
-				//Layout.Label(resource.Key, Palette.yellow, GUILayout.Width(170));
 				GUILayout.Label(resource.Key, GUILayout.Width(170));
-				if (ableToRequest && requestPool.ContainsKey (resource.Key)) {
+				if (ableToRequest && requestPool.ContainsKey (resource.Key))
+				{
 					//Layout.Label(requestPool[resource.Key].ToString("0.00") + " / " +
 					GUILayout.Label(requestPool[resource.Key].ToString("0.00") + " / " +
 						resource.Value.ToString ("0.00"));
-				} else
-//					Layout.Label(resource.Value.ToString("0.00"));
+				GUILayout.FlexibleSpace();
+				}
+/*				else
+				{
+					//TODO: *knocking on wood that this woorks.
+*//*					if (GUILayout.Button(resourcePool[resource.Key].ToString("0.00")))
+							// depositResource(PartResourceLibrary.Instance.GetDefinition(resource.Key.ToString()) );
+							depositResource(PartResourceLibrary.Instance.GetDefinition(resource.Key.ToString()) );*//*
+
 					GUILayout.Label(resource.Value.ToString("0.00"));
+				}*/
 
 				GUILayout.EndHorizontal ();
-				if (ableToRequest && requestPool.ContainsKey(resource.Key)) {
+				if (ableToRequest && requestPool.ContainsKey(resource.Key))
+				{
 					GUILayout.BeginHorizontal ();
 					//if (Layout.Button("0", GUILayout.Width(20)))
 					if (GUILayout.Button("0", GUILayout.Width(20)))
 							requestPool[resource.Key] = 0;
+				GUILayout.FlexibleSpace();
 
 					//requestPool[resource.Key] = Layout.HorizontalSlider(
 					requestPool[resource.Key] = GUILayout.HorizontalSlider(
@@ -287,6 +263,7 @@ namespace SimpleLogistics
 						(float)Math.Min (vesselSpareSpace [resource.Key], resource.Value),
 						GUILayout.Width (280)
 					);
+				//GUILayout.FlexibleSpace();
 					//if (Layout.Button(vesselSpareSpace[resource.Key].ToString("0.00")))
 						if (GUILayout.Button(vesselSpareSpace[resource.Key].ToString("0.00")))
 							requestPool[resource.Key] = Math.Min (vesselSpareSpace [resource.Key], resource.Value);
@@ -296,36 +273,29 @@ namespace SimpleLogistics
 			}
 
 			if (ableToRequest)
-				// "Request Resources"
-				//if(Layout.Button(Localizer.Format("#SimpleLogistics_Label6"))) {
-				if (GUILayout.Button(Localizer.Format("#SimpleLogistics_Label6")))
+				if (GUILayout.Button(Localizer.Format("#SimpleLogistics_Label6"))) // "Request Resources"
 				{
 					requested = true;
-			}
-
+				}
+			//TextAnchor x = GUI.skin.button.alignment;
+			//GUI.skin.button.alignment = TextAnchor.UpperRight;
 			//"Close"
 			//if (Layout.Button(Localizer.Format("#SimpleLogistics_Label7"), Palette.red))
-			if (GUILayout.Button(Localizer.Format("#SimpleLogistics_Label7")))
-				{
-#if false
-				if (appLauncherButton != null)
-					appLauncherButton.SetFalse ();
-				else
-					onToggle ();				
-#endif
-					toolbarControl.SetFalse();
-			}
+			if (GUILayout.Button("<color=red>X</color>", GUILayout.Width(20))) toolbarControl.SetFalse();
+			//GUI.skin.button.alignment = x;
 
 			GUILayout.EndVertical ();
 			GUI.DragWindow ();
 		}
 
-		public void onGamePause() {
+		public void onGamePause()
+		{
 			gamePaused = true;
 			UnlockControls ();
 		}
 
-		public void onGameUnpause() {
+		public void onGameUnpause()
+		{
 			gamePaused = false;
 		}
 
@@ -342,8 +312,10 @@ namespace SimpleLogistics
 
 		public void onAppTrue()
 		{
-			if (!InSituation.NetworkEligible(FlightGlobals.ActiveVessel)) {
-                ScreenMessages.PostScreenMessage(Localizer.Format("#SimpleLogistics_msg1")); //"Must be landed to use logistics"
+			string errMsg = InSituation.NetworkEligible(FlightGlobals.ActiveVessel);
+			if (!String.IsNullOrEmpty(errMsg))
+			{
+                Logs.msg(errMsg); //"Must be landed to use logistics"
                 return;
 			}
 
@@ -359,13 +331,16 @@ namespace SimpleLogistics
 
 		internal virtual void onToggle()
 		{
-			if (!InSituation.NetworkEligible(FlightGlobals.ActiveVessel)) {
-                ScreenMessages.PostScreenMessage(Localizer.Format("#SimpleLogistics_msg2")); //"Must be landed to use logistics"
-                return;
+			string errMsg = InSituation.NetworkEligible(FlightGlobals.ActiveVessel);
+			if (!String.IsNullOrEmpty(errMsg))
+			{
+				Logs.msg(errMsg); //"Must be landed to use logistics"
+				return;
 			}
 
 			active = !active;
-			if (!active) {
+			if (!active)
+			{
 				refresh = true;
 				UnlockControls ();
 			}
@@ -381,51 +356,44 @@ namespace SimpleLogistics
 			InputLockManager.RemoveControlLock(this.name);
 		}
 #endregion
-#region zed'K new code
-/*        private Boolean IsSituationValid(Vessel vessel)
-        {
-            Boolean stati = false;
-
-            if (HighLogic.CurrentGame.Parameters.CustomParams<OptionsA>().globalLogisticsRange > 1) stati = true;
-            if (HighLogic.CurrentGame.Parameters.CustomParams<OptionsA>().allowPreLaunch) stati = true;
-            if (HighLogic.CurrentGame.Parameters.CustomParams<OptionsA>().allowSplashed) stati = true;
-            if (HighLogic.CurrentGame.Parameters.CustomParams<OptionsA>().requireLanded) stati = true;
-            return stati;
-        }
-        private Boolean VesselState(Vessel vessel)
-        {
-            Log.dbg("name {0}, range {1}, situation {2}", vessel.vesselName, vessel.vesselRanges, vessel.SituationString);
-            if ((vessel.situation != Vessel.Situations.LANDED) || (vessel.situation != Vessel.Situations.PRELAUNCH) || (vessel.situation != Vessel.Situations.SPLASHED)) return true;
-            return false;
-        }
-        private Boolean VesselRange(Vessel vessel)
-        {
-            return true;
-        }*/
-#endregion
 #region Resource Sharing
-        private void FixedUpdate() {
+        private void FixedUpdate()
+		{
 			// Find all resources in the network
 			partResources.Clear ();
-			foreach (Vessel vessel in FlightGlobals.VesselsLoaded) {
-				
-				if (!InSituation.NetworkEligible(vessel))
+			foreach (Vessel vessel in FlightGlobals.VesselsLoaded)
+			{
+				if (!String.IsNullOrEmpty(InSituation.NetworkEligible(vessel)))
+				{
+					Logs.dbg("{0} ineligible\n", vessel.GetDisplayName());
                     continue;
+				}
 
 				LogisticsModule lm = vessel.FindPartModuleImplementing<LogisticsModule> ();
 				if (lm != null)
 				if (!lm.IsActive)
+					{
+					Logs.dbg("{0} not pluged in\n", vessel.GetDisplayName());
 					continue;
+					}
 				
-				foreach (Part part in vessel.parts) {
+				foreach (Part part in vessel.parts)
+				{
 					if (part.State == PartStates.DEAD)
+					{
+						Logs.dbg("{0} is dead on {1}\n", part.partName, vessel.GetDisplayName());
 						continue;
+					}	
 					
-					foreach (PartResource resource in part.Resources) {
+					foreach (PartResource resource in part.Resources)
+					{
 						if (resource.info.resourceTransferMode == ResourceTransferMode.NONE ||
 							resource._flowMode == PartResource.FlowMode.None ||
 							!resource._flowState)
+						{
+							Logs.dbg("{3}'s {2}'s {1} can't flow", resource.resourceName, part.partName,vessel.vesselName);
 							continue;
+						}
 						
 						partResources.Add (resource);
 					}
@@ -434,7 +402,8 @@ namespace SimpleLogistics
 
 			// Create a resource pool
 			resourcePool.Clear ();
-			foreach (var resource in partResources) {
+			foreach (var resource in partResources)
+			{
 				if (!resourcePool.ContainsKey (resource.info.name))
 					resourcePool.Add (resource.info.name, resource.amount);
 				else
@@ -442,10 +411,13 @@ namespace SimpleLogistics
 			}
 
 			// Spread resources evenly
-			foreach (var resource in resourcePool) {
+			foreach (var resource in resourcePool)
+			{
 				double value = resource.Value;
-				if (requested) {
-					if (requestPool.ContainsKey (resource.Key)) {
+				if (requested)
+				{
+					if (requestPool.ContainsKey (resource.Key))
+					{
 						value -= requestPool [resource.Key];
 					}
 				}
@@ -459,7 +431,8 @@ namespace SimpleLogistics
 				ShareResource (resList, value);
 			}
 
-			if (requested) {
+			if (requested)
+			{
 				TransferResources ();
 				requested = false;
 			}
@@ -470,7 +443,8 @@ namespace SimpleLogistics
 		/// </summary>
 		/// <param name="resources">List of resources</param>
 		/// <param name="amount">Overall amount</param>
-		private void ShareResource(List<PartResource> resources, double amount) {
+		private void ShareResource(List<PartResource> resources, double amount)
+		{
 			// Portion each may potentially receive
 			double portion = amount / resources.Count;
 
@@ -480,9 +454,11 @@ namespace SimpleLogistics
 			// Those who may grab whole portion and even ask for more :D
 			var majors = resources.FindAll (r => r.maxAmount >= portion);
 
-			if (minors.Count > 0) {
+			if (minors.Count > 0)
+			{
 				// Some may not handle this much
-				foreach (var minor in minors) {
+				foreach (var minor in minors)
+				{
 					minor.amount = minor.maxAmount;
 					amount -= minor.maxAmount;
 				}
@@ -491,7 +467,8 @@ namespace SimpleLogistics
 					ShareResource (majors, amount);
 			} else {
 				// Portion size is good for everybody
-				foreach (var major in majors) {
+				foreach (var major in majors)
+				{
 					major.amount = portion;
 				}
 			}
@@ -501,10 +478,13 @@ namespace SimpleLogistics
 		/// Get the amount of spare resource space. Calling every physics frame is stupid, but who cares :D
 		/// </summary>
 		/// <param name="vessel">Vessel.</param>
-		private void GetVesselSpareSpace() {
+		private void GetVesselSpareSpace()
+		{
 			vesselSpareSpace.Clear ();
-			foreach(Part part in FlightGlobals.ActiveVessel.parts) {
-				foreach (var resource in part.Resources) {
+			foreach(Part part in FlightGlobals.ActiveVessel.parts)
+			{
+				foreach (var resource in part.Resources)
+				{
 					if (!vesselSpareSpace.ContainsKey (resource.info.name))
 						vesselSpareSpace.Add (resource.info.name, resource.maxAmount - resource.amount);
 					else
@@ -514,15 +494,18 @@ namespace SimpleLogistics
 		}
 
 		// Code duplication? No way!
-		private void TransferResources() {
+		private void TransferResources()
+		{
 			List<PartResource> AVResources = new List<PartResource> ();
 			SortedList<string, double> AVPool = new SortedList<string, double> ();
 
-			foreach (Part part in FlightGlobals.ActiveVessel.parts) {
+			foreach (Part part in FlightGlobals.ActiveVessel.parts)
+			{
 				if (part.State == PartStates.DEAD)
 					continue;
 
-				foreach (PartResource resource in part.Resources) {
+				foreach (PartResource resource in part.Resources)
+				{
 					if (resource.info.resourceTransferMode == ResourceTransferMode.NONE ||
 						resource._flowMode == PartResource.FlowMode.None ||
 						!resource._flowState)
@@ -532,7 +515,8 @@ namespace SimpleLogistics
 				}
 			}
 
-			foreach (var resource in AVResources) {
+			foreach (var resource in AVResources)
+			{
 				if (!AVPool.ContainsKey (resource.info.name))
 					AVPool.Add (resource.info.name, resource.amount);
 				else
@@ -540,7 +524,8 @@ namespace SimpleLogistics
 			}
 
 			// Spread resources evenly
-			foreach (var resource in AVPool) {
+			foreach (var resource in AVPool)
+			{
 				double value = resource.Value;
 				var resList = AVResources.FindAll (r => r.info.name == resource.Key);
 				value += requestPool [resource.Key];
@@ -548,6 +533,22 @@ namespace SimpleLogistics
 
 				ShareResource (resList, value);
 			}
+		}
+#endregion
+#region zed'K new code
+        private void depositResource(PartResource resource)
+		{
+			List<PartResource> AVResources = new List<PartResource>();
+			
+			foreach (Part part in FlightGlobals.ActiveVessel.parts)
+				if (part.State == PartStates.DEAD ||
+					resource.info.resourceTransferMode == ResourceTransferMode.NONE ||
+					resource._flowMode == PartResource.FlowMode.None ||
+					!resource._flowState)
+					continue;
+
+			AVResources.Add(resource);
+			ShareResource(AVResources, resource.amount);
 		}
 #endregion
 	}

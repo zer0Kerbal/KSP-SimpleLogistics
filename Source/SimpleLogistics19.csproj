@@ -61,7 +61,7 @@
     <None Include=".vs\SimpleLogistics\v16\Server\sqlite3\storage.ide-wal" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Log.cs" />
+    <Compile Include="Logs.cs" />
     <Compile Include="InSituation.cs" />
     <Compile Include="InstallChecker.cs" />
     <Compile Include="LogisticsModule.cs" />
@@ -77,13 +77,7 @@
     </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="SimpleLogistics.cs" />
-    <Compile Include="RegisterToolbar.cs" />
-    <Compile Include="ToolbarWrapper.cs" />
-    <Compile Include="UIFramework\Core.cs" />
-    <Compile Include="UIFramework\Layout.cs" />
-    <Compile Include="UIFramework\Offsets.cs" />
-    <Compile Include="UIFramework\Palette.cs" />
-    <Compile Include="UIFramework\Styles.cs" />
+    <Compile Include="GUICore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -99,6 +93,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>

@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
 using System.Reflection;
+using KSP.Localization;
 
 // This will add a tab to the Stock Settings in the Difficulty settings called "SimpleLogistics"
 // To use, reference the setting using the following:
@@ -19,21 +20,24 @@ namespace SimpleLogistics
 
     public class OptionsA : GameParameters.CustomParameterNode
     {
-        public override string Title { get { return "[WIP] General Settings"; } }
+        public override string Title { get { return Localizer.Format("#SimpleLogistics_Section1"); } }
         public override GameParameters.GameMode GameMode { get { return GameParameters.GameMode.ANY; } }
-        public override string Section { get { return "[WIP] SimpleLogistics"; } }
-        public override string DisplaySection { get { return "[WIP] SimpleLogistics"; } }
+        public override string Section { get { return Localizer.Format("#SimpleLogistics_ModName"); } }
+        public override string DisplaySection { get { return Localizer.Format("#SimpleLogistics_ModName"); } }
         public override int SectionOrder { get { return 1; } }
 
         [GameParameters.CustomParameterUI("SimpleLogistics! enabled?",
             toolTip = "enables and disables entire network (ON/off).",
             newGameOnly = false,
             unlockedDuringMission = true)]
-        public bool enabled = true;
+        public bool _moduleEnabled = false;
+        public bool IsEnabled { get { return _moduleEnabled; } }
+
 
         [GameParameters.CustomParameterUI("Use alternate skin",
             toolTip = "Use a more minimiliast skin")]
-        public bool useAlternateSkin = false;
+        public bool _useAlternateSkin = false;
+        public bool useAlternateSkin { get { return _useAlternateSkin; } }
 
         [GameParameters.CustomParameterUI("PAW Color",
             toolTip = "allow color coding in PAW (part action window) / part RMB (right menu button).",
@@ -41,43 +45,14 @@ namespace SimpleLogistics
             unlockedDuringMission = true)]
         public bool coloredPAW = true;
 
-        [GameParameters.CustomFloatParameterUI("Global Range Max (0 for limitied only by game physics range",
-            toolTip = "Max range of Logistics Network (in meters).",
-            newGameOnly = false,
-            unlockedDuringMission = true,
-            minValue = 10.0f,
-            maxValue = 2400.0f,
-            stepCount = 100,
-            displayFormat = "F2",
-            asPercentage = false)]
-        public float maxRange = 1000.0f; // 0 for physics range ~2400
-
-        [GameParameters.CustomFloatParameterUI("Altitude",
-            toolTip = "Max altitude to use the Logistics Network (in meters).",
-            newGameOnly = false,
-            unlockedDuringMission = true,
-            minValue = 10.0f,
-            maxValue = 1000.0f,
-            stepCount = 10,
-            displayFormat = "F2",
-            asPercentage = false)]
-        public float maxAltitude = 500.0f;
-
-        [GameParameters.CustomFloatParameterUI("Ground Speed",
-            toolTip = "Max ground speed to use the Logistics Network (in meters).",
-            newGameOnly = false,
-            unlockedDuringMission = true,
-            minValue = 1.0f,
-            maxValue = 100.0f,
-            stepCount = 1,
-            displayFormat = "F2",
-            asPercentage = false)]
-        public float maxGroundSpeed = 20.0f;
+        [GameParameters.CustomParameterUI("<color=red>Extra Debugging</color>",
+            toolTip = "<color=red>WARNING: will spam the log with extra information.</color>")]
+        public bool DebugLogging = false;
 
         // If you want to have some of the game settings default to enabled,  change 
         // the "if false" to "if true" and set the values as you like
 
-#if true        
+#if false        
         public override bool HasPresets { get { return true; } }
 
         public override void SetDifficultyPreset(GameParameters.Preset preset)
@@ -86,27 +61,16 @@ namespace SimpleLogistics
             switch (preset)
             {
                 case GameParameters.Preset.Easy:
-                    maxRange = 0f;
-                    maxAltitude = 500f;
-                    maxGroundSpeed = 100f;
+                   
                     break;
 
                 case GameParameters.Preset.Normal:
-                    maxRange = 1000f;
-                    maxAltitude = 250f;
-                    maxGroundSpeed = 40f;
                     break;
 
                 case GameParameters.Preset.Moderate:
-                    maxRange = 500f;
-                    maxAltitude = 100f;
-                    maxGroundSpeed = 20f;
                     break;
 
                 case GameParameters.Preset.Hard:
-                    maxRange = 250f;
-                    maxAltitude = 50f;
-                    maxGroundSpeed = 10f;
                     break;
             }
         }
@@ -121,63 +85,63 @@ namespace SimpleLogistics
 
     public class OptionsB : GameParameters.CustomParameterNode
     {
-        public override string Title { get { return "[WIP] Situational Settings"; } }
+        public override string Title { get { return Localizer.Format("#SimpleLogistics_Section2"); } }
         public override GameParameters.GameMode GameMode { get { return GameParameters.GameMode.ANY; } }
-        public override string Section { get { return "[WIP] SimpleLogistics"; } }
-        public override string DisplaySection { get { return "[WIP] SimpleLogistics"; } }
-        public override int SectionOrder { get { return 1; } }
+        public override string Section { get { return Localizer.Format("#SimpleLogistics_ModName"); } }
+        public override string DisplaySection { get { return Localizer.Format("#SimpleLogistics_ModName"); } }
+        public override int SectionOrder { get { return 2; } }
 
-        [GameParameters.CustomParameterUI("Landed vessels may connect to SimpleLogistics network",
-            toolTip = "if yes, landed vessels connect to and use the SimpleLogistics Network?",
+        [GameParameters.CustomParameterUI("Landed vessels may access network",
+            toolTip = "if yes, allow landed vessels to use SimpleLogistics!",
             newGameOnly = false,
             unlockedDuringMission = true)]
         public bool yesLanded = true;
 
 
-        [GameParameters.CustomParameterUI("Splashed vessels may connect to SimpleLogistics network",
-            toolTip = "if yes, allow splashed vessels to access the SimpleLogistics network.",
+        [GameParameters.CustomParameterUI("Splashed vessels may access network",
+            toolTip = "if yes, allow splashed vessels to use SimpleLogistics!",
             newGameOnly = false,
             unlockedDuringMission = true)]
         public bool yesSplashed = true;
 
 
-        [GameParameters.CustomParameterUI("Pre-Launch vessels may connect to SimpleLogistics network",
-            toolTip = "if yes, allow pre-launch vessels to access the SimpleLogistics network.",
+        [GameParameters.CustomParameterUI("Pre-Launch vessels may access network",
+            toolTip = "if yes, allow pre-launch vessels to use SimpleLogistics!",
             newGameOnly = false,
             unlockedDuringMission = true)]
         public bool yesPreLaunch = true;
 
 
-        [GameParameters.CustomParameterUI("Orbiting vessels may connect to SimpleLogistics network",
-            toolTip = "if yes, allow Orbiting  vessels to access the SimpleLogistics network.",
+        [GameParameters.CustomParameterUI("Orbiting vessels may access network",
+            toolTip = "if yes, allow Orbiting  vessels to use SimpleLogistics!",
             newGameOnly = false,
             unlockedDuringMission = true)]
         public bool yesOrbiting = false;
 
 
-        [GameParameters.CustomParameterUI("Flying vessels may connect to SimpleLogistics network",
-            toolTip = "if yes, allow Flying  vessels to access the SimpleLogistics network.",
+        [GameParameters.CustomParameterUI("Flying vessels may access network",
+            toolTip = "if yes, allow Flying vessels to use SimpleLogistics!",
             newGameOnly = false,
             unlockedDuringMission = true)]
         public bool yesFlying = false;
 
 
-        [GameParameters.CustomParameterUI("SubOrbital vessels may connect to SimpleLogistics network",
-            toolTip = "if yes, allow SubOrbital  vessels to access the SimpleLogistics network.",
+        [GameParameters.CustomParameterUI("SubOrbital vessels may access network",
+            toolTip = "if yes, allow SubOrbital vessels to use SimpleLogistics!",
             newGameOnly = false,
             unlockedDuringMission = true)]
         public bool yesSubOrbital = false;
 
 
-        [GameParameters.CustomParameterUI("Escaping vessels may connect to SimpleLogistics network",
-            toolTip = "if yes, allow Escaping  vessels to access the SimpleLogistics network.",
+        [GameParameters.CustomParameterUI("Escaping vessels may access network",
+            toolTip = "if yes, allow Escaping vessels to use SimpleLogistics!",
             newGameOnly = false,
             unlockedDuringMission = true)]
         public bool yesEscaping = false;
 
 
-        [GameParameters.CustomParameterUI("Docked vessels may connect to SimpleLogistics network",
-            toolTip = "if yes, allow Docked vessels to access the SimpleLogistics network.",
+        [GameParameters.CustomParameterUI("Docked vessels may access network",
+            toolTip = "if yes, allow Docked vessels to use SimpleLogistics!",
             newGameOnly = false,
             unlockedDuringMission = true)]
         public bool yesDocked = false;
@@ -250,36 +214,72 @@ namespace SimpleLogistics
 
     public class OptionsC : GameParameters.CustomParameterNode
     {
-        public override string Title { get { return "[WIP] Control Settings"; } }
+        public override string Title { get { return Localizer.Format("#SimpleLogistics_Section3"); } }
         public override GameParameters.GameMode GameMode { get { return GameParameters.GameMode.ANY; } }
-        public override string Section { get { return "[WIP] SimpleLogistics"; } }
-        public override string DisplaySection { get { return "[WIP] SimpleLogistics"; } }
-        public override int SectionOrder { get { return 1; } }
+        public override string Section { get { return Localizer.Format("#SimpleLogistics_ModName"); } } 
+        public override string DisplaySection { get { return Localizer.Format("#SimpleLogistics_ModName"); } }
+        public override int SectionOrder { get { return 3; } }
        
         [GameParameters.CustomParameterUI("Control: Full",
-           toolTip = "allow logisics network access from vessels with full control.",
+           toolTip = "allow logistics network access from vessels with Partial Full control.",
            newGameOnly = false,
            unlockedDuringMission = true)]
         public bool yesFull = true;
 
         [GameParameters.CustomParameterUI("Control: Partial Manned",
-            toolTip = "allow logisics network access from vessels with Partial Manned control.",
+            toolTip = "allow logistics network access from vessels with Partial Manned control.",
             newGameOnly = false,
             unlockedDuringMission = true)]
         public bool yesPartialManned = true;
 
         [GameParameters.CustomParameterUI("Control: Partial Unmanned",
-            toolTip = "allow logisics network access from vessels with Partial Unmanned control.",
+            toolTip = "allow logistics network access from vessels with Partial Unmanned control.",
             newGameOnly = false,
             unlockedDuringMission = true)]
         public bool yesPartialUnmaned = true;
 
 
-        [GameParameters.CustomParameterUI("Control: None (debris)",
-            toolTip = "allow logisics network access from vessels with no control.",
+        [GameParameters.CustomParameterUI("Control: None (Debris)",
+            toolTip = "allow logistics network access from vessels with no control.",
             newGameOnly = false,
             unlockedDuringMission = true)]
         public bool yesNone = false;
+
+        [GameParameters.CustomStringParameterUI("")]
+        public string junk1 = "";
+
+        [GameParameters.CustomFloatParameterUI("Global Distance Max (0 for limitied only by game physics range",
+            toolTip = "Max range of Logistics Network (in meters).",
+            newGameOnly = false,
+            unlockedDuringMission = true,
+            minValue = 0f,
+            maxValue = 2400.0f,
+            stepCount = 100,
+            displayFormat = "F2",
+            asPercentage = false)]
+        public float maxDistance = 0f; // 0 for physics range ~2400
+
+        [GameParameters.CustomFloatParameterUI("Altitude",
+            toolTip = "Max altitude to use the Logistics Network (in meters) 0 = unlimited.",
+            newGameOnly = false,
+            unlockedDuringMission = true,
+            minValue = 0,
+            maxValue = 1000.0f,
+            stepCount = 10,
+            displayFormat = "F2",
+            asPercentage = false)]
+        public float maxAltitude = 500.0f;
+
+        [GameParameters.CustomFloatParameterUI("Ground Speed",
+            toolTip = "Max ground speed to use the Logistics Network (in meters) 0 = unlimited.",
+            newGameOnly = false,
+            unlockedDuringMission = true,
+            minValue = 0,
+            maxValue = 100.0f,
+            stepCount = 1,
+            displayFormat = "F2",
+            asPercentage = false)]
+        public float maxGroundSpeed = 0;
 
         // If you want to have some of the game settings default to enabled,  change 
         // the "if false" to "if true" and set the values as you like
@@ -296,7 +296,10 @@ namespace SimpleLogistics
                     yesNone = true;
                     yesPartialUnmaned = true;
                     yesPartialManned = true;
-                    yesFull = true;
+                    yesFull = true; 
+                    maxDistance = 0f;
+                    maxAltitude = 500f;
+                    maxGroundSpeed = 0f;
                     break;
 
                 case GameParameters.Preset.Normal:
@@ -304,6 +307,9 @@ namespace SimpleLogistics
                     yesPartialUnmaned = true;
                     yesPartialManned = true;
                     yesFull = true;
+                    maxDistance = 1000f;
+                    maxAltitude = 250f;
+                    maxGroundSpeed = 20f;
                     break;
 
                 case GameParameters.Preset.Moderate:
@@ -311,6 +317,9 @@ namespace SimpleLogistics
                     yesPartialUnmaned = false;
                     yesPartialManned = true;
                     yesFull = true;
+                    maxDistance = 500f;
+                    maxAltitude = 100f;
+                    maxGroundSpeed = 10f;
                     break;
 
                 case GameParameters.Preset.Hard:
@@ -318,6 +327,9 @@ namespace SimpleLogistics
                     yesPartialUnmaned = false;
                     yesPartialManned = false;
                     yesFull = true;
+                    maxDistance = 250f;
+                    maxAltitude = 50f;
+                    maxGroundSpeed = 0f;
                     break;
             }
         }

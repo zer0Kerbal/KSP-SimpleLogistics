@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 	ProjectSection(SolutionItems) = preProject
 		..\buildRelease.bat = ..\buildRelease.bat
 		..\deploy.bat = ..\deploy.bat
+		..\GameData\SimpleLogistics\Localization\en-us.cfg = ..\GameData\SimpleLogistics\Localization\en-us.cfg
 		..\SimpleLogistics.version = ..\SimpleLogistics.version
 	EndProjectSection
 EndProject
