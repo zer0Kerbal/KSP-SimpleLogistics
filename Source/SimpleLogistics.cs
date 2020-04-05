@@ -177,11 +177,11 @@ namespace SimpleLogistics
 				windowId,
 				windowRect,
 				DrawGUI,
-                Localizer.Format("#SimpleLogistics_WindowTitle"), //"Logistics Network"
+                Localizer.Format("#SimpleLogistics_WindowTitle", Version.Text), //"Logistics Network v "
                 GUILayout.ExpandWidth(true),
 				GUILayout.ExpandHeight(true)
 			);
-			if (windowRect.Contains (Event.current.mousePosition)) {
+			if (windowRect.Contains (Event.current.mousePosition)){
 				LockControls ();
 			} else {
 				UnlockControls();
@@ -192,82 +192,81 @@ namespace SimpleLogistics
 		private void DrawGUI(int windowId)
 		{
 			GUILayout.BeginVertical ();
-			GUILayout.BeginHorizontal();
-				GUILayout.Label(Localizer.Format("#SimpleLogistics_VesselName", FlightGlobals.ActiveVessel.GetDisplayName()));
-			GUILayout.EndHorizontal();
+				GUILayout.BeginHorizontal();
+					GUILayout.Label(Localizer.Format("#SimpleLogistics_VesselName", FlightGlobals.ActiveVessel.GetDisplayName()));
+				GUILayout.EndHorizontal();
+				GUILayout.BeginHorizontal();
+					GUILayout.Label(Localizer.Format("#SimpleLogistics_Status", FlightGlobals.ActiveVessel.SituationString));
+				GUILayout.EndHorizontal();
+				GUILayout.BeginHorizontal();
+					bool ableToRequest = false;
+					LogisticsModule lm = FlightGlobals.ActiveVessel.FindPartModuleImplementing<LogisticsModule> ();
+					if (lm != null)
+					{
+						GUILayout.Label(
+							lm.IsActive ? Localizer.Format("#SimpleLogistics_Label3") : Localizer.Format("#SimpleLogistics_Label2") //, //"Pluged In""Unplugged"
+							// lm.IsActive ? GUILayout. GUILayoutOpt Palette.green : Palette.red
+						);
 
-			GUILayout.BeginHorizontal();
-				GUILayout.Label(Localizer.Format("#SimpleLogistics_Status", FlightGlobals.ActiveVessel.SituationString));
-			GUILayout.EndHorizontal();
+						GUILayout.FlexibleSpace();
+						if (GUILayout.Button("<color=yellow>" + Localizer.Format("#SimpleLogistics_Label4") + "</color>")) // "Toggle Plug"
+						{
+							lm.Set (!lm.IsActive);
+							refresh = true;
+						}
 
-            bool ableToRequest = false;
+						GUILayout.FlexibleSpace();
+						ableToRequest = !lm.IsActive;
+					}
+				GUILayout.EndHorizontal();
 
-			LogisticsModule lm = FlightGlobals.ActiveVessel.FindPartModuleImplementing<LogisticsModule> ();
-			if (lm != null)
-			{
-				GUILayout.Label(
-					lm.IsActive ? Localizer.Format("#SimpleLogistics_Label3") : Localizer.Format("#SimpleLogistics_Label2") //, //"Pluged In""Unplugged"
-//                    lm.IsActive ? Palette.green : Palette.red
-                );
+				if (ableToRequest)
+					GetVesselSpareSpace();
 
-				if (GUILayout.Button("<color=yellow>" + Localizer.Format("#SimpleLogistics_Label4") + "</color>")) // "Toggle Plug"
-				{
-					lm.Set (!lm.IsActive);
-					refresh = true;
-				}
-				
-				ableToRequest = !lm.IsActive;
-			}
-
-			if (ableToRequest)
-				GetVesselSpareSpace ();
-
-			//Layout.LabelCentered(Localizer.Format("#SimpleLogistics_Label5"), Palette.yellow); //"Resource Pool:"
-			GUILayout.Label(Localizer.Format("#SimpleLogistics_Label5")); //"Resource Pool:"
-			//GUILayout.FlexibleSpace();
+				GUILayout.BeginHorizontal();
+					//Layout.LabelCentered(Localizer.Format("#SimpleLogistics_Label5"), Palette.yellow); //"Resource Pool:"
+					GUILayout.Label(Localizer.Format("#SimpleLogistics_Label5")); //"Resource Pool:"
+				GUILayout.EndHorizontal();
+			GUILayout.EndVertical();
+			GUILayout.BeginVertical();
 			foreach (var resource in resourcePool)
 			{
-				GUILayout.BeginHorizontal ();
+				GUILayout.BeginHorizontal();
+
 					GUILayout.Label(resource.Key, GUILayout.Width(170));
-					if (ableToRequest && requestPool.ContainsKey (resource.Key))
+					if (ableToRequest && requestPool.ContainsKey(resource.Key))
 					{
-						//Layout.Label(requestPool[resource.Key].ToString("0.00") + " / " +
 						GUILayout.Label(requestPool[resource.Key].ToString("0.00") + " / " +
 							resource.Value.ToString ("0.00"));
+						//GUILayout.FlexibleSpace();	
 					}
-	/*				else
+					else
 					{
 						//TODO: *knocking on wood that this woorks.
-	*//*					if (GUILayout.Button(resourcePool[resource.Key].ToString("0.00")))
+	/*					if (GUILayout.Button(resourcePool[resource.Key].ToString("0.00")))
 								// depositResource(PartResourceLibrary.Instance.GetDefinition(resource.Key.ToString()) );
 								depositResource(PartResourceLibrary.Instance.GetDefinition(resource.Key.ToString()) );*//*
-
+*/
 						GUILayout.Label(resource.Value.ToString("0.00"));
-					}*/
-
-					GUILayout.FlexibleSpace();
-				GUILayout.EndHorizontal ();
+					}
+				GUILayout.EndHorizontal();
 				if (ableToRequest && requestPool.ContainsKey(resource.Key))
 				{
-					GUILayout.BeginHorizontal ();
-					//if (Layout.Button("0", GUILayout.Width(20)))
-			GUILayout.FlexibleSpace(); 
-					if (GUILayout.Button("0", GUILayout.Width(20)))
+					GUILayout.BeginHorizontal();
+						if (GUILayout.Button("0", GUILayout.Width(20)))
 							requestPool[resource.Key] = 0;
 
-					//requestPool[resource.Key] = Layout.HorizontalSlider(
-					requestPool[resource.Key] = GUILayout.HorizontalSlider(
-						(float)requestPool[resource.Key],
-						0,
-						(float)Math.Min (vesselSpareSpace [resource.Key], resource.Value),
-						GUILayout.Width (280)
-					);
-				//GUILayout.FlexibleSpace();
-					//if (Layout.Button(vesselSpareSpace[resource.Key].ToString("0.00")))
-						if (GUILayout.Button(vesselSpareSpace[resource.Key].ToString("0.00")))
-							requestPool[resource.Key] = Math.Min (vesselSpareSpace [resource.Key], resource.Value);
+						requestPool[resource.Key] = GUILayout.HorizontalSlider(
+							(float)requestPool[resource.Key],
+							0,
+							(float)Math.Min (vesselSpareSpace [resource.Key], resource.Value),
+							GUILayout.Width (280)
+						);
 
-					GUILayout.EndHorizontal ();
+						if (GUILayout.Button(vesselSpareSpace[resource.Key].ToString("0.00")))
+								requestPool[resource.Key] = Math.Min (vesselSpareSpace [resource.Key], resource.Value);
+
+					GUILayout.EndHorizontal();
 				}
 			}
 
@@ -276,16 +275,12 @@ namespace SimpleLogistics
 				{
 					requested = true;
 				}
-			//TextAnchor x = GUI.skin.button.alignment;
-			//GUI.skin.button.alignment = TextAnchor.UpperRight;
-			//"Close"
-			//if (Layout.Button(Localizer.Format("#SimpleLogistics_Label7"), Palette.red))
 			GUILayout.FlexibleSpace(); 
 			if (GUILayout.Button("<color=red>X</color>", GUILayout.Width(20))) toolbarControl.SetFalse();
-			//GUI.skin.button.alignment = x;
 
-			GUILayout.EndVertical ();
-			GUI.DragWindow ();
+			GUILayout.EndVertical();
+
+			GUI.DragWindow();
 		}
 
 		public void onGamePause()
@@ -551,6 +546,9 @@ namespace SimpleLogistics
 			ShareResource(AVResources, resource.amount);
 		}
 #endregion
-	}
+#region On Event
+        
+#endregion
+    }
 }
 

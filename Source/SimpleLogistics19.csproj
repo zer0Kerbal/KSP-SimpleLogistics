@@ -65,10 +65,10 @@
     <Compile Include="InSituation.cs" />
     <Compile Include="InstallChecker.cs" />
     <Compile Include="LogisticsModule.cs" />
-    <Compile Include="Properties\AssemblyVersion.cs">
+    <Compile Include="Properties\AssemblyFileVersion.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AssemblyVersion.tt</DependentUpon>
+      <DependentUpon>AssemblyFileVersion.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\Version.cs">
       <AutoGen>True</AutoGen>
@@ -81,9 +81,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Properties\AssemblyVersion.tt">
+    <Content Include="Properties\AssemblyFileVersion.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>AssemblyVersion.cs</LastGenOutput>
+      <LastGenOutput>AssemblyFileVersion.cs</LastGenOutput>
     </Content>
     <Content Include="Properties\Version.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

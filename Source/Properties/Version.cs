@@ -1,6 +1,11 @@
 ﻿
 
 // Automatically generated code. Any changes will be lost!
+ using System.Reflection;
+
+ //[assembly: AssemblyFileVersion("2.0.4.0")]
+ [assembly: AssemblyVersion("2.0.4.0")]
+
 namespace SimpleLogistics
 {
     public static class Version
@@ -11,9 +16,9 @@ namespace SimpleLogistics
         public const int build = 0;
         public const string Number = "2.0.4.0";
 #if DEBUG
-        public const string Text = Number + " BETA DEBUG";
+        public const string Text = Number + " DEBUG";
 #else
-        public const string Text = Number + " BETA";
+        public const string Text = Number + "";
 #endif
     }
 }

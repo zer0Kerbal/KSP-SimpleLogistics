@@ -7,8 +7,8 @@ using System.Runtime.CompilerServices;
 
 [assembly: KSPAssemblyDependency("ClickThroughBlocker", 1, 0)]
 [assembly: KSPAssemblyDependency("ToolbarController", 1, 0)]
-[assembly: AssemblyTitle ("SimpleLogistics")]
-[assembly: AssemblyDescription ("Simple Logistics Restocked for KSP")]
+[assembly: AssemblyTitle ("SimpleLogistics!")]
+[assembly: AssemblyDescription ("SimpleLogistics! (Restocked) for KSP")]
 [assembly: AssemblyConfiguration ("Release")]
 [assembly: AssemblyCompany ("zer0Kerbal")]
 [assembly: AssemblyProduct ("")]
@@ -20,7 +20,8 @@ using System.Runtime.CompilerServices;
 // The form "{Major}.{Minor}.*" will automatically update the build and revision,
 // and "{Major}.{Minor}.{Build}.*" will update just the revision.
 //[assembly: AssemblyVersion ("2.0.2.2")]
-//[assembly: AssemblyFileVersion ("2.0.3.0")]
+//[assembly: AssemblyFileVersion ("2.0.4.0")]
+
 [assembly: ComVisible(false)]
 [assembly: Guid("587108A5-23DD-4CAD-976D-8ABE51CBB43D")]
 

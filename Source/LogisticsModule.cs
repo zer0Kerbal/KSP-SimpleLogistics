@@ -22,11 +22,23 @@ namespace SimpleLogistics
 
 		public void Set(bool status) {
 			_isActive = status;
-		}
+        }
+ 
+        /// <summary>Module information shown in editors</summary>
+        private string info = string.Empty;
 
-		public override string GetInfo()
-		{
-			return Localizer.Format("#SimpleLogistics_Module_Getinfo"); //"Logistics Module for easy resource sharing."
+        public override string GetInfo()
+        {
+            //? this is what is show in the editor
+            //? As annoying as it is, pre-parsing the config MUST be done here, because this is called during part loading.
+            //? The config is only fully parsed after everything is fully loaded (which is why it's in OnStart())
+            if (info == string.Empty)
+            {
+                info += Localizer.Format("#SimpleLogistics_manu"); // #SimpleLogistics_manu = KerGuise Experimental Logistics
+                info += "\n v" + Version.Text; // mod Version Number text
+                info += "\n<color=#b4d455FF>" + Localizer.Format("#SimpleLogistics_Module_Getinfo"); // #SimpleLogistics_Module_Getinfo = Logistics Module for easy resource sharing.
+            }
+            return info;
         }
 
 		public override void OnStart(PartModule.StartState state) 
