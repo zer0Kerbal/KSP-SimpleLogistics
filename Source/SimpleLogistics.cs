@@ -30,16 +30,19 @@ namespace SimpleLogistics
 		private Rect windowRect;
 		private int windowId;
 		private bool gamePaused;
-		private bool globalHidden;
-		private bool active;
-		private bool refresh;
+		private bool GUIglobalHidden;
+		private bool GUIactive;
+		private bool refreshGUI;
+
+		private static Color titleColor = new Color(45f, 145f, 17f, 1f);
+		private static Color titleBackColor = new Color(45f, 145f, 17f, 0.45f);
 
 		private ToolbarControl toolbarControl;
 
 		// Same as Debug Toolbar lock mask
 		private const ulong lockMask = 900719925474097919;
 
-#region Primary Functions
+#region On Events
 		private void Awake() 
 		{
 			if (instance != null) 
@@ -65,16 +68,16 @@ namespace SimpleLogistics
 
 			windowId = GUIUtility.GetControlID(FocusType.Passive);
 
-			globalHidden = false;
+			GUIglobalHidden = false;
 			gamePaused = false;
-			active = false;
-			refresh = true;
+			GUIactive = false;
+			refreshGUI = true;
 
 			requested = false;
 			CreateLauncher();
 
-			GameEvents.onLevelWasLoaded.Add (onLevelWasLoaded);
 			GameEvents.onVesselChange.Add (onVesselChange);
+			GameEvents.onLevelWasLoaded.Add (onLevelWasLoaded);
 			GameEvents.onHideUI.Add(onHideUI);
 			GameEvents.onShowUI.Add(onShowUI);
 			GameEvents.onGamePause.Add (onGamePause);
@@ -99,8 +102,10 @@ namespace SimpleLogistics
 			if (instance == this)
 				instance = null;
 		}
+#endregion
 
-		private void onVesselChange(Vessel vessel) 
+#region Game Events
+        private void onVesselChange(Vessel vessel) 
 		{
 			requestPool.Clear ();
 			vesselSpareSpace.Clear ();
@@ -124,7 +129,7 @@ namespace SimpleLogistics
 			onVesselChange(FlightGlobals.ActiveVessel);
 		}
 
-		#endregion
+#endregion
 
 #region UI Functions
 
@@ -154,25 +159,24 @@ namespace SimpleLogistics
 
 		public void OnGUI()
 		{
-			if (gamePaused || globalHidden || !active) return;
+			if (gamePaused || GUIglobalHidden || !GUIactive) return;
 
-			// if (FlightGlobals.ActiveVessel.situation != Vessel.Situations.LANDED) {
-				
-			string test = InSituation.NetworkEligible(FlightGlobals.ActiveVessel);
-			if (!String.IsNullOrEmpty(test))
+			string IsEligible = InSituation.NetworkEligible(FlightGlobals.ActiveVessel);
+			if (!String.IsNullOrEmpty(IsEligible))
 			{
 				toolbarControl.SetFalse();
-				Logs.msg(test);
+				Logs.msg(IsEligible);
 			}
 
-			if (refresh)
+			if (refreshGUI)
 			{
 				windowRect.height = 0;
-				refresh = false;
+				refreshGUI = false;
 			}
 
 			if (HighLogic.CurrentGame.Parameters.CustomParams<OptionsA>().useAlternateSkin) GUI.skin = HighLogic.Skin;
-
+			GUI.backgroundColor = titleBackColor;
+			GUI.contentColor = titleColor;
 			windowRect = ClickThruBlocker.GUILayoutWindow(
 				windowId,
 				windowRect,
@@ -192,63 +196,51 @@ namespace SimpleLogistics
 		private void DrawGUI(int windowId)
 		{
 			GUILayout.BeginVertical ();
+			GUI.contentColor = Color.blue;
+				GUILayout.Label(Localizer.Format("#SimpleLogistics_VesselName", FlightGlobals.ActiveVessel.GetDisplayName()));
+				GUILayout.Label(Localizer.Format("#SimpleLogistics_Status", FlightGlobals.ActiveVessel.SituationString));
+				
+				bool ableToRequest = false;
+				LogisticsModule lm = FlightGlobals.ActiveVessel.FindPartModuleImplementing<LogisticsModule> ();
+				if (lm != null)
+				{
 				GUILayout.BeginHorizontal();
-					GUILayout.Label(Localizer.Format("#SimpleLogistics_VesselName", FlightGlobals.ActiveVessel.GetDisplayName()));
-				GUILayout.EndHorizontal();
-				GUILayout.BeginHorizontal();
-					GUILayout.Label(Localizer.Format("#SimpleLogistics_Status", FlightGlobals.ActiveVessel.SituationString));
-				GUILayout.EndHorizontal();
-				GUILayout.BeginHorizontal();
-					bool ableToRequest = false;
-					LogisticsModule lm = FlightGlobals.ActiveVessel.FindPartModuleImplementing<LogisticsModule> ();
-					if (lm != null)
+					GUILayout.Label(
+						lm.IsActive ? Localizer.Format("#SimpleLogistics_Label2") : Localizer.Format("#SimpleLogistics_Label3") //, //"Pluged In""Unplugged"
+						//lm.IsActive ? GUI.contentColor = Color.green : GUI.contentColor = Color.red
+					);
+				GUILayout.FlexibleSpace();
+					GUI.contentColor = Color.yellow;
+					if (GUILayout.Button(Localizer.Format("#SimpleLogistics_Label4"))) // "Toggle Plug"
 					{
-						GUILayout.Label(
-							lm.IsActive ? Localizer.Format("#SimpleLogistics_Label3") : Localizer.Format("#SimpleLogistics_Label2") //, //"Pluged In""Unplugged"
-							// lm.IsActive ? GUILayout. GUILayoutOpt Palette.green : Palette.red
-						);
-
-						GUILayout.FlexibleSpace();
-						if (GUILayout.Button("<color=yellow>" + Localizer.Format("#SimpleLogistics_Label4") + "</color>")) // "Toggle Plug"
-						{
-							lm.Set (!lm.IsActive);
-							refresh = true;
-						}
-
-						GUILayout.FlexibleSpace();
-						ableToRequest = !lm.IsActive;
+						lm.Toggle();// Set (!lm.IsActive);
+						refreshGUI = true;
 					}
+				GUILayout.FlexibleSpace();
+					GUI.contentColor = Color.white;
 				GUILayout.EndHorizontal();
+				// if plugged in - not able to request
+					ableToRequest = !lm.IsActive;
+				}
 
-				if (ableToRequest)
-					GetVesselSpareSpace();
+			//if (ableToRequest)
+				GetVesselSpareSpace();
 
-				GUILayout.BeginHorizontal();
-					//Layout.LabelCentered(Localizer.Format("#SimpleLogistics_Label5"), Palette.yellow); //"Resource Pool:"
-					GUILayout.Label(Localizer.Format("#SimpleLogistics_Label5")); //"Resource Pool:"
-				GUILayout.EndHorizontal();
-			GUILayout.EndVertical();
-			GUILayout.BeginVertical();
+				GUI.contentColor = Color.yellow;
+				GUILayout.Label(Localizer.Format("#SimpleLogistics_Label5")); //"Resource Pool:"
+
 			foreach (var resource in resourcePool)
 			{
 				GUILayout.BeginHorizontal();
-
 					GUILayout.Label(resource.Key, GUILayout.Width(170));
 					if (ableToRequest && requestPool.ContainsKey(resource.Key))
-					{
-						GUILayout.Label(requestPool[resource.Key].ToString("0.00") + " / " +
-							resource.Value.ToString ("0.00"));
-						//GUILayout.FlexibleSpace();	
-					}
-					else
-					{
-						//TODO: *knocking on wood that this woorks.
-	/*					if (GUILayout.Button(resourcePool[resource.Key].ToString("0.00")))
-								// depositResource(PartResourceLibrary.Instance.GetDefinition(resource.Key.ToString()) );
-								depositResource(PartResourceLibrary.Instance.GetDefinition(resource.Key.ToString()) );*//*
-*/
-						GUILayout.Label(resource.Value.ToString("0.00"));
-					}
+						GUILayout.Label(requestPool[resource.Key].ToString("0.00") + " / " + resource.Value.ToString ("0.00"));
+					else GUILayout.Label(resource.Value.ToString("0.00"));
+				//TODO: *knocking on wood that this woorks.
+				/*					if (GUILayout.Button(resourcePool[resource.Key].ToString("0.00")))
+											// depositResource(PartResourceLibrary.Instance.GetDefinition(resource.Key.ToString()) );
+											depositResource(PartResourceLibrary.Instance.GetDefinition(resource.Key.ToString()) );*//*
+			*/
 				GUILayout.EndHorizontal();
 				if (ableToRequest && requestPool.ContainsKey(resource.Key))
 				{
@@ -256,7 +248,7 @@ namespace SimpleLogistics
 						if (GUILayout.Button("0", GUILayout.Width(20)))
 							requestPool[resource.Key] = 0;
 
-						requestPool[resource.Key] = GUILayout.HorizontalSlider(
+						requestPool[resource.Key] = GUILayout.HorizontalSlider (
 							(float)requestPool[resource.Key],
 							0,
 							(float)Math.Min (vesselSpareSpace [resource.Key], resource.Value),
@@ -296,13 +288,13 @@ namespace SimpleLogistics
 
 		private void onHideUI()
 		{
-			globalHidden = true;
+			GUIglobalHidden = true;
 			UnlockControls ();
 		}
 
 		private void onShowUI()
 		{
-			globalHidden = false;
+			GUIglobalHidden = false;
 		}
 
 		public void onAppTrue()
@@ -314,13 +306,13 @@ namespace SimpleLogistics
                 return;
 			}
 
-			active = true;
+			GUIactive = true;
 		}
 
 		public void onAppFalse()
 		{
-			active = false;
-			refresh = true;
+			GUIactive = false;
+			refreshGUI = true;
 			UnlockControls ();
 		}
 
@@ -333,10 +325,10 @@ namespace SimpleLogistics
 				return;
 			}
 
-			active = !active;
-			if (!active)
+			GUIactive = !GUIactive;
+			if (!GUIactive)
 			{
-				refresh = true;
+				refreshGUI = true;
 				UnlockControls ();
 			}
 		}
@@ -365,8 +357,7 @@ namespace SimpleLogistics
 				}
 
 				LogisticsModule lm = vessel.FindPartModuleImplementing<LogisticsModule> ();
-				if (lm != null)
-				if (!lm.IsActive)
+				if (lm != null && !lm.IsActive)
 					{
 					Logs.dbg("{0} not pluged in\n", vessel.GetDisplayName());
 					continue;
