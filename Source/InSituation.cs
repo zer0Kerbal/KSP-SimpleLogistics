@@ -40,7 +40,7 @@ namespace SimpleLogistics
 
             string msgSit = SituationEligible(vessel),
                    msgCntr = ControlEligible(vessel),
-                   msgDistance = Localizer.Format("#SimpleLogistics_msgRange", distance.ToString(), HighLogic.CurrentGame.Parameters.CustomParams<OptionsC>().maxDistance.ToString()),
+                   msgDistance = (Localizer.Format("#SimpleLogistics_msgRange", distance.ToString(), HighLogic.CurrentGame.Parameters.CustomParams<OptionsC>().maxDistance.ToString())),
                    msgAlt = Localizer.Format("#SimpleLogistics_msgAltitude", altitude.ToString(), HighLogic.CurrentGame.Parameters.CustomParams<OptionsC>().maxAltitude.ToString()),
                    msgSpd = Localizer.Format("#SimpleLogistics_msgGroundSpeed", groundSpeed.ToString(), HighLogic.CurrentGame.Parameters.CustomParams<OptionsC>().maxGroundSpeed.ToString()),
                    msgDistanceAlt = Localizer.Format("#SimpleLogistics_msgDistanceAlt", distance.ToString(), HighLogic.CurrentGame.Parameters.CustomParams<OptionsC>().maxDistance.ToString()),

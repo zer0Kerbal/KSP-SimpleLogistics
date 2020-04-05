@@ -251,6 +251,7 @@ namespace SimpleLogistics
 				{
 					GUILayout.BeginHorizontal ();
 					//if (Layout.Button("0", GUILayout.Width(20)))
+			GUILayout.FlexibleSpace(); 
 					if (GUILayout.Button("0", GUILayout.Width(20)))
 							requestPool[resource.Key] = 0;
 
@@ -266,7 +267,6 @@ namespace SimpleLogistics
 						if (GUILayout.Button(vesselSpareSpace[resource.Key].ToString("0.00")))
 							requestPool[resource.Key] = Math.Min (vesselSpareSpace [resource.Key], resource.Value);
 
-			GUILayout.FlexibleSpace(); 
 					GUILayout.EndHorizontal ();
 				}
 			}
@@ -280,9 +280,9 @@ namespace SimpleLogistics
 			//GUI.skin.button.alignment = TextAnchor.UpperRight;
 			//"Close"
 			//if (Layout.Button(Localizer.Format("#SimpleLogistics_Label7"), Palette.red))
+			GUILayout.FlexibleSpace(); 
 			if (GUILayout.Button("<color=red>X</color>", GUILayout.Width(20))) toolbarControl.SetFalse();
 			//GUI.skin.button.alignment = x;
-			GUILayout.FlexibleSpace(); 
 
 			GUILayout.EndVertical ();
 			GUI.DragWindow ();
