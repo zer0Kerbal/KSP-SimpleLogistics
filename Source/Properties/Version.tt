@@ -83,6 +83,11 @@
 #>
 
 // Automatically generated code. Any changes will be lost!
+ using System.Reflection;
+
+ //[assembly: AssemblyFileVersion("<#= major #>.<#= minor #>.<#= patch #>.<#= build #>")]
+ [assembly: AssemblyVersion("<#= major #>.<#= minor #>.<#= patch #>.<#= build #>")]
+
 namespace <#= PROJECT_NAME #>
 {
     public static class Version
@@ -93,9 +98,9 @@ namespace <#= PROJECT_NAME #>
         public const int build = <#= build #>;
         public const string Number = "<#= major #>.<#= minor #>.<#= patch #>.<#= build #>";
 #if DEBUG
-        public const string Text = Number + " BETA DEBUG";
+        public const string Text = Number + " DEBUG";
 #else
-        public const string Text = Number + " BETA";
+        public const string Text = Number + "";
 #endif
     }
 }

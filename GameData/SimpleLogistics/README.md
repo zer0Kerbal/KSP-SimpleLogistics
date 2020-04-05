@@ -19,10 +19,12 @@ updated: 01 Feb 2020 -->
 ![SimpleLogistics!][IMG:hero:0]  
 ***
 ### Installation Directions:
-- Use CKAN
+- Use CKAN  
+![][image:rel-ckan]
 ### Changelog Summary
-*See [ChangeLog][MOD:changelog] for full details of mod changes*
-***
+- *See [ChangeLog][MOD:changelog] for full details of mod changes*
+### Known Issues
+- *See [Known Issues][MOD:issues] for full details of feature requests, and known issues*
 ### Dependencies
 - [x] [Kerbal Space Program][KSP:website] [![][shield:ksp]][KSP:website] ***may*** work on other versions (YMMV)
 - [x] [Module Manager][thread:mm] 
@@ -83,7 +85,7 @@ License: ![License GPLv3][shield:license] ![][LOGO:gplv3]
 [MOD:contributing]: https://github.com/zer0Kerbal/SimpleLogistics/blob/master/.github/CONTRIBUTING.md
 [MOD:issues]:       https://github.com/zer0Kerbal/SimpleLogistics/issues
 [MOD:wiki]:         https://github.com/zer0Kerbal/SimpleLogistics/
-[MOD:known]:        https://github.com/zer0Kerbal/SimpleLogistics/wiki/Known-Issues
+[MOD:issues]:        https://github.com/zer0Kerbal/SimpleLogistics/wiki/Known-Issues
 [MOD:forum]:        https://forum.kerbalspaceprogram.com/index.php?/topic/191045-*
 [MOD:github:repo]:  https://github.com/zer0Kerbal/SimpleLogistics/
 [MOD:changelog]:    https://raw.githubusercontent.com/zer0Kerbal/SimpleLogistics/master/Changelog.cfg
@@ -94,10 +96,7 @@ License: ![License GPLv3][shield:license] ![][LOGO:gplv3]
 [MOD:original:thread]:  https://forum.kerbalspaceprogram.com/index.php?/topic/152345-*  
 [MOD:original:download]: https://github.com/Real-Gecko/KSP-SimpleLogistics/releases/latest  
 
-<!--- license logo urls -->
-[LOGO:mit]:     https://i.postimg.cc/bvjfsMP5/MIT-17x17.png
 [LOGO:gplv3]:   https://i.postimg.cc/90kCDs7K/gplv3-48x17.png
-[LOGO:ccbysa4]: https://licensebuttons.net/l/by-sa/4.0/80x15.png
 
 [MOD:rel-github]: https://github.com/zer0Kerbal/SimpleLogistics/releases/latest "GitHub"
 [MOD:rel-spacedock]: http://spacedock.info/mod/1889
@@ -138,7 +137,6 @@ License: ![License GPLv3][shield:license] ![][LOGO:gplv3]
 [thread:NUK]:  https://forum.kerbalspaceprogram.com/index.php?/topic/21466-*
 [thread:OHS]:  https://forum.kerbalspaceprogram.com/index.php?/topic/192360-* "Oh Scrap!"
 [thread:SYD]:  https://forum.kerbalspaceprogram.com/index.php?/topic/192360-* "ScrapYard"
-[thread:DRL]: https:// "DRElite (DRL)"
 
 [thread:DPD]:  https://github.com/zer0Kerbal/KGEx/tree/master/GameData/KGEx/DockingPortDescriptions  
 [thread:PPS]:  https://forum.kerbalspaceprogram.com/index.php?/topic/192187-*  
@@ -155,7 +153,14 @@ License: ![License GPLv3][shield:license] ![][LOGO:gplv3]
 [thread:NSSC]: https://forum.kerbalspaceprogram.com/index.php?/topic/191504-* "Not So SimpleConstructon!" 
 [thread:BIO]:  https://forum.kerbalspaceprogram.com/index.php?/topic/191426-* "Biomatic"  
 [thread:BSS]:  http:// "B9 Stock Switches"  
-[thread:HB!]:  http:// "HotBeverages"  
+[thread:HB!]:  http:// "HotBeverages" 
+[thread:AIM]: http:// "LandingAim"  
+[thread:GFC]: http:// "G-Force"
+[thread:JET]: http:// "Jettison"  
+[thread:KBM]: http:// "KaboOom!" 
+[thread:DRL]: https:// "DRElite (DRL)"
+[thread:SIL]: http:// "Stock Inline Lights"  
+[thread:SILP]: http:// "Stock Inline Lights Patches"
 
 [thread:mm]:  http://forum.kerbalspaceprogram.com/index.php?/topic/50533-* "ModuleManager"  
 [thread:mc]:  https://forum.kerbalspaceprogram.com/index.php?/topic/178484-* " "

@@ -34,16 +34,16 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="$(DevDir173)\GameData\000_ClickThroughBlocker\Plugins\ClickThroughBlocker.dll">
+    <Reference Include="$(DevDir19)\GameData\000_ClickThroughBlocker\Plugins\ClickThroughBlocker.dll">
       <Private>False</Private>
     </Reference>
-    <Reference Include="$(DevDir173)\GameData\001_ToolbarControl\Plugins\ToolbarControl.dll">
+    <Reference Include="$(DevDir19)\GameData\001_ToolbarControl\Plugins\ToolbarControl.dll">
       <Private>False</Private>
     </Reference>
-    <Reference Include="$(DevDir173)\KSP_x64_Data\Managed\Assembly-CSharp*.dll">
+    <Reference Include="$(DevDir19)\KSP_x64_Data\Managed\Assembly-CSharp*.dll">
       <Private>False</Private>
     </Reference>
-    <Reference Include="$(DevDir173)\KSP_x64_Data\Managed\UnityEngine*.dll">
+    <Reference Include="$(DevDir19)\KSP_x64_Data\Managed\UnityEngine*.dll">
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -61,13 +61,14 @@
     <None Include=".vs\SimpleLogistics\v16\Server\sqlite3\storage.ide-wal" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logs.cs" />
+    <Compile Include="InSituation.cs" />
     <Compile Include="InstallChecker.cs" />
-    <Compile Include="Log.cs" />
     <Compile Include="LogisticsModule.cs" />
-    <Compile Include="Properties\AssemblyVersion.cs">
+    <Compile Include="Properties\AssemblyFileVersion.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AssemblyVersion.tt</DependentUpon>
+      <DependentUpon>AssemblyFileVersion.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\Version.cs">
       <AutoGen>True</AutoGen>
@@ -76,19 +77,13 @@
     </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="SimpleLogistics.cs" />
-    <Compile Include="RegisterToolbar.cs" />
-    <Compile Include="ToolbarWrapper.cs" />
-    <Compile Include="UIFramework\Core.cs" />
-    <Compile Include="UIFramework\Layout.cs" />
-    <Compile Include="UIFramework\Offsets.cs" />
-    <Compile Include="UIFramework\Palette.cs" />
-    <Compile Include="UIFramework\Styles.cs" />
+    <Compile Include="GUICore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Properties\AssemblyVersion.tt">
+    <Content Include="Properties\AssemblyFileVersion.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>AssemblyVersion.cs</LastGenOutput>
+      <LastGenOutput>AssemblyFileVersion.cs</LastGenOutput>
     </Content>
     <Content Include="Properties\Version.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -98,6 +93,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>
