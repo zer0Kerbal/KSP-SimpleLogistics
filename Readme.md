@@ -1,11 +1,11 @@
-<!-- Readme.md v1.1.2.0
+<!-- Readme.md v1.1.2.5
 SimpleLogistics! (SLR)
 created: 11 Aug 2018
-updated: 01 Feb 2020 -->
+updated: 29 May 2021 -->
 
 ## Download on [SpaceDock][MOD:rel-spacedock] or [Github][MOD:rel-github] or [Curseforge][MOD:rel-curseforge]. Also available on [CKAN][MOD:rel-ckan].  
 
-# SimpleLogistics! (Restocked)  
+# SimpleLogistics! (SLOG!)  
 ## Simple resource sharing among landed vessels.  
 ### Localizations: 🇺🇸 🇪🇸 🇫🇷 🇮🇹 🇧🇷 🇷🇺 🇩🇪 🇨🇳 🇯🇵 🇰🇷 🇳🇴 🇸🇪  
 > SimpleLogistics is a Polyglot! It now speaks twelve languages.  
@@ -83,10 +83,9 @@ Author: [@RealGecko][LINK:realgecko]
 Source: [GitHub][MOD:original:source]  
 License: ![License GPLv3][shield:license] ![][LOGO:gplv3]  
 
-
  *Be Kind: Lithobrake, not jakebrake! Keep your Module Manager up to date*
 
-###### v2.0.3.2 original: 11 Aug 2018 0K updated: 20 Mar 2020 zed'K
+###### v2.0.3.2 original: 11 Aug 2018 0K updated: 30 May 2021 zed'K
 
 <!-- graphical links to downloads -->
 [MOD:license]:      https://github.com/zer0Kerbal/SimpleLogistics/blob/master/LICENSE
