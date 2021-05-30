@@ -31,7 +31,7 @@ updated: 01 Feb 2020 -->
 - [x] [ToolbarController][thread:tbc]  
 - [x] [ClickThroughBlocker][thread:ctb]
 ### Recomends  
-- [x] [Toolbar (Blizzy's)][thread:tbr]  
+- [x] [Toolbar][thread:tbr]  
 ## Suggests
 - [x] [On Demand Fuel Cells {ODFC)}][thread:ODFC]  
 - [x] [Field Training Facility (FTF)][thread:FTF]  
@@ -107,7 +107,7 @@ License: ![License GPLv3][shield:license] ![][LOGO:gplv3]
 [LOGO:gplv3]:   https://i.postimg.cc/90kCDs7K/gplv3-48x17.png
 
 [MOD:rel-github]: https://github.com/zer0Kerbal/SimpleLogistics/releases/latest "GitHub"
-[MOD:rel-spacedock]: http://spacedock.info/mod/1889
+[MOD:rel-spacedock]: http://spacedock.info/mod/2312
 [MOD:rel-curseforge]: https://www.curseforge.com/kerbal/ksp-mods/SimpleLogistics
 [MOD:rel-ckan]: http://forum.kerbalspaceprogram.com/index.php?/topic/90246-*
 
@@ -178,7 +178,7 @@ License: ![License GPLv3][shield:license] ![][LOGO:gplv3]
 [thread:far]: https://forum.kerbalspaceprogram.com/index.php?/topic/179445-* "Ferram Aerospace Research"  
 [thread:tbc]: https://forum.kerbalspaceprogram.com/index.php?/topic/169509-* "ToolbarController"  
 [thread:ctb]: https://forum.kerbalspaceprogram.com/index.php?/topic/170747-* "ClickThroughBlocker"  
-[thread:tbr]: https://forum.kerbalspaceprogram.com/index.php?/topic/161857-* "Blizzy's"  
+[thread:tbr]: https://forum.kerbalspaceprogram.com/index.php?/topic/161857-* "Toolbar"  
 
 [thread:tweakscale]:            https://forum.kerbalspaceprogram.com/index.php?/topic/179030-*
 [thread:communityresourcepack]: http://forum.kerbalspaceprogram.com/index.php?/topic/83007-*
