@@ -1,4 +1,4 @@
-from: @HebruSan (thank you) :![link](https://github.com/HebaruSan/Astrogator/tree/master/assets/lang)
+from: @HebruSan (thank you) ![link](https://github.com/HebaruSan/Astrogator/tree/master/assets/lang)
 GPLv3
 # Translating to your language
 
