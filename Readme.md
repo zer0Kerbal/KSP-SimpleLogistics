@@ -11,7 +11,7 @@ updated: 11 Aug 2021 -->
 
 # SimpleLogistics! (SLOG!)  
 
-#### Adopted by [@zer0Kerbal][LINK:zer0kerbal], originally by [@RealGecko][LINK:realgecko]  
+#### Adopted by [`@zer0Kerbal`][LINK:zer0kerbal], originally by [`@RealGecko`][LINK:realgecko]  
 
 ![Mod Version][MOD:shld:latest] ![KSP version][KSP:shld]  [![License GPLv3][LICENSE:shld]][LICENSE:url] [![GPLv3 Logo][LICENSE:logo]][LICENSE:url]  
 
@@ -47,7 +47,7 @@ See the [README in the Localization folder][LINK:localization] for instructions 
 ***
 
 ### Discussions: 
-*See [Discussions][MOD:disc] or [KSP Forums][MOD:threads] for discussions and news on this mod* 
+*See [Discussions][MOD:disc] or [KSP Forums][MOD:thread] for discussions and news on this mod* 
 
 ***
 
@@ -120,33 +120,31 @@ See the [README in the Localization folder][LINK:localization] for instructions 
 <p><b>*red box below is a link to forum post on how to get support*</b></br>  
 <a href = "https://forum.kerbalspaceprogram.com/index.php?/topic/83212-*">
   <img src = "https://i.postimg.cc/vHP6zmrw/image.png" alt="How to get support"></br></p></a></div>
-
+  
 <p style="border:0.5px solid Tomato; background-color: lightgrey; color: #FF0000; text-align:center">Kerbal Space Program 1.9.1 — Unity 2019.2.2f1 — .NET Framework 4.8
-</p>
+</p>  
+  
+[![][UTUBE:img]][UTUBE:url]  
+  
+  </br>  
+<div><details>  
+  <summary>Embedded Kottabo Youtube Video</summary>  
+    <iframe width="649" height="365" src="https://www.youtube.com/embed/cJjIAE0RoK0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
+</details></div>  
+ </br>  
+   
+#### Credits  
 
-[![][UTUBE:img]][UTUBE:url]
-
-<details>
-  <summary>Embedded Kottabo Youtube Video</summary>
-    <iframe width="649" height="365" src="https://www.youtube.com/embed/cJjIAE0RoK0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</details>
-
-#### Credits
-> [`@MatterBeam`][LINK:matterbeam] for developing this mod
-> [`@RealGecko`][Link:realgecko] for adopting and continuing this mod
-> @linuxgurugamer for the toolbar/clickthroughblocker updates (and other things)!
-> @tinygrox for the localization implementation and the ZN-CH localization!
-> @fitiales for the Spanish (es-es.cfg) localization!
-> @malanok1 for the German(de-de.cg) and Russian (ru.cfg) localization!
-> @Lisias for the Brazilian-Portuguese (br-pt.cfg) localization!
-> @translate.google.com for French, Italian, Japanese, Korean, Swedish, and Norwegian localization (corrections solicited and welcome!)
+> [`@MatterBeam`][LINK:matterbeam] for developing this mod  
+> [`@RealGecko`][Link:realgecko] for adopting and continuing this mod  
+> @linuxgurugamer for the toolbar/clickthroughblocker updates (and other things)!  
+> @tinygrox for the localization implementation and the ZN-CH localization!  
+> @fitiales for the Spanish (es-es.cfg) localization!  
+> @malanok1 for the German(de-de.cg) and Russian (ru.cfg) localization!  
+> @Lisias for the Brazilian-Portuguese (br-pt.cfg) localization!  
+> @translate.google.com for French, Italian, Japanese, Korean, Swedish, and Norwegian   localization (corrections solicited and welcome!)  
 
 ***
-
-<div style="border:0.5px solid Tomato; background-color: lightgrey; color: #FF0000; text-align:center">
-<p><b>*red box below is a link to forum post on how to get support*</b>  
-<a href = "https://forum.kerbalspaceprogram.com/index.php?/topic/83212-*">
-  <img src = "https://i.postimg.cc/vHP6zmrw/image.png" alt="How to get support"></br></p></a></div>
 
 ### Legal Mumbo Jumbo (License)
 
@@ -291,7 +289,7 @@ License: [![License GPLv3][LICENSE:shld]][LICENSE:url] [![][LICENSE:logo]][LICEN
 [thread:crp]: http://forum.kerbalspaceprogram.com/index.php?/topic/83007-* "Community Resource Pack (CRP)"
 
 <!--- statics -->
-[LINK:zer0Kerbal]:     https://forum.kerbalspaceprogram.com/index.php?/profile/190933-zer0kerbal/  "zer0Kerbal (zed'K)"
+[LINK:zer0Kerbal]:     https://forum.kerbalspaceprogram.com/index.php?/profile/190933-zer0kerbal/  "zer0Kerbal (zed'K)"  
 [LINK:realgecko]: https://forum.kerbalspaceprogram.com/index.php?/profile/162682-realgecko/   "RealGecko"
 [LINK:matterbeam]: https://forum.kerbalspaceprogram.com/index.php?/profile/133334-matterbeam/ "MatterBeam"
 [LINK:orig]: https://forum.kerbalspaceprogram.com/index.php?/topic/152345-*
