@@ -34,7 +34,7 @@ updated: 11 Aug 2021 -->
 ***
 
 ### Localizations: 🇺🇸 🇪🇸 🇫🇷 🇮🇹 🇧🇷 🇷🇺 🇩🇪 🇨🇳 🇯🇵 🇰🇷 🇳🇴 🇸🇪  
-And SimpleLogistics is a polyglot! Thiss mod speaks 12 major languages in case of some of your kerbals are picky in this sense.
+And SimpleLogistics is a polyglot! This mod speaks 12 major languages in case of some of your kerbals are picky in this sense.
 > *Additions and corrections solicited and welcome!*  
 
 Languages supported  
