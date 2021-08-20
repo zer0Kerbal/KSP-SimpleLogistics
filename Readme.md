@@ -34,8 +34,19 @@ updated: 11 Aug 2021 -->
 ***
 
 ### Localizations: 🇺🇸 🇪🇸 🇫🇷 🇮🇹 🇧🇷 🇷🇺 🇩🇪 🇨🇳 🇯🇵 🇰🇷 🇳🇴 🇸🇪  
-> SimpleLogistics is a Polyglot! It now twelve languages.  
+And SimpleLogistics is a polyglot! Thiss mod speaks 12 major languages in case of some of your kerbals are picky in this sense.
 > *Additions and corrections solicited and welcome!*  
+
+Languages supported  
+[![Русский](https://github.com/ihsoft/EasyVesselSwitch/raw/master/WikiImages/Russian-small-flag.png)](https://github.com/ihsoft/EasyVesselSwitch/raw/master/WikiImages/Russian-small-flag.png) Русский  
+  
+[![Italiano](https://github.com/ihsoft/EasyVesselSwitch/raw/master/WikiImages/Italian-small-flag.png)](https://github.com/ihsoft/EasyVesselSwitch/raw/master/WikiImages/Italian-small-flag.png) Italiano  
+  
+[![Español](https://github.com/ihsoft/EasyVesselSwitch/raw/master/WikiImages/Spanish-small-flag.png)](https://github.com/ihsoft/EasyVesselSwitch/raw/master/WikiImages/Spanish-small-flag.png) Español  
+  
+[![简体中文](https://github.com/ihsoft/EasyVesselSwitch/raw/master/WikiImages/Chineese-small-flag.png)](https://github.com/ihsoft/EasyVesselSwitch/raw/master/WikiImages/Chineese-small-flag.png) 简体中文  
+  
+[![Français](https://github.com/ihsoft/EasyVesselSwitch/raw/master/WikiImages/French-small-flag.png)](https://github.com/ihsoft/EasyVesselSwitch/raw/master/WikiImages/French-small-flag.png) Français  
 
 See the [README in the Localization folder][LINK:localization] for instructions for adding or improving translations for languages other than English. GitHub push is the best way to contribute.
 
