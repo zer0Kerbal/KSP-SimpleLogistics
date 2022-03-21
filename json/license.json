@@ -4,5 +4,7 @@
  "labelColor": "white",
  "message": "GPLv3",
  "color": "A42E2B",
+ "logoColor": "A42E2B",
+ "namedLogo": "gnu",
  "style": "plastic"
 }
