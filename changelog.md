@@ -37,7 +37,7 @@ updated: 05 Mar 2022
 * #14 - add game settings/difficulty setting (options):
 * #18 - ability to set in part.cfg
 
-## Version 2.0.5.0 - Routine Maintenance 
+## Version 2.0.5.0 - Routine Maintenance
 
 * 11 Aug 2021
 * Released for Kerbal Space Program 1.9.1
