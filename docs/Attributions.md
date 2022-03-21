@@ -44,6 +44,7 @@ updated: 17 Feb 2022
 
 * @linuxgurugamer for the toolbar/clickthroughblocker updates (and other things)!
 * [Blizzy78][LINK:blizzy78] for creating the toolbar!
+
 <ul>
   <li><a href="https://forum.kerbalspaceprogram.com/index.php?/profile/68543-blizzy78/"><img border="0" alt="Blizzy78" src="https://kerbal-forum-uploads.s3.us-west-2.amazonaws.com/profile/photo-68543.png" width="100" height="100" > Blizzy78</a>
   <li><a href="https://forum.kerbalspaceprogram.com/index.php?/profile/70516-captainkipard/"><img border="0" alt="Captain Kipard" src="https://kerbal-forum-uploads.s3.us-west-2.amazonaws.com/monthly_12_2015/itsame.png.3227b08e54fc9e3eaa0c6c2ad8e9ad07.thumb.png.5d3a3eb0344a23048ea58826e47b9781.png" width="100" height="100" > Captain Kipard</a> for the <a href="https://forum.kerbalspaceprogram.com/index.php?/topic/85372-> Mod Development Links Compilation</a> and other tutorials.</li>
