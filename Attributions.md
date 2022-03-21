@@ -22,8 +22,8 @@ updated: 17 Feb 2022
 
 ### Credits
 
-* [`@MatterBeam`][LINK:matterbeam] for developing [SimpleLogistics!][thread:SLOG]
-* [`@RealGecko`][Link:realgecko] for adopting and continuing this mod  
+* [MatterBeam][LINK:matterbeam] for developing [SimpleLogistics!][thread:SLOG]
+* [RealGecko][Link:realgecko] for adopting and continuing this mod  
 * mwerle for maintaining and updating [SimpleLogistics!][thread:SLOG]
 * tinygrox for initial localization implementation and the ZN-CH localizations!
 * Fitiales for the ES-SP localization!
