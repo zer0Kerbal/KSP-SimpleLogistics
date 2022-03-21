@@ -34,8 +34,19 @@ updated: 11 Aug 2021 -->
 ***
 
 ### Localizations: 🇺🇸 🇪🇸 🇫🇷 🇮🇹 🇧🇷 🇷🇺 🇩🇪 🇨🇳 🇯🇵 🇰🇷 🇳🇴 🇸🇪  
-> SimpleLogistics is a Polyglot! It now twelve languages.  
+And SimpleLogistics is a polyglot! This mod speaks 12 major languages in case of some of your kerbals are picky in this sense.
 > *Additions and corrections solicited and welcome!*  
+
+Languages supported  
+[![Русский](https://github.com/ihsoft/EasyVesselSwitch/raw/master/WikiImages/Russian-small-flag.png)](https://github.com/ihsoft/EasyVesselSwitch/raw/master/WikiImages/Russian-small-flag.png) Русский  
+  
+[![Italiano](https://github.com/ihsoft/EasyVesselSwitch/raw/master/WikiImages/Italian-small-flag.png)](https://github.com/ihsoft/EasyVesselSwitch/raw/master/WikiImages/Italian-small-flag.png) Italiano  
+  
+[![Español](https://github.com/ihsoft/EasyVesselSwitch/raw/master/WikiImages/Spanish-small-flag.png)](https://github.com/ihsoft/EasyVesselSwitch/raw/master/WikiImages/Spanish-small-flag.png) Español  
+  
+[![简体中文](https://github.com/ihsoft/EasyVesselSwitch/raw/master/WikiImages/Chineese-small-flag.png)](https://github.com/ihsoft/EasyVesselSwitch/raw/master/WikiImages/Chineese-small-flag.png) 简体中文  
+  
+[![Français](https://github.com/ihsoft/EasyVesselSwitch/raw/master/WikiImages/French-small-flag.png)](https://github.com/ihsoft/EasyVesselSwitch/raw/master/WikiImages/French-small-flag.png) Français  
 
 See the [README in the Localization folder][LINK:localization] for instructions for adding or improving translations for languages other than English. GitHub push is the best way to contribute.
 
@@ -63,9 +74,9 @@ See the [README in the Localization folder][LINK:localization] for instructions 
 
 ### Dependencies
 - [x] [Kerbal Space Program][KSP:url] [![][KSP:shld]][KSP:url]  ***may*** work on other versions (YMMV)  
-- [x]  [Module Manager][thread:mm] 
-- [x]  [ToolbarController][thread:tbc]  
-- [x]  [ClickThroughBlocker][thread:ctb]
+- [x] [Module Manager][thread:mm] 
+- [x] [ToolbarController][thread:tbc]  
+- [x] [ClickThroughBlocker][thread:ctb]
 
 ### Recommends  
 - [x]  [Toolbar][thread:tbr]  
@@ -201,7 +212,6 @@ License: [![License GPLv3][LICENSE:shld]][LICENSE:url] [![][LICENSE:logo]][LICEN
 [LICENSE:orig:logo]: https://licensebuttons.net/i/l/by-nc-sa/transparent/33/66/99/76x22.png "CC BY-NC-SA 4.0"
 [LICENSE:orig:shld]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/zer0Kerbal/TheGoldStandard/master/json/license.json&logo=creativecommons&logoColor=white "CC BY-NC-SA 4.0"
 
-
 [AVC:shld]:     https://img.shields.io/badge/KSP-AVC--supported-brightgreen.svg?style=plastic
 [AVCVLD:shld]:    https://github.com/zer0Kerbal/SimpleLogistics/workflows/Validate%20AVC%20.version%20files/badge.svg
 
@@ -306,17 +316,11 @@ License: [![License GPLv3][LICENSE:shld]][LICENSE:url] [![][LICENSE:logo]][LICEN
 <!-- financial support -->
 [PAYPAL:img]: https://img.shields.io/badge/Buy%20me%20some%20-LFO-00457C?style=for-the-badge&logo=paypal&labelColor=FFDD00 "PayPal"
 [PAYPAL:url]: https://www.paypal.com/donate?hosted_button_id=R9ACWD7VREBCY "PayPal"
-
 [PATREON:img]: https://img.shields.io/badge/Patreon%20-be%20a%20Patron-FF424D?style=for-the-badge&logo=patreon "Patreon"
 [PATREON:url]: https://www.patreon.com/bePatron?u=23390503 "Patreon"
-
 [GSPONS:img]: https://img.shields.io/badge/Github%20-Sponsor-EA4AAA?style=for-the-badge&logo=githubsponsors "Github Sponsors"
 [GSPONS:url]: https://github.com/sponsors/zer0Kerbal "Github Sponsors"
-
 [BMCC:img]: https://img.shields.io/badge/Buy%20Me%20a%20-Snack!-FFDD00?style=for-the-badge&logo=buymeacoffee "Buy Me A Snack"
 [BMCC:url]: https://buymeacoffee.com/zer0Kerbal "Buy Me A Snack"
 
-<!--
-this file: GPLv2
-zer0Kerbal-->
-
+<!-- this file: GPLv2 BY zer0Kerbal -->
