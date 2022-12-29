@@ -7,14 +7,14 @@ using System.Runtime.CompilerServices;
 
 [assembly: KSPAssemblyDependency("ClickThroughBlocker", 1, 0)]
 [assembly: KSPAssemblyDependency("ToolbarController", 1, 0)]
-[assembly: AssemblyTitle ("SimpleLogistics!")]
-[assembly: AssemblyDescription ("SimpleLogistics! (Restocked) for KSP")]
-[assembly: AssemblyConfiguration ("Release")]
-[assembly: AssemblyCompany ("zer0Kerbal")]
-[assembly: AssemblyProduct ("")]
-[assembly: AssemblyCopyright ("RealGecko")]
-[assembly: AssemblyTrademark ("")]
-[assembly: AssemblyCulture ("")]
+[assembly: AssemblyTitle("SimpleLogistics!")]
+[assembly: AssemblyDescription("SimpleLogistics! (SLOG!) for Kerbal Space Program")]
+[assembly: AssemblyConfiguration("Release")]
+[assembly: AssemblyCompany("zer0Kerbal")]
+[assembly: AssemblyProduct("A simple addon for sharing resources between v essels within physics range")]
+[assembly: AssemblyCopyright("2016, 2021 (c) RealGecko, zer0Kerbal")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
 
 // The assembly version has the format "{Major}.{Minor}.{Build}.{Revision}".
 // The form "{Major}.{Minor}.*" will automatically update the build and revision,
