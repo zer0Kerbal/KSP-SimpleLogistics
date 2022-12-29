@@ -13,3 +13,4 @@
 - [Localizations](Localizations.md)
 - [ManualInstallation](ManualInstallation.md)
 - [Why](Why.md)
+- [future](future.md)

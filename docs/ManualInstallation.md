@@ -6,10 +6,10 @@ description: the flat-pack Kiea instructions, written in Kerbalese, unusally pre
 tags: installation,directions,page,kerbal,ksp,zer0Kerbal,zedK
 ---
 
-<!-- ManualInstallation.md v1.1.0.0
+<!-- ManualInstallation.md v1.1.1.0
 SimpleLogistics! (SLOG!)
 created: 01 Oct 2019
-updated: 02 Mar 2022 -->
+updated: 27 Mar 2022 -->
 
 <!-- based upon work by Lisias -->
 
@@ -79,7 +79,7 @@ To install, place the GameData folder inside your Kerbal Space Program folder:
 
 ### Dependencies
 
-* [Module Manager][thread:mm]
+* [Module Manager /L][mm]
 * [ToolbarController][thread:tbc]
 
 [thread:mm]:  https://github.com/net-lisias-ksp/ModuleManager "Module Manager"

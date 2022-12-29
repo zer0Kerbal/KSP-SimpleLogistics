@@ -92,7 +92,7 @@ See the [README in the Localization folder][LINK:localization] for instructions 
 - [x]  [Solar Science (SOLS)][thread:SOLS]  
 - [x]  [Jack-O-Lantern (JACK)][thread:JACK]  
 - [x]  [MoarKerbals(MOAR)][thread:MK]  
-- [x]  [On Demand Fuel Cells {ODFC)}][thread:ODFC]  
+- [x]  [On Demand Fuel Cells (ODFC)}][thread:ODFC]  
 - [x]  [Field Training Facility (FTF)][thread:FTF]  
 - [x]  [Field Training Lab (FTL)][thread:FTL]  
 - [x]  [Docking Port Descriptions(DPD)][thread:DPD]  
