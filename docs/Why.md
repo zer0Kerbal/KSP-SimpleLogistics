@@ -13,7 +13,9 @@ updated: 02 Mar 2022 -->
 
 # SimpleLogistics! (SLOG!)
 
-## Introduction by [`@MatterBeam`][LINK:matterbeam]
+[Home](/index.md)
+
+## Introduction by [`@MatterBeam`][matterbeam]
 
 > Lately my Munar base turned into a mess of eight different vessels connected together with KAS winches.
 >
@@ -29,6 +31,6 @@ updated: 02 Mar 2022 -->
 
 ![Munar Base](https://i.imgur.com/PA05bBw.png)
 
-[LINK:matterbeam]: https://forum.kerbalspaceprogram.com/index.php?/profile/133334-matterbeam/ "MatterBeam"
+[matterbeam]: https://forum.kerbalspaceprogram.com/index.php?/profile/133334-*/ "MatterBeam"
 
 <!-- this file CC BY-NC-ND 3.0 Unported by zer0Kerbal -->
