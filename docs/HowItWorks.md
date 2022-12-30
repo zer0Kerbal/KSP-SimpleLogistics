@@ -7,9 +7,18 @@ tags: installation,directions,page,kerbal,ksp,zer0Kerbal,zedK
 ---
 
 <!-- HowItWorks.md v1.1.0.0
-SimpleLogistics! (SLOG!)
+SimpleLogistics! (SLOG)
 created: 01 Oct 2019
 updated: 02 Mar 2022 -->
+
+<img src = "https://i.postimg.cc/vBLmKmG5/Screen-Msg-New.png" alt="New Skin">
+<img src = "https://i.postimg.cc/XNQ2M1FT/Skin-U2-0-4-0.png" alt="New Skin">
+<img src = "https://i.postimg.cc/vBLmKmG5/Screen-Msg-New.png" alt="New Situations">
+
+[HERO:0]: https://i.postimg.cc/GmZ77BYt/Settings2-0-4-0.png "New Features"
+[HERO:1]: https://i.postimg.cc/nrRTvMpH/Skin-A2-0-4-0.png "New Skin"
+[HERO:2]: https://i.postimg.cc/XNQ2M1FT/Skin-U2-0-4-0.png "New Skin"
+[HERO:3]: https://i.postimg.cc/vBLmKmG5/Screen-Msg-New.png "New Situations"
 
 # How it works
 
@@ -37,3 +46,5 @@ updated: 02 Mar 2022 -->
 [thread:tbc]: https://forum.kerbalspaceprogram.com/index.php?/topic/169509-* "ToolbarController"
 
 <!-- this file CC BY-NC-ND 3.0 Unported by zer0Kerbal -->
+
+![img](https://spacedock.info/content/RealGecko_4471/SimpleLogistics/SimpleLogistics-1479979364.054124.png)
