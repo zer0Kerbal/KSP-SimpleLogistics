@@ -1,14 +1,14 @@
 ﻿# Changelog  
   
-| modName    | SimpleLogistics! (SLOG)                                          |
-| ---------- | ---------------------------------------------------------------- |
-| license    | GPL-3.0                                                          |
-| author     | Real-Gecko, mwerle and zer0Kerbal                                |
-| forum      | (https://forum.kerbalspaceprogram.com/index.php?/topic/191045-*) |
-| github     | (https://github.com/zer0Kerbal/zer0Kerbal/SimpleLogistics)       |
-| curseforge | (https://www.curseforge.com/kerbal/ksp-mods/SimpleLogistics)     |
-| spacedock  | (https://spacedock.info/mod/1079)                                |
-| ckan       | SimpleLogistics                                                  |
+| modName    | SimpleLogistics! (SLOG)                                           |
+| ---------- | ----------------------------------------------------------------- |
+| license    | GPLv3                                                             |
+| author     | Real-Gecko and zer0Kerbal                                         |
+| forum      | (https://forum.kerbalspaceprogram.com/index.php?/topic/191045-*/) |
+| github     | (https://github.com/zer0Kerbal/SimpleLogistics)                   |
+| curseforge | (https://www.curseforge.com/kerbal/ksp-mods/SimpleLogistics)      |
+| spacedock  | (https://spacedock.info/mod/1079)                                 |
+| ckan       | SimpleLogistics                                                   |
 
 ## Version 2.0.5.0 - `<Routine Maintenance>` edition
 
