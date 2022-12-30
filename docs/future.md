@@ -8,7 +8,7 @@ tags: thank-you,directions,page,kerbal,ksp,zer0Kerbal,zedK
 
 <!--
 Future.md v1.0.3.0
-SimpleLogistics! (SLOG!)
+SimpleLogistics! (SLOG)
 created: 01 Feb 2022
 updated: 17 Feb 2022
 -->
