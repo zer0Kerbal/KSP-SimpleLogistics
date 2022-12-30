@@ -14,7 +14,7 @@ updated: 04 Oct 2022 -->
 
 # SimpleLogistics! (SLOG)
 
-An add-on for sharing resources between vessels within physics range.
+An add-on for simple resources sharing between vessels within physics range.
 
 
 
