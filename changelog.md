@@ -15,19 +15,26 @@
 * 11 Aug 2021
 * Released for Kerbal Space Program 1.9.1
 
-### Patch Linting and Maintenance
+### Code 2.0.5.0
+
+* <SimpleLogistics.dll> 2.0.4.0
+* Compiled for
+  * KSP 1.9.1
+  * .NET 4.8
+  * C# 8.0
 
 ### Updated 2.0.5.0
 
-* Corrections
-  * `:AFTER[SquadExpansion,SimpleLogistics]` -> `:AFTER[SquadExpansion]`
-  * removed [ModuleSolarPanel] from [DeployedSoloarPanel]
-  * adjusted [LogisticsModule] in [DeployedRTG] to now include IsActive = True
-  * corrected isActive to IsActive
-* Add
-  * [ModuleGenerator] to  [DeployedSoloarPanel]
-  * [IsActive = False] to [CommandLogistics.cfg] patches
-* Remove
+* Patch Linting and Maintenance
+  * Corrections
+    * `:AFTER[SquadExpansion,SimpleLogistics]` -> `:AFTER[SquadExpansion]`
+    * removed [ModuleSolarPanel] from [DeployedSoloarPanel]
+    * adjusted [LogisticsModule] in [DeployedRTG] to now include IsActive = True
+    * corrected isActive to IsActive
+  * Add
+    * [ModuleGenerator] to  [DeployedSoloarPanel]
+    * [IsActive = False] to [CommandLogistics.cfg] patches
+  * Remove
 * duplicate patch [Lights.cfg] from [KAS-PortPylonPw	r.cfg]
 
 ### Backstage 2.0.5.0
