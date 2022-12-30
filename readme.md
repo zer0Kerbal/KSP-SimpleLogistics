@@ -12,7 +12,7 @@ updated: 04 Oct 2022 -->
 ![Code][CODE:shd]
 
 
-# SimpleLogistics! (SLOG)  
+# SimpleLogistics! (SLOG)
 
 An add-on for sharing resources between vessels within physics range.
 
@@ -51,7 +51,7 @@ adopted with *express* permission and brought to you by *KerbSimpleCo*
 >* Have a request? Glad to have them, kindly submit through [GitHub][MOD:issue].
 >* Translations: See the [README in the Localization folder][lreadme] or the [Quickstart Guide][qstart] for instructions for adding or improving translations. [GitHub][GitHub:url] push is the best way to contribute. *Additions and corrections welcome!*
 
-### Localizations: 🇺🇸 🇪🇸 🇫🇷 🇮🇹 🇧🇷 🇷🇺 🇩🇪 🇨🇳 🇯🇵 🇰🇷 🇳🇴 🇸🇪  
+### Localizations: 🇺🇸 🇪🇸 🇫🇷 🇮🇹 🇧🇷 🇷🇺 🇩🇪 🇨🇳 🇯🇵 🇰🇷 🇳🇴 🇸🇪
 
 SimpleLogistics! is a polyglot and speaks 12 major languages!
 
@@ -74,7 +74,7 @@ Just in case of some of your kerbals are picky (in this sense)!
 ### Installation Directions [^1]
 
 ***Use***
-  CurseForge/OverWolf App (currently does not install dependencies)  
+  CurseForge/OverWolf App (currently does not install dependencies)
 
   <a href="https://download.curseforge.com/"> <img src="https://www.overwolf.com/brand-guidelines/img/logo2.svg" alt="CurseForge/OverWolf App" width="15%" height="15%"></a>
 
@@ -87,52 +87,43 @@ or [![CKAN][ckan:img]][ckan:url]
 * Either [^3]
   * [Module Manager /L][mml]
   * [Module Manager][mm]
+* [Toolbar Controller][tbc]
+* ~~[Click Through Blocker][ctb]~~ (not required >= v2.0.6.0)
 * [Kerbal Space Program][KSP:url] [![Kerbal Space Program][KSP:shd]][KSP:url] [^2]
 
-* [ToolbarController][tbc]  
-* [ClickThroughBlocker][ctb]
+### Recommends
 
-### Recommends  
-
-* [Toolbar][tbr]
+* [Blizzy's Toolbar (tool)][tool]
 
 ### Suggests
 
-* [Komplexity (KPLX)][KPLX]  
-* [Keridian Dynamics Vessel Assembly (KDVA)][KDVA]  
-* [KaboOom! (BOOM)][BOOM] another way to not go to space today  
-* [The Gold Standard! (GOLD)][GOLD]  
-* [Stock Inline Lights (SIL)][SIL]  
-* [Mini Sample Return Capsule (MSRC)][MSRC] 
-* [Pteron (MSRV)][MSRV] 
-* [Solar Science (SOLS)][SOLS]  
-* [Jack-O-Lantern (JACK)][JACK]  
-* [MoarKerbals(MOAR)][MK]  
-* [On Demand Fuel Cells (ODFC)}][ODFC]  
-* [Field Training Facility (FTF)][FTF]  
-* [Field Training Lab (FTL)][FTL]  
-* [Docking Port Descriptions(DPD)][DPD]  
-* [PicoPort Shielded (PPS)][PPS]  
-* [Transparent Command Pods) (TCP)][TCP]  
-* [Stork Delivery System (SDS)][SDS]
-* [Biomatic (BIO)][BIO]
-* [B9 Stock Switches (B9S][B9S]
-* [Oh Scrap!][OHS]
-* [ScrapYard][SYD]
-* [DaMichel's AeroRadial (DAR)][DAR]  
-* [DaMichel's CargoBays (DCB)][DCB]  
-* [DaMichel's Fuselage (DMF)][DMF]  
-* [DaMichel's Spherical Tanks (DST)][DST]  
-* [Stork Delivery System (SDS)][SDS]  
-* [SimpleConstructon! (SCON!)][SCON!]  
-* [Not So SimpleConstructon! (NSSC)][NSSC]  
-* [Simple Cargo Solutions (SCS)][SCS]  
+* Other addons by [zer0Kerbal][zer0Kerbal]
+  * [Biomatic (BIO)][BIO]
+  * [Field Training Facility (FTF)][FTF]
+  * [Field Training Lab (FTL)][FTL]
+  * [Kaboom! (BOOM)][BOOM] another way to not go to space today
+  * [Keridian Dynamics Vessel Assembly (KDVA)][KDVA]
+  * [Komplexity (KPLX)][KPLX]
+  * [MoarKerbals(MOAR)][MK]
+  * [Not So SimpleConstructon! (NSSC)][NSSC]
+  * [OhScrap!][OHS]
+  * [On Demand Fuel Cells (ODFC)][ODFC]
+  * [Papa Kerballini's Pizza (PIZZA)][PIZZA]
+  * [ScrapYard][SYD]
+  * [SimpleConstructon! (SCON!)][SCON]
+  * [SimpleLife! (LIFE)][LIFE]
+  * [Solar Science (SOL)][SOL]
+  * [The Gold Standard! (GOLD)][GOLD]
+  * [Transparent Command Pods) (TCP)][TCP]
 
 ### Supports
 
-* [Toolbar][tbr]
-* [On Demand Fuel Cells (ODFC)][ODFC]
 * [GPO (Goo Pumps & Oils') Speed Pump (GPO)][GPO]
+* [On Demand Fuel Cells (ODFC)][ODFC]
+* [Blizzy's Toolbar (tool)][tool]
+* [TweakScale (twk)][twk]
+* [B9 Part Switch (B9PS)][b9ps]
+* [Community Resource Pack (CRP)][crp]
 
 ### Conflicts
 
@@ -154,22 +145,22 @@ or [![CKAN][ckan:img]][ckan:url]
 >* [`RealGecko`][realgecko] for developing this glorious addon!
 >* [Usgiyi][usgiyi] for the 1.7.2 recompile
 >* [Miracle Magician][miraclemagician] for the 1.7.2 recompile
->* [linuxgurugamer][linuxgurugamer] for the toolbar/clickthroughblocker updates (and other things)!  
-
+>* [linuxgurugamer][linuxgurugamer] for the toolbar/clickthroughblocker updates (and other things)! 
+>* see [Attributions][MOD:attr] for more
 
 ### Legal Mumbo Jumbo (License *provenance*)
 
 #### Current (1) - [`zer0Kerbal`][zer0Kerbal]
 
-> Forum: [Thread][MOD:forum] - Source: [GitHub][GITHUB:url]  
+> Forum: [Thread][MOD:forum] - Source: [GitHub][GITHUB:url] 
 > License: [![License][LIC:shd]][LIC:url] ![License][LIC:log]
 >
 > ##### Disclaimer(s)
 >
-> ***All bundled mods are distributed under their own licenses***  
+> ***All bundled mods are distributed under their own licenses***
 > ***All assets, including but not limited to: animations, models, sounds and textures are distributed under their own licenses***
 
-##### see [Notices.md][MOD:notic] for more *legal Mumbo Jumbo*
+##### see [Notices][MOD:notic] for more *legal Mumbo Jumbo*
 
 #### Original (0) - Author: [`RealGecko`][realgecko]
 
@@ -218,7 +209,7 @@ or [![CKAN][ckan:img]][ckan:url]
 
 <!--- CKAN -->
 [ckan:img]: https://i.postimg.cc/x8XSVg4R/sj507JC.png "CKAN"
-[ckan:url]: http://forum.kerbalspaceprogram.com/index.php?/topic/197082-*/ "CKAN"
+[ckan:url]: https://forum.kerbalspaceprogram.com/index.php?/topic/197082-*/ "CKAN"
 [ckan:shd]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/zer0Kerbal/SimpleLogistics/master/json/ckan.json "CKAN"
 
 <!--- release links -->
@@ -228,7 +219,7 @@ or [![CKAN][ckan:img]][ckan:url]
 [GITHUB:url]: https://github.com/zer0Kerbal/SimpleLogistics/ "GitHub"
 [GITHUB:shd]: https://img.shields.io/badge/Github-Link-CCFF00.svg?labelColor=181717&style=plastic&logo=github "GitHub"
 
-[SPCDCK:url]: http://spacedock.info/mod/1079 "SpaceDock"
+[SPCDCK:url]: https://spacedock.info/mod/1079 "SpaceDock"
 [SPCDCK:shd]:  https://img.shields.io/badge/SpaceDock-Link-CCFF00.svg?labelColor=181717&style=plastic&logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA1MDAgNTAwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MDAgNTAwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGw6IzFBMUExQTt9Cgkuc3Qxe2ZpbGw6IzA1Nzg5Mzt9Cgkuc3Qye2ZpbGw6IzA3QUNEMjt9Cjwvc3R5bGU+CjxwYXRoIGlkPSJYTUxJRF8xXyIgY2xhc3M9InN0MCIgZD0iTTQwMCwwLjZIMTAwYy01NSwwLTEwMCw0NS0xMDAsMTAwVjQwMGMwLDU1LDQ1LDEwMCwxMDAsMTAwaDMwMGM1NSwwLDEwMC00NSwxMDAtMTAwVjEwMC42CglDNTAwLDQ1LjYsNDU1LDAuNiw0MDAsMC42eiIvPgo8ZyBpZD0iWE1MSURfNl8iPgoJPGcgaWQ9IlhNTElEXzlfIj4KCQk8cGF0aCBpZD0iWE1MSURfMTdfIiBjbGFzcz0ic3QxIiBkPSJNMTgzLjMsMTY1LjljNi40LTMuNiwxNi45LTMuNiwyMy4zLDBMNDY3LjQsMzE0YzYuNCwzLjYsNi40LDkuNiwwLDEzLjJMMjA2LjYsNDc0LjQKCQkJYy02LjQsMy42LTE3LjcsNi42LTI1LDYuNmgtNDQuOGMtNy40LDAtOC4xLTMtMS43LTYuNmwyNjEtMTQ3LjJjNi40LTMuNiw2LjQtOS42LDAtMTMuMkwxNzEsMTg2Yy02LjQtMy42LTYuNC05LjYsMC0xMy4yCgkJCUwxODMuMywxNjUuOXoiLz4KCTwvZz4KCTxnIGlkPSJYTUxJRF84XyI+CgkJPHBhdGggaWQ9IlhNTElEXzE2XyIgY2xhc3M9InN0MiIgZD0iTTMxOC44LDE5Yy03LjQsMC0xOC42LDIuOC0yNSw2LjRMMzMsMTczLjRjLTYuNCwzLjYtNi40LDkuNSwwLDEzLjFsMjYwLjcsMTQ3LjEKCQkJYzYuNCwzLjYsMTYuOSwzLjYsMjMuMywwbDEyLjMtN2M2LjQtMy42LDYuNC05LjUsMC0xMy4ybC0yMjUuMS0xMjdjLTYuNC0zLjYtNi40LTkuNSwwLTEzLjJMMzY1LjYsMjUuNGM2LjQtMy42LDUuNi02LjQtMS43LTYuNAoJCQlIMzE4Ljh6Ii8+Cgk8L2c+CjwvZz4KPC9zdmc+Cg==  "SpaceDock"
 
 <!-- Kerbal Space Program -->
@@ -236,78 +227,32 @@ or [![CKAN][ckan:img]][ckan:url]
 [KSP:shd]: https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/zer0Kerbal/SimpleLogistics/master/json/ksp.json&logo=data:image/webp;base64,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 "Kerbal Space Program"
 
 <!-- links to add-ons/mods -->
-[DPD]: https://github.com/zer0Kerbal/KGEx/tree/master/GameData/KGEx/DockingPortDescriptions/ "Docking Port Descriptions"
-[SCS]: https://github.com/zer0Kerbal/SimpleCargo "Simple Cargo Solutions (SCS)"
-
-
 [BIO]: https://forum.kerbalspaceprogram.com/index.php?/topic/191426-*/ "Biomatic (BIO)"
+[BOOM]: https://forum.kerbalspaceprogram.com/index.php?/topic/192938-*/ "Kaboom! (BOOM)"
 [FTF]: https://forum.kerbalspaceprogram.com/index.php?/topic/188841-*/ "Field Training Facility (FTF)"
 [FTL]: https://forum.kerbalspaceprogram.com/index.php?/topic/188841-*/ "Field Training Lab (FTL)"
+[GOLD]: https://forum.kerbalspaceprogram.com/index.php?/topic/203990-*/ "The Gold Standard! (GOLD)"
 [GPO]: https://forum.kerbalspaceprogram.com/index.php?/topic/207732-*/ "GPO SpeedPump (GPO)"
-[BOOM]: https://forum.kerbalspaceprogram.com/index.php?/topic/192938-*/ "Kaboom! (BOOM)"
+[KDVA]: https://forum.kerbalspaceprogram.com/index.php?/topic/202945-*/ "Keridian Dynamics Vessel Assembly (KDVA)"
+[KPLX]: https://forum.kerbalspaceprogram.com/index.php?/topic/202749-*/ "Komplexity (KMPX)"
+[LIFE]: https://forum.kerbalspaceprogram.com/index.php?/topic/191526-*/ "SimpleLife! (LIFE)"
+[MK]: https://forum.kerbalspaceprogram.com/index.php?/topic/191525-*/ "MoarKerbals (MOAR)"
+[NSSC]: https://forum.kerbalspaceprogram.com/index.php?/topic/191504-*/ "Not So SimpleConstructon! (NSSC)"
 [ODFC]: https://forum.kerbalspaceprogram.com/index.php?/topic/187625-*/ "On Demand Fuel Cells (ODFC)"
+[OHS]: https://forum.kerbalspaceprogram.com/index.php?/topic/192360-*/ "OhScrap! (OHS)"
 [PIZZA]: https://forum.kerbalspaceprogram.com/index.php?/topic/209577-*/ "Papa Kerballini's Pizza (PIZZA)"
-
-[ODFC]: https://forum.kerbalspaceprogram.com/index.php?/topic/187625-*/ "On Demand Fuel Cells"
-[FTF]: https://forum.kerbalspaceprogram.com/index.php?/topic/188841-*/ "Field Training Facility"
-[FTL]: https://forum.kerbalspaceprogram.com/index.php?/topic/188841-*/ "Field Training Lab"
-[MHH]: https://forum.kerbalspaceprogram.com/index.php?/topic/188246-*/ "More Hitchhikers"
-[TCP]: https://forum.kerbalspaceprogram.com/index.php?/topic/187495-*/ "Transparent Command Pods"
-[NUK]: https://forum.kerbalspaceprogram.com/index.php?/topic/21466-*/ "Nuke's Tiny Parts"  
-[OHS]: https://forum.kerbalspaceprogram.com/index.php?/topic/192360-*/ "Oh Scrap!"
-[SYD]: https://forum.kerbalspaceprogram.com/index.php?/topic/192360-*/ "ScrapYard"
-[PPS]: https://forum.kerbalspaceprogram.com/index.php?/topic/192187-*/ "Shielded PicoPort"
-[DST]: https://forum.kerbalspaceprogram.com/index.php?/topic/191719-*/ "DaMichel's Spherical Tanks"
-[DMF]: https://forum.kerbalspaceprogram.com/index.php?/topic/191719-*/ "DaMichel's Fuselage"
-[DAR]: https://forum.kerbalspaceprogram.com/index.php?/topic/191719-*/ "DaMichel's AeroRadial"
-[DCB]: https://forum.kerbalspaceprogram.com/index.php?/topic/191719-*/ "DaMichel's CargoBays"
-[SDS]: https://forum.kerbalspaceprogram.com/index.php?/topic/191719-*/ "Stork Delivery System (SDS)"
-[SCON]: https://forum.kerbalspaceprogram.com/index.php?/topic/191424-*/ "SimpleConstructon!"
-[SLOG]: https://forum.kerbalspaceprogram.com/index.php?/topic/191045-*/ "SimpleLogistics!"
-[SLIF]: https://forum.kerbalspaceprogram.com/index.php?/topic/191526-*/ "SimpleLife!"
-[NSSC]: https://forum.kerbalspaceprogram.com/index.php?/topic/191504-* "Not So SimpleConstructon!"
-[BIO]: https://forum.kerbalspaceprogram.com/index.php?/topic/191426-*/ "Biomatic"
-[KGX]: https://forum.kerbalspaceprogram.com/index.php?/topic/192696-*/ "KerGuise Experimental Engineering"
-[B9S]: https://forum.kerbalspaceprogram.com/index.php?/topic/190870-*/ "B9 Stock Switches"
-
-
-[BOOM]: https://forum.kerbalspaceprogram.com/index.php?/topic/192938-*/ "KaboOom!"
-[GOLD]: https://forum.kerbalspaceprogram.com/index.php?/topic/203990-*/ "[The Gold Standard! (GOLD)"
-[JACK]: https://forum.kerbalspaceprogram.com/index.php?/topic/189466-*/ "Jack-O'-Lantern"
-[KDVA]: https://forum.kerbalspaceprogram.com/index.php?/topic/202945-*/ "[Keridian Dynamics Vessel Assembly (KDVA)]"  
-[KPLX]: https://forum.kerbalspaceprogram.com/index.php?/topic/202749-*/ "Komplexity (KMPX)"  
-[MSRC]: https://forum.kerbalspaceprogram.com/index.php?/topic/204186-*/ "Mini Sample Return Capsule"
-[MSRV]: https://forum.kerbalspaceprogram.com/index.php?/topic/192742-*/ "Pteron (MSRV)"
-[SILP]: https://forum.kerbalspaceprogram.com/index.php?/topic/193051-*/ "Stock Inline Lights Patches"
-[SOLS]: https://forum.kerbalspaceprogram.com/index.php?/topic/192489-*/ "Solar Science (SOLS)"
-[JET]: https://forum.kerbalspaceprogram.com/index.php?/topic/138441-*/ "Jettison"
-[SIL]: https://forum.kerbalspaceprogram.com/index.php?/topic/193050-*/ "Stock Inline Lights"
-[MK]: https://forum.kerbalspaceprogram.com/index.php?/topic/191525-*/ "MoarKerbals"
-
+[SCON]: https://forum.kerbalspaceprogram.com/index.php?/topic/191424-*/ "SimpleConstructon! (SCON)"
+[SOL]: https://forum.kerbalspaceprogram.com/index.php?/topic/192489-*/ "Solar Science (SOL)"
+[SYD]: https://forum.kerbalspaceprogram.com/index.php?/topic/192360-*/ "ScrapYard (SYD)"
+[TCP]: https://forum.kerbalspaceprogram.com/index.php?/topic/187495-*/ "Transparent Command Pods (TCP)"
 
 [b9ps]: https://forum.kerbalspaceprogram.com/index.php?/topic/140541-*/ "B9 Part Switch"
-[crp]: http://forum.kerbalspaceprogram.com/index.php?/topic/83007-*/ "Community Resource Pack (CRP)"
-
-[ctb]: https://forum.kerbalspaceprogram.com/index.php?/topic/170747-*/ "ClickThroughBlocker"
-[far]: https://forum.kerbalspaceprogram.com/index.php?/topic/179445-*/ "Ferram Aerospace Research"
-[ifsc]: http://forum.kerbalspaceprogram.com/index.php?/topic/106243-*/ "Interstellar Fuel Switch (Core)"
-[kas]: http://forum.kerbalspaceprogram.com/index.php?/topic/142594-*/ "Kerbal Attachment System"
-[kct]: https://forum.kerbalspaceprogram.com/index.php?/topic/182877-*/ "Kerbal Construction Time"
-[kis]: http://forum.kerbalspaceprogram.com/index.php?/topic/149848-*/ "Kerbal Inventory System"
-[kjr]: https://forum.kerbalspaceprogram.com/index.php?/topic/184206-*/ "Kerbal Joint Reinforcement"
-[kspie]: https://forum.kerbalspaceprogram.com/index.php?/topic/172026-*/ "KSP Interstellar Extended (KSPIE)"
-[kurs]: https://github.com/linuxgurugamer/DockingCam "KURS style docking camera"
-[mas]:  https://forum.kerbalspaceprogram.com/index.php?/topic/160856-*/ "MOARdV's Avionics System"
-[mc]: https://forum.kerbalspaceprogram.com/index.php?/topic/178484-*/ " "
+[crp]: https://forum.kerbalspaceprogram.com/index.php?/topic/83007-*/ "Community Resource Pack (CRP)"
 [mm]: https://forum.kerbalspaceprogram.com/index.php?/topic/50533-*/ "Module Manager"
 [mml]: https://github.com/net-lisias-ksp/ModuleManager "Module Manager /L"
-[restock]: https://forum.kerbalspaceprogram.com/index.php?/topic/182679-*/ "Restock"
-[rpm]: https://forum.kerbalspaceprogram.com/index.php?/topic/105821-*/ "Raster Prop Monitor"
-[sr]: https://forum.kerbalspaceprogram.com/index.php?/topic/179306-*/ "StageRecovery"
-
-[tbc]: https://forum.kerbalspaceprogram.com/index.php?/topic/169509-*/ "ToolbarController"
-[tbr]: https://forum.kerbalspaceprogram.com/index.php?/topic/161857-*/ "Toolbar"
-[twk]: https://forum.kerbalspaceprogram.com/index.php?/topic/179030-*/ "TweakScale"
+[tbc]: https://forum.kerbalspaceprogram.com/index.php?/topic/169509-*/ "Toolbar Controller"
+[tool]: https://forum.kerbalspaceprogram.com/index.php?/topic/161857-*/ "Blizzy's Toolbar (tool)"
+[twk]: https://forum.kerbalspaceprogram.com/index.php?/topic/179030-*/ "TweakScale (twk)"
 
 <!--- statics -->
 [usgiyi]: https://forum.kerbalspaceprogram.com/index.php?/profile/114101-*/ "Usgiyi"
