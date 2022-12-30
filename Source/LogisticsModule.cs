@@ -13,10 +13,10 @@ namespace SimpleLogistics
             groupDisplayName = "SimpleLogistics! v " + Version.SText, groupStartCollapsed = true)]
         public bool _isActive = false;
 
-		[SerializeField]
+        [SerializeField]
         public bool IsActive { get { return _isActive; } }
 
-		public void Set(bool status)
+        public void Set(bool status)
         { _isActive = status; }
 
 		[KSPEvent(guiActive = true, guiActiveEditor = true, guiName = "#SLOG-Module-PluggedNet", groupName = "SimpleLogistics")] //Plug into Network
@@ -26,11 +26,11 @@ namespace SimpleLogistics
         public override string ToString()
         { return _isActive ? "false" : "true"; }
 
-#region Var Const Enums
+        #region Var Const Enums
         /// <summary>Module information shown in editors</summary>
         private string info = string.Empty;
 
-#endregion
+        #endregion
         public override string GetInfo()
         {
             //? this is what is shown in the editor
@@ -44,11 +44,11 @@ namespace SimpleLogistics
             }
             return info;
         }
-#region On Event
-        public override void OnStart(PartModule.StartState state) 
+        #region On Event
+        public override void OnStart(PartModule.StartState state)
         {
             Logs.dbg("On Start " + state.ToString());
-		}
+        }
 
         // LGG
         public new void Load(ConfigNode node)
@@ -67,6 +67,6 @@ namespace SimpleLogistics
             node.AddValue("isActive", _isActive);
             base.Save(node); // LGG
         }
-#endregion
+        #endregion
     }
 }
