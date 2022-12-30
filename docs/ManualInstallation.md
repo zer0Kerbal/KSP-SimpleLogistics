@@ -7,13 +7,13 @@ tags: installation,directions,page,kerbal,ksp,zer0Kerbal,zedK
 ---
 
 <!-- ManualInstallation.md v1.1.1.0
-SimpleLogistics! (SLOG!)
+SimpleLogistics! (SLOG)
 created: 01 Oct 2019
 updated: 27 Mar 2022 -->
 
 <!-- based upon work by Lisias -->
 
-# SimpleLogistics! (SLOG!)
+# SimpleLogistics! (SLOG)
 
 A SimpleCo add-on for sharing resources between vessels within physics range for Kerbal Space Program.
 
