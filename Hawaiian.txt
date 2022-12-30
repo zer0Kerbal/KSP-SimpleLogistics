@@ -1,0 +1,19 @@
+Localization 
+{
+	Hawaiian 
+	{
+		#SLOG-Module-Plugged = Hoʻokomo ʻia?
+		#SLOG-Module-PluggedNet = Hoʻokomo i ka Pūnaewele
+		#SLOG-Module-Getinfo = Palapala ʻo Logistics no ka hoʻomohala ʻokoʻa ʻana i nā kumuwaiwai maʻalahi.
+		#SLOG-WindowTitle = Pūnaewele Pūnaewele
+		# SimpleLogistics_Label1 = Vessel o kēia manawa
+		# Mālama_Akolohua_Label2 = Hoʻopili
+		# SimpleLogistics_Label3 = Hoʻopili ʻole ʻia
+		# KōkuhiWaʻikahi_Label4 = Palapala Hoʻoilina
+		# KōkuhiWaʻikahi_Label5 = Lā Waiwai:
+		# SimpleLogistics_Label6 = Pono i nā kumuwaiwai
+		# MākouNiʻalalapa_Label7 = Palani
+		# SimpleLogistics_msg1 = Pono e pae ʻia e hoʻohana i nā loiloi
+		# SimpleLogistics_msg2 = Pono e pae ʻia e hoʻohana i nā loiloi
+	 }
+}
