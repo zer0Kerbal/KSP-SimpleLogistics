@@ -40,12 +40,12 @@ namespace SimpleLogistics
 
             string msgSit = SituationEligible(vessel),
                    msgCntr = ControlEligible(vessel),
-                   msgDistance = (Localizer.Format("#SimpleLogistics_msgRange", distance.ToString(), HighLogic.CurrentGame.Parameters.CustomParams<OptionsC>().maxDistance.ToString())),
-                   msgAlt = Localizer.Format("#SimpleLogistics_msgAltitude", altitude.ToString(), HighLogic.CurrentGame.Parameters.CustomParams<OptionsC>().maxAltitude.ToString()),
-                   msgSpd = Localizer.Format("#SimpleLogistics_msgGroundSpeed", groundSpeed.ToString(), HighLogic.CurrentGame.Parameters.CustomParams<OptionsC>().maxGroundSpeed.ToString()),
-                   msgDistanceAlt = Localizer.Format("#SimpleLogistics_msgDistanceAlt", distance.ToString(), HighLogic.CurrentGame.Parameters.CustomParams<OptionsC>().maxDistance.ToString()),
-                   msgAltAlt = Localizer.Format("#SimpleLogistics_msgAltitudeAlt", altitude.ToString(), HighLogic.CurrentGame.Parameters.CustomParams<OptionsC>().maxAltitude.ToString()),
-                   msgSpdAlt = Localizer.Format("#SimpleLogistics_msgGroundspeedAlt", groundSpeed.ToString(), HighLogic.CurrentGame.Parameters.CustomParams<OptionsC>().maxGroundSpeed.ToString()),
+                   msgDistance = (Localizer.Format("#SLOG-msgRange", distance.ToString(), HighLogic.CurrentGame.Parameters.CustomParams<OptionsC>().maxDistance.ToString())),
+                   msgAlt = Localizer.Format("#SLOG-msgAltitude", altitude.ToString(), HighLogic.CurrentGame.Parameters.CustomParams<OptionsC>().maxAltitude.ToString()),
+                   msgSpd = Localizer.Format("#SLOG-msgGroundSpeed", groundSpeed.ToString(), HighLogic.CurrentGame.Parameters.CustomParams<OptionsC>().maxGroundSpeed.ToString()),
+                   msgDistanceAlt = Localizer.Format("#SLOG-msgDistanceAlt", distance.ToString(), HighLogic.CurrentGame.Parameters.CustomParams<OptionsC>().maxDistance.ToString()),
+                   msgAltAlt = Localizer.Format("#SLOG-msgAltitudeAlt", altitude.ToString(), HighLogic.CurrentGame.Parameters.CustomParams<OptionsC>().maxAltitude.ToString()),
+                   msgSpdAlt = Localizer.Format("#SLOG-msgGroundspeedAlt", groundSpeed.ToString(), HighLogic.CurrentGame.Parameters.CustomParams<OptionsC>().maxGroundSpeed.ToString()),
                    returnMsg = String.Empty;
 
 
@@ -118,16 +118,16 @@ namespace SimpleLogistics
             switch (controlLevel)
             {
                 case Vessel.ControlLevel.FULL:
-                    if (!HighLogic.CurrentGame.Parameters.CustomParams<OptionsC>().yesFull) return Localizer.Format("#SimpleLogistics_msgControl", Localizer.Format("#SimpleLogistics_Full"));
+                    if (!HighLogic.CurrentGame.Parameters.CustomParams<OptionsC>().yesFull) return Localizer.Format("#SLOG-msgControl", Localizer.Format("#SLOG-Full"));
                     break;
                 case Vessel.ControlLevel.PARTIAL_MANNED:
-                    if (!HighLogic.CurrentGame.Parameters.CustomParams<OptionsC>().yesPartialManned) return Localizer.Format("#SimpleLogistics_msgControl", Localizer.Format("#SimpleLogistics_PartialManned"));
+                    if (!HighLogic.CurrentGame.Parameters.CustomParams<OptionsC>().yesPartialManned) return Localizer.Format("#SLOG-msgControl", Localizer.Format("#SLOG-PartialManned"));
                     break;
                 case Vessel.ControlLevel.PARTIAL_UNMANNED:
-                    if (!HighLogic.CurrentGame.Parameters.CustomParams<OptionsC>().yesPartialUnmaned) return Localizer.Format("#SimpleLogistics_msgControl", Localizer.Format("#SimpleLogistics_PartialUnmanned"));
+                    if (!HighLogic.CurrentGame.Parameters.CustomParams<OptionsC>().yesPartialUnmaned) return Localizer.Format("#SLOG-msgControl", Localizer.Format("#SLOG-PartialUnmanned"));
                     break;
                 case Vessel.ControlLevel.NONE:
-                    if (!HighLogic.CurrentGame.Parameters.CustomParams<OptionsC>().yesNone) return Localizer.Format("#SimpleLogistics_msgControl", Localizer.Format("#SimpleLogistics_None"));
+                    if (!HighLogic.CurrentGame.Parameters.CustomParams<OptionsC>().yesNone) return Localizer.Format("#SLOG-msgControl", Localizer.Format("#SLOG-None"));
                     break;
             }
             return String.Empty;
@@ -139,28 +139,28 @@ namespace SimpleLogistics
             switch (situation)
             {
                 case Vessel.Situations.LANDED:
-                    if (!HighLogic.CurrentGame.Parameters.CustomParams<OptionsB>().yesLanded) return Localizer.Format("#SimpleLogistics_msgSituation", Localizer.Format("#SimpleLogistics_Landed"));
+                    if (!HighLogic.CurrentGame.Parameters.CustomParams<OptionsB>().yesLanded) return Localizer.Format("#SLOG-msgSituation", Localizer.Format("#SLOG-Landed"));
                     break;
                 case Vessel.Situations.PRELAUNCH:
-                    if (!HighLogic.CurrentGame.Parameters.CustomParams<OptionsB>().yesPreLaunch) return Localizer.Format("#SimpleLogistics_msgSituation", Localizer.Format("#SimpleLogistics_PreLaunch"));
+                    if (!HighLogic.CurrentGame.Parameters.CustomParams<OptionsB>().yesPreLaunch) return Localizer.Format("#SLOG-msgSituation", Localizer.Format("#SLOG-PreLaunch"));
                     break;
                 case Vessel.Situations.SPLASHED:
-                    if (!HighLogic.CurrentGame.Parameters.CustomParams<OptionsB>().yesSplashed) return Localizer.Format("#SimpleLogistics_msgSituation", Localizer.Format("#SimpleLogistics_Splashed"));
+                    if (!HighLogic.CurrentGame.Parameters.CustomParams<OptionsB>().yesSplashed) return Localizer.Format("#SLOG-msgSituation", Localizer.Format("#SLOG-Splashed"));
                     break;
                 case Vessel.Situations.ORBITING:
-                    if (!HighLogic.CurrentGame.Parameters.CustomParams<OptionsB>().yesOrbiting) return Localizer.Format("#SimpleLogistics_msgSituation", Localizer.Format("#SimpleLogistics_Orbiting"));
+                    if (!HighLogic.CurrentGame.Parameters.CustomParams<OptionsB>().yesOrbiting) return Localizer.Format("#SLOG-msgSituation", Localizer.Format("#SLOG-Orbiting"));
                     break;
                 case Vessel.Situations.FLYING:
-                    if (!HighLogic.CurrentGame.Parameters.CustomParams<OptionsB>().yesFlying) return Localizer.Format("#SimpleLogistics_msgSituation", Localizer.Format("#SimpleLogistics_Flying"));
+                    if (!HighLogic.CurrentGame.Parameters.CustomParams<OptionsB>().yesFlying) return Localizer.Format("#SLOG-msgSituation", Localizer.Format("#SLOG-Flying"));
                     break;
                 case Vessel.Situations.SUB_ORBITAL:
-                    if (!HighLogic.CurrentGame.Parameters.CustomParams<OptionsB>().yesSubOrbital) return Localizer.Format("#SimpleLogistics_msgSituation", Localizer.Format("#SimpleLogistics_SubOrbital"));
+                    if (!HighLogic.CurrentGame.Parameters.CustomParams<OptionsB>().yesSubOrbital) return Localizer.Format("#SLOG-msgSituation", Localizer.Format("#SLOG-SubOrbital"));
                     break;
                 case Vessel.Situations.ESCAPING:
-                    if (!HighLogic.CurrentGame.Parameters.CustomParams<OptionsB>().yesEscaping) return Localizer.Format("#SimpleLogistics_msgSituation", Localizer.Format("#SimpleLogistics_Escaping"));
+                    if (!HighLogic.CurrentGame.Parameters.CustomParams<OptionsB>().yesEscaping) return Localizer.Format("#SLOG-msgSituation", Localizer.Format("#SLOG-Escaping"));
                     break;
                 case Vessel.Situations.DOCKED:
-                    if (!HighLogic.CurrentGame.Parameters.CustomParams<OptionsB>().yesLanded) return Localizer.Format("#SimpleLogistics_msgSituation", Localizer.Format("#SimpleLogistics_Docked"));
+                    if (!HighLogic.CurrentGame.Parameters.CustomParams<OptionsB>().yesLanded) return Localizer.Format("#SLOG-msgSituation", Localizer.Format("#SLOG-Docked"));
                     break;
             }
             return String.Empty;

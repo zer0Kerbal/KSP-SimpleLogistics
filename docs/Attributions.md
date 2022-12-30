@@ -8,14 +8,25 @@ tags: thank-you,directions,page,kerbal,ksp,zer0Kerbal,zedK
 
 <!--
 Attributions.md v1.0.4.0
-SimpleLogistics! (SLOG!)
+SimpleLogistics! (SLOG)
 created: 01 Feb 2022
 updated: 27 Mar 2022
 -->
 
+>* [`RealGecko`][realgecko] for developing this glorious addon!
+>* [Usgiyi][usgiyi] for the 1.7.2 recompile
+>* [Miracle Magician][miraclemagician] for the 1.7.2 recompile
+>* [linuxgurugamer][linuxgurugamer] for the toolbar/clickthroughblocker updates (and other things)!  
+
+
+[usgiyi]: https://forum.kerbalspaceprogram.com/index.php?/profile/114101-*/ "Usgiyi"
+[miraclemagician]: https://forum.kerbalspaceprogram.com/index.php?/profile/197080-*/ "Miracle Magician"
+[linuxgurugamer]:  " linuxgurugamer"
+
+
 <script src="https://kit.fontawesome.com/0ea5493613.js" crossorigin="anonymous"></script>
 <i class="fa fa-gear fa-spin fa-2x" style="color: firebrick"></i>
-# SimpleLogistics! (SLOG!)
+# SimpleLogistics! (SLOG)
 [Home](./index.md)
 
 ## Attribution

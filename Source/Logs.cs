@@ -145,7 +145,7 @@ namespace SimpleLogistics
         public void Awake()
         {
             // logs.Add("Using SimpleLogistics! " + Version.Number);
-            logs.Add("Using SimpleLogistics! " + Version.Text);
+            logs.Add("Using SimpleLogistics! " + Version.SText);
             instance = this;
             directory = KSPUtil.ApplicationRootPath + "/GameData/SimpleLogistics/Plugins/Logs/";
             if (!Directory.Exists(directory)) Directory.CreateDirectory(directory);

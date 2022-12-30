@@ -181,7 +181,7 @@ namespace SimpleLogistics
 				windowId,
 				windowRect,
 				DrawGUI,
-                Localizer.Format("#SimpleLogistics_WindowTitle", Version.Text), //"Logistics Network v "
+                Localizer.Format("#SLOG-WindowTitle", Version.SText), //"Logistics Network v "
                 GUILayout.ExpandWidth(true),
 				GUILayout.ExpandHeight(true)
 			);
@@ -197,8 +197,8 @@ namespace SimpleLogistics
 		{
 			GUILayout.BeginVertical ();
 			GUI.contentColor = Color.blue;
-				GUILayout.Label(Localizer.Format("#SimpleLogistics_VesselName", FlightGlobals.ActiveVessel.GetDisplayName()));
-				GUILayout.Label(Localizer.Format("#SimpleLogistics_Status", FlightGlobals.ActiveVessel.SituationString));
+				GUILayout.Label(Localizer.Format("#SLOG-VesselName", FlightGlobals.ActiveVessel.GetDisplayName()));
+				GUILayout.Label(Localizer.Format("#SLOG-Status", FlightGlobals.ActiveVessel.SituationString));
 				
 				bool ableToRequest = false;
 				LogisticsModule lm = FlightGlobals.ActiveVessel.FindPartModuleImplementing<LogisticsModule> ();
@@ -206,12 +206,12 @@ namespace SimpleLogistics
 				{
 				GUILayout.BeginHorizontal();
 					GUILayout.Label(
-						lm.IsActive ? Localizer.Format("#SimpleLogistics_Label2") : Localizer.Format("#SimpleLogistics_Label3") //, //"Pluged In""Unplugged"
+						lm.IsActive ? Localizer.Format("#SLOG-Label2") : Localizer.Format("#SLOG-Label3") //, //"Pluged In""Unplugged"
 						//lm.IsActive ? GUI.contentColor = Color.green : GUI.contentColor = Color.red
 					);
 				GUILayout.FlexibleSpace();
 					GUI.contentColor = Color.yellow;
-					if (GUILayout.Button(Localizer.Format("#SimpleLogistics_Label4"))) // "Toggle Plug"
+					if (GUILayout.Button(Localizer.Format("#SLOG-Label4"))) // "Toggle Plug"
 					{
 						lm.Toggle();// Set (!lm.IsActive);
 						refreshGUI = true;
@@ -227,7 +227,7 @@ namespace SimpleLogistics
 				GetVesselSpareSpace();
 
 				GUI.contentColor = Color.yellow;
-				GUILayout.Label(Localizer.Format("#SimpleLogistics_Label5")); //"Resource Pool:"
+				GUILayout.Label(Localizer.Format("#SLOG-Label5")); //"Resource Pool:"
 
 			foreach (var resource in resourcePool)
 			{
@@ -263,7 +263,7 @@ namespace SimpleLogistics
 			}
 
 			if (ableToRequest)
-				if (GUILayout.Button(Localizer.Format("#SimpleLogistics_Label6"))) // "Request Resources"
+				if (GUILayout.Button(Localizer.Format("#SLOG-Label6"))) // "Request Resources"
 				{
 					requested = true;
 				}
