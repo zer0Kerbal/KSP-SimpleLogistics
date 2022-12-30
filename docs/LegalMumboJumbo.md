@@ -8,12 +8,12 @@ tags: legal,mumbo,jumbo,page,kerbal,ksp,zer0Kerbal,zedK
 
 <!--
 LegalMumboJumbo.md v1.0.4.0
-SimpleLogistics! (SLOG!)
+SimpleLogistics! (SLOG)
 created: 01 Feb 2022
 updated: 27 Mar 2022
 -->
 
-# SimpleLogistics! (SLOG!)
+# SimpleLogistics! (SLOG)
 
 [Home](/index.md)
 
