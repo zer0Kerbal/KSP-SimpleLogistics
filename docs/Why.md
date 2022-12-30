@@ -7,11 +7,11 @@ tags: installation,directions,page,kerbal,ksp,zer0Kerbal,zedK
 ---
 
 <!-- Why.md v1.1.0.0
-SimpleLogistics! (SLOG!)
+SimpleLogistics! (SLOG)
 created: 01 Oct 2019
 updated: 02 Mar 2022 -->
 
-# SimpleLogistics! (SLOG!)
+# SimpleLogistics! (SLOG)
 
 [Home](/index.md)
 
