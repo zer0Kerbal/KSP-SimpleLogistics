@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SimpleLogistics</name>
+    </assembly>
+    <members>
+        <member name="M:SimpleLogistics.InSituation.NetworkEligible(Vessel)">
+            <summary>
+            Queries all the conditions that determine elibability/suitablitliy to access logicstics network.
+            If all conditions are met, passes an String.Empty;
+            else passes back the error message built from al the testing conditions.
+            </summary>
+            <param name="vessel">The vessel.</param>
+            <returns></returns>
+        </member>
+        <member name="F:SimpleLogistics.LogisticsModule.info">
+            <summary>Module information shown in editors</summary>
+        </member>
+        <member name="M:SimpleLogistics.Logs.dbg(System.String,System.Object[])">
+            <summary>
+            sends the specific message to ingame mail and screen if Debug is defined
+            For debugging use only.
+            </summary>
+            <param name="msg">The MSG.</param>
+            <param name="params">The parameters.</param>
+        </member>
+        <member name="M:SimpleLogistics.Logs.DebugLog(System.Object,SimpleLogistics.Logs.LogType)">
+            <summary>
+            Logs the provided message only if built in Debug mode
+            </summary>
+            <param name="msg">The object to log</param>
+            <param name="type">The type of message being logged (severity)</param>
+        </member>
+        <member name="M:SimpleLogistics.Logs.Log(System.Object,SimpleLogistics.Logs.LogType)">
+            <summary>
+            Logs the provided message
+            </summary>
+            <param name="msg">The object to log</param>
+            <param name="type">The type of message being logged (severity)</param>
+        </member>
+        <member name="M:SimpleLogistics.Logs.LogException(System.Exception)">
+            <summary>
+            Logs the provided Exception
+            </summary>
+            <param name="ex">The exception to log</param>
+        </member>
+        <member name="M:SimpleLogistics.SimpleLogistics.ShareResource(System.Collections.Generic.List{PartResource},System.Double)">
+            <summary>
+            Distributes resource evenly across every capacitor with priority to low capacity first
+            </summary>
+            <param name="resources">List of resources</param>
+            <param name="amount">Overall amount</param>
+        </member>
+        <member name="M:SimpleLogistics.SimpleLogistics.GetVesselSpareSpace">
+            <summary>
+            Get the amount of spare resource space. Calling every physics frame is stupid, but who cares :D
+            </summary>
+            <param name="vessel">Vessel.</param>
+        </member>
+    </members>
+</doc>
