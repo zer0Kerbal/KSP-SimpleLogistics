@@ -10,7 +10,7 @@ namespace SimpleLogistics
 	public class LogisticsModule: PartModule
 	{
         [KSPField(isPersistant = true, guiActive = true, guiActiveEditor = true, guiName = "#SLOG-Module-Plugged", groupName = "SimpleLogistics", //Plugged In?
-            groupDisplayName = "SimpleLogistics! v " + Version.Text, groupStartCollapsed = true)]
+            groupDisplayName = "SimpleLogistics! v " + Version.SText, groupStartCollapsed = true)]
         public bool _isActive = false;
 
 		[SerializeField]
@@ -39,7 +39,7 @@ namespace SimpleLogistics
             if (info == string.Empty)
             {
                 info += Localizer.Format("#SLOG-manu"); // #SLOG-manu = KerGuise Experimental Logistics
-                info += "\n v" + Version.Text; // mod Version Number text
+                info += "\n v" + Version.SText; // mod Version Number text
                 info += "\n<color=#b4d455FF>" + Localizer.Format("#SLOG-Module-Getinfo"); // #SLOG-Module-Getinfo = Logistics Module for easy resource sharing.
             }
             return info;
