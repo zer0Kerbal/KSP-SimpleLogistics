@@ -24,7 +24,7 @@ adopted with *express* permission and brought to you by *KerbSimpleCo*
 
 <img src="https://raw.githubusercontent.com/zer0Kerbal/SimpleLogistics/master/img/HeroLogo_1920x1920.png" alt="SimpleLogistics Hero" width="50%" height="50%">
 
-### Preamble by [RealGecko[realgecko]
+### Preamble by [RealGecko][realgecko]
 
 > Lately my Munar base turned into a mess of eight different vessels connected together with KAS winches. FPS reduced dramatically, managing became nearly impossible. I turned my gaze on to USI MKS and it's Logistics feature, but MKS adds too much stuff I don't really need. So after hacking a little I discovered that all logistics is done by USI Tools mod and MKS is not really required to do the job. Instead of reinventing the wheel I created a set of patches to bring logistics to stock parts. But I was completely unhappy with the fact that I cannot transfer Rocket Parts from my RP printing lab to nearby RP freight. So I decided to create my own logistics system with Blackjack and .... whatever...
 
