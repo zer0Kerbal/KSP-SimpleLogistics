@@ -10,6 +10,102 @@
 | spacedock  | (https://spacedock.info/mod/1079)                                 |
 | ckan       | SimpleLogistics                                                   |
 
+## Version 2.0.6.0-release - `<Supply & Demand>`
+
+* Released
+  * 28 Dec 2022
+  * for Kerbal Space Program 1.12.4
+  * by zer0Kerbal
+
+### Summary  2.0.6.0
+
+* Release for KSP 1.12.4
+* <SimpleLogistics.dll> 2.0.4.0 --> 2.0.6.109
+* Proper credit given (apologies)
+
+### Code 2.0.6.0
+
+* <SimpleLogistics.dll> 2.0.4.0 --> 2.0.6.109
+* Compiled for
+  * KSP 1.12.4
+  * .NET 4.6.2
+  * C# 8.0
+
+### Bugs 2.0.6.0
+
+* moved textures into the sun
+* <Changelog.cfg>
+  * Convert to markdown
+* <ja.cfg>
+  * missing Localization key
+* <DeployableBatteries.cfg>
+  * Fix :NEEDS, move some into :HAS
+* closes #37 - [BUG] config file issues
+
+### Backstage 2.0.6.0
+
+* massive update (everything)
+
+### Localization 2.0.6.0
+
+* Update
+  * Localization/
+    * add headers
+    * <en-us.cfg> v1.0.1.0
+    * <en-us.cfg> v1.0.1.0
+    * <pt-br.cfg> v1.0.1.0
+    * <de-de.cfg> v1.0.1.0
+    * <es-es.cfg> v1.0.1.0
+    * <fr-fr.cfg> v1.0.1.0
+    * <it-it.cfg> v1.0.1.0
+    * <ja.cfg> v1.0.1.0
+    * <ru.cfg> v1.0.1.0
+    * <zh-cn.cfg> v1.0.1.0
+    * <ko.cfg> v1.0.1.0
+    * <no-no.cfg> v1.0.1.0
+    * <sw.cfg> v1.0.1.0
+    * [readme.md] v2.1.2.0
+    * [quickstart.md] v1.0.1.1
+  * closes #38 - Update Localization files
+  * closes #40 - English <en-us.cfg>
+  * closes #41 - Brazalian (Português Brasil) <pt-br.cfg>
+  * closes #42 - German (Deutsch) <de-de.cfg>
+  * closes #43 - Spanish (Español) <es-es.cfg>
+  * closes #44 - French (Français) <fr-fr.cfg>
+  * closes #45 - Italian (Italiano) <it-it.cfg>
+  * closes #46 - Japanese (日本語) <ja.cfg>
+  * closes #47 - Russian (Русский) <ru.cfg>
+  * closes #48 - Simplified Chinese (简体中文) <zh-cn.cfg>
+  * closes #50 - Korean (한국어) <ko.cfg>
+  * closes #52 - Norwegian (Norsk) <no-no.cfg>
+  * closes #54 - Swedish (Svenska) <sw.cfg>
+  * closes #58 - Code Localization
+  * updates #39 - Localization - Master
+
+### Status 2.0.6.0
+
+* Issues
+  * closes #31 - SimpleLogistics! (SLOG!) 2.0.6.0-prerelease <Supply & Demand>
+  * closes #32 - 2.0.6.0 Verify Legal Mumbo Jumbo
+  * closes #33 - 2.0.6.0 Update Documentation
+  * closes #34 - 2.0.6.0 Social Media
+* PR's
+  * #14 - add game settings/difficulty setting (options):
+  * #16 - Merge LGG's change  - contributed by linuxgurugamer
+  * #17 - Localization - contributed by zer0Kerbal
+  * #18 - ability to set in part.cfg
+  * #19 - Lgg dev branch - contributed by linuxgurugamer
+  * #21 - 2.0.4.0 - contributed by zer0Kerbal
+  * #22 - correction in comments - contributed by zer0Kerbal
+  * #24 - Version 2.0.5.0 - Routine Maintenance - contributed by zer0Kerbal
+  * #26 - update new branch before working on it - contributed by zer0Kerbal
+  * #28 - [ImgBot] Optimize images - contributed by imgbot[bot]
+  * #35 - upstream refresh from master - contributed by zer0Kerbal
+  * #7 - Localization
+  * #9 - PT-BR translation. - contributed by Lisias
+
+---
+
 ## Version 2.0.5.0 - `<Routine Maintenance>` edition
 
 * 11 Aug 2021
