@@ -2,7 +2,7 @@
  "schemaVersion": 1,
  "label": "Code",
  "labelColor": "66ccff",
- "message": "<.NET 4.6.1> <C# 8.0>",
+ "message": "<.NET 4.7.2> <C# 8.0>",
  "color": "darkblue",
  "style": "plastic"
 }
