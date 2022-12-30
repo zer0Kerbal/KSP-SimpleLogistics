@@ -13,7 +13,7 @@ repository:
   name: SimpleLogistics
 
   # A short description of the repository that will show up on GitHub
-  description: A SimpleCo add-on for sharing resources between vessels within physics range for Kerbal Space Program.
+  description: A simple add-on for sharing resources between vessels within physics range for Kerbal Space Program.
 
   # A URL with more information about the repository
   homepage: https://forum.kerbalspaceprogram.com/index.php?/topic/191045-*/
