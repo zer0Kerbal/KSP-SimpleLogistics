@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <config>
     <rect name="SimpleLogistics">
-        <xmin>103</xmin>
-        <xmax>469</xmax>
-        <ymin>256</ymin>
-        <ymax>482</ymax>
+        <xmin>75</xmin>
+        <xmax>400</xmax>
+        <ymin>200</ymin>
+        <ymax>800</ymax>
     </rect>
 </config>
