@@ -20,10 +20,10 @@ namespace SimpleLogistics
 
     public class OptionsA : GameParameters.CustomParameterNode
     {
-        public override string Title { get { return Localizer.Format("#SimpleLogistics_Section1"); } }
+        public override string Title { get { return Localizer.Format("#SLOG-Section1"); } }
         public override GameParameters.GameMode GameMode { get { return GameParameters.GameMode.ANY; } }
-        public override string Section { get { return Localizer.Format("#SimpleLogistics_ModName"); } }
-        public override string DisplaySection { get { return Localizer.Format("#SimpleLogistics_ModName"); } }
+        public override string Section { get { return Localizer.Format("#SLOG-ModName"); } }
+        public override string DisplaySection { get { return Localizer.Format("#SLOG-ModName"); } }
         public override int SectionOrder { get { return 1; } }
 
         [GameParameters.CustomParameterUI("SimpleLogistics! enabled?",
@@ -85,10 +85,10 @@ namespace SimpleLogistics
 
     public class OptionsB : GameParameters.CustomParameterNode
     {
-        public override string Title { get { return Localizer.Format("#SimpleLogistics_Section2"); } }
+        public override string Title { get { return Localizer.Format("#SLOG-Section2"); } }
         public override GameParameters.GameMode GameMode { get { return GameParameters.GameMode.ANY; } }
-        public override string Section { get { return Localizer.Format("#SimpleLogistics_ModName"); } }
-        public override string DisplaySection { get { return Localizer.Format("#SimpleLogistics_ModName"); } }
+        public override string Section { get { return Localizer.Format("#SLOG-ModName"); } }
+        public override string DisplaySection { get { return Localizer.Format("#SLOG-ModName"); } }
         public override int SectionOrder { get { return 2; } }
 
         [GameParameters.CustomParameterUI("Landed vessels may access network",
@@ -214,10 +214,10 @@ namespace SimpleLogistics
 
     public class OptionsC : GameParameters.CustomParameterNode
     {
-        public override string Title { get { return Localizer.Format("#SimpleLogistics_Section3"); } }
+        public override string Title { get { return Localizer.Format("#SLOG-Section3"); } }
         public override GameParameters.GameMode GameMode { get { return GameParameters.GameMode.ANY; } }
-        public override string Section { get { return Localizer.Format("#SimpleLogistics_ModName"); } } 
-        public override string DisplaySection { get { return Localizer.Format("#SimpleLogistics_ModName"); } }
+        public override string Section { get { return Localizer.Format("#SLOG-ModName"); } } 
+        public override string DisplaySection { get { return Localizer.Format("#SLOG-ModName"); } }
         public override int SectionOrder { get { return 3; } }
        
         [GameParameters.CustomParameterUI("Control: Full",
