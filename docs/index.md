@@ -14,3 +14,4 @@
 - [ManualInstallation](ManualInstallation.md)
 - [Marketing](Marketing.md)
 - [Why](Why.md)
+- [changelog](changelog.md)
