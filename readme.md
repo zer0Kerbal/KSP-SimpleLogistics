@@ -46,7 +46,7 @@ adopted with *express* permission and brought to you by *KerbSimpleCo*
 >* Compatibility patches
 >* Contracts for this addon
 >* Variant GUI Skins
->* Am open to [GitHub][]
+>* Am open to [GitHub][GITHUB:url] pushes
 >* Marketing Images and Videos such as hero shots, animated gifs, short highlights
 >* Have a request? Glad to have them, kindly submit through [GitHub][MOD:issue].
 >* Translations: See the [README in the Localization folder][lreadme] or the [Quickstart Guide][qstart] for instructions for adding or improving translations. [GitHub][GitHub:url] push is the best way to contribute. *Additions and corrections welcome!*
