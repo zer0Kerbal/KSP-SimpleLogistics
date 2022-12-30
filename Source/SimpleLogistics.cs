@@ -181,7 +181,7 @@ namespace SimpleLogistics
 				windowId,
 				windowRect,
 				DrawGUI,
-                Localizer.Format("#SLOG-WindowTitle", Version.Text), //"Logistics Network v "
+                Localizer.Format("#SLOG-WindowTitle", Version.SText), //"Logistics Network v "
                 GUILayout.ExpandWidth(true),
 				GUILayout.ExpandHeight(true)
 			);
