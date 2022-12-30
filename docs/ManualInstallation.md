@@ -15,7 +15,7 @@ updated: 29 Jul 2022 -->
 
 [Home](./index.md)
 
-An add-on for sharing resources between vessels within physics range.
+An add-on for simple resources sharing between vessels within physics range.
 
 ## Installation Instructions
 
