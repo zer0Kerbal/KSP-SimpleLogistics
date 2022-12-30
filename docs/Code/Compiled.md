@@ -8,7 +8,7 @@ tags: code,page,kerbal,ksp,zer0Kerbal,zedK
 ---
 
 <!-- Compiled.md v1.0.3.0
-SimpleLogistics! (SLOG!)
+SimpleLogistics! (SLOG)
 created: 01 Feb 2022
 updated: 07 Mar 2022 -->
 
