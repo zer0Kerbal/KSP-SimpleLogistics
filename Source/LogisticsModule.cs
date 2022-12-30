@@ -9,7 +9,7 @@ namespace SimpleLogistics
 	[Serializable]
 	public class LogisticsModule: PartModule
 	{
-        [KSPField(isPersistant = true, guiActive = true, guiActiveEditor = true, guiName = "#SimpleLogistics_Module_Plugged", groupName = "SimpleLogistics", //Plugged In?
+        [KSPField(isPersistant = true, guiActive = true, guiActiveEditor = true, guiName = "#SLOG-Module-Plugged", groupName = "SimpleLogistics", //Plugged In?
             groupDisplayName = "SimpleLogistics! v " + Version.Text, groupStartCollapsed = true)]
         public bool _isActive = false;
 
@@ -19,7 +19,7 @@ namespace SimpleLogistics
 		public void Set(bool status)
         { _isActive = status; }
 
-		[KSPEvent(guiActive = true, guiActiveEditor = true, guiName = "#SimpleLogistics_Module_PluggedNet", groupName = "SimpleLogistics")] //Plug into Network
+		[KSPEvent(guiActive = true, guiActiveEditor = true, guiName = "#SLOG-Module-PluggedNet", groupName = "SimpleLogistics")] //Plug into Network
         internal void Toggle()
         { _isActive = !_isActive; }
 
@@ -38,9 +38,9 @@ namespace SimpleLogistics
             //? The config is only fully parsed after everything is fully loaded (which is why it's in OnStart())
             if (info == string.Empty)
             {
-                info += Localizer.Format("#SimpleLogistics_manu"); // #SimpleLogistics_manu = KerGuise Experimental Logistics
+                info += Localizer.Format("#SLOG-manu"); // #SLOG-manu = KerGuise Experimental Logistics
                 info += "\n v" + Version.Text; // mod Version Number text
-                info += "\n<color=#b4d455FF>" + Localizer.Format("#SimpleLogistics_Module_Getinfo"); // #SimpleLogistics_Module_Getinfo = Logistics Module for easy resource sharing.
+                info += "\n<color=#b4d455FF>" + Localizer.Format("#SLOG-Module-Getinfo"); // #SLOG-Module-Getinfo = Logistics Module for easy resource sharing.
             }
             return info;
         }
